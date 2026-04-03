@@ -1,43 +1,42 @@
 import streamlit as st
 import pandas as pd
 from google import genai
+import os
 
-# 1. الـ API Key
-API_KEY = "AIzaSyBZWpMlqty2iciVgr9f3n_953E5ipVPKB4"
+# 1. إعداد الـ API باستخدام Secrets لحماية المفتاح
+# تأكد انك ضفت GOOGLE_API_KEY في Settings بتاع Streamlit Cloud
+API_KEY = st.secrets["GOOGLE_API_KEY"]
 client = genai.Client(api_key=API_KEY)
 
-st.set_page_config(page_title="Supply Chain Analyst", layout="wide")
-st.title("🤖 Supply Chain Excel Analyst")
+st.set_page_config(page_title="Supply Chain AI Analyst", layout="wide")
+st.title("🤖 Supply Chain AI Analyst")
 
-# 2. تحميل البيانات
-@st.cache_data
-def load_data():
-    # تأكد إن الملف مرفوع في الكود سبيس بنفس الاسم ده
-        return pd.read_excel("Supply_Chain_Optimization.xlsx") 
+# 2. قراءة الملف
+file_path = "Supply_Chain_Optimization.csv"
 
-        try:
-            df = load_data()
-                st.success("✅ تم تحميل البيانات بنجاح")
-                    st.subheader("📊 عينة من البيانات")
-                        st.dataframe(df.head(10))
+if os.path.exists(file_path):
+    try:
+        df = pd.read_csv(file_path)
+        st.success("✅ تم تحميل البيانات بنجاح")
+        st.dataframe(df.head(10))
 
-                            # 3. الشات بوت
-                                st.divider()
-                                    user_question = st.text_input("❓ اسأل المحلل الذكي عن الجدول:")
+        # 3. الشات بوت
+        st.divider()
+        user_question = st.text_input("❓ اسأل المحلل الذكي عن بياناتك:")
 
-                                        if st.button("تحليل") and user_question:
-                                                with st.spinner("جاري التحليل..."):
-                                                            # بناخد أول 30 سطر عشان الـ AI يفهم السياق
-                                                                        context = df.head(30).to_string()
-                                                                                    prompt = f"Data Context:\n{context}\n\nUser Question: {user_question}"
-
-                                                                                                response = client.models.generate_content(
-                                                                                                                model="gemini-1.5-flash",
-                                                                                                                                contents=prompt
-                                                                                                                                            )
-                                                                                                                                                        
-                                                                                                                                                                    st.info(f"🤖 رد المحلل الذكي: \n\n {response.text}")
-
-                                                                                                                                                                    except Exception as e:
-                                                                                                                                                                        st.error(f"❌ مشكلة: تأكد من رفع ملف الـ Excel. الخطأ: {e}")
-                                                                        
+        if st.button("تحليل"):
+            if user_question:
+                with st.spinner("جاري التحليل..."):
+                    context = df.head(30).to_string()
+                    prompt = f"Data:\n{context}\nQuestion: {user_question}"
+                    response = client.models.generate_content(
+                        model="gemini-1.5-flash",
+                        contents=prompt
+                    )
+                    st.info(response.text)
+            else:
+                st.warning("يرجى كتابة سؤال أولاً.")
+    except Exception as e:
+        st.error(f"❌ خطأ في قراءة الملف: {e}")
+else:
+    st.error(f"⚠️ الملف {file_path} غير موجود في GitHub.")
