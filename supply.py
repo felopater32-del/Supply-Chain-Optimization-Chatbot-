@@ -5,45 +5,41 @@ from pandasai.llm import GoogleGemini
 import os
 
 st.set_page_config(page_title="AI Data Scientist", layout="wide")
-st.title("🤖 PandasAI: Smart Supply Chain Analyst")
+st.title("🤖 Smart Supply Chain Dashboard")
 
-# 1. إعداد الـ LLM (Gemini) داخل PandasAI
+# إعداد الـ LLM
 try:
     API_KEY = st.secrets["GOOGLE_API_KEY"]
     llm = GoogleGemini(api_key=API_KEY)
 except:
     st.error("⚠️ تأكد من إضافة المفتاح في الـ Secrets")
 
-# 2. تحميل البيانات
 file_path = "Supply_Chain_Optimization.csv"
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
-    
-    # تحويل الـ DataFrame العادي لـ Smart Dataframe
-    smart_df = SmartDataframe(df, config={"llm": llm})
+    # تفعيل خيار الحفظ التلقائي للرسومات عشان تظهر في Streamlit
+    smart_df = SmartDataframe(df, config={"llm": llm, "save_charts": True})
 
     st.write("### عينة من البيانات:")
     st.dataframe(df.head(5))
 
     st.divider()
 
-    # 3. صندوق الدردشة الذكي
-    st.subheader("📊 اسأل الـ AI ليرسم أو يحلل:")
-    prompt = st.text_input("مثلاً: 'Draw a bar chart of top 5 products by revenue' أو 'ماهي أعلى 5 مدن في التكلفة؟'")
+    st.subheader("📊 اطلب من الـ AI رسم بياني أو تحليل:")
+    prompt = st.text_input("مثلاً: Draw a bar chart of the top 5 product types by price")
 
-    if st.button("تنفيذ الأمر"):
+    if st.button("تنفيذ"):
         if prompt:
-            with st.spinner("جاري التفكير والرسم..."):
-                # هنا السحر: المكتبة هي اللي بتقرر تطلع نص أو رسمة
+            with st.spinner("جاري معالجة البيانات..."):
                 response = smart_df.chat(prompt)
                 
-                # عرض النتيجة (سواء كانت نص أو صورة الرسم البياني)
+                # عرض الرد (سواء كان نص أو مسار الصورة)
                 if response:
                     st.write(response)
-                    # ملاحظة: PandasAI بتحفظ الصورة في مجلد exports وتظهرها أوتوماتيك
+                    # لو الـ AI رسم صورة، المكتبة غالباً بتطلعها أوتوماتيك
+                    # لو مظهرتش، قولي وهنضيف سطر عرض الصورة يدوياً
         else:
-            st.warning("اكتب سؤالك أو أمر الرسم أولاً")
-
+            st.warning("اكتب سؤالك أولاً")
 else:
     st.error("❌ ملف البيانات غير موجود")
