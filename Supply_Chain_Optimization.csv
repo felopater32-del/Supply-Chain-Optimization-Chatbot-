@@ -1,0 +1,1001 @@
+Region,Product_Category,Warehouse_Type,Supplier_Type,Transportation_Mode,Demand_Level_Category,Inventory_Status,Demand_Units,Forecasted_Demand_Units,Inventory_Level_Units,Reorder_Point,Lead_Time_Days,Transportation_Cost_USD,Holding_Cost_USD,Stockout_Incidents,Order_Fulfillment_Time_Days,Supplier_Reliability_Score,Demand_Forecast_Accuracy,Inventory_Turnover_Ratio,Supply_Chain_Efficiency_Index,Inventory_Risk_Score,Logistics_Performance_Index
+West,FMCG,Regional,International,Sea,Medium,Optimal,1371,1290.0,2011.0,1220,21.08,2111.16,2208.34,3,14.23,93.27,94.09,0.68,75.35,33.44,65.2
+East,Industrial Supplies,Central,Distributor,Road,Medium,Overstocked,1449,1298.0,1765.0,992,17.07,1892.9,1647.92,1,9.87,87.43,89.58,0.82,81.12,24.57,72.62
+North,Apparel,Central,International,Road,Medium,Overstocked,1905,1984.0,3185.0,1616,16.61,1583.7,7274.25,0,9.04,74.93,95.85,0.6,83.24,18.27,71.16
+West,FMCG,Regional,International,Road,High,Optimal,1700,1680.0,2386.0,1457,16.16,3022.95,1546.73,1,7.56,69.53,98.82,0.71,82.19,19.96,69.56
+South,Industrial Supplies,Local,International,Road,Medium,Overstocked,1167,1065.0,1372.0,1284,23.24,1219.12,1766.91,0,9.34,69.13,91.26,0.85,79.88,26.74,69.57
+West,FMCG,Regional,Distributor,Air,Low,Optimal,490,485.0,632.0,532,14.57,2530.51,473.48,0,7.05,85.02,98.98,0.78,88.85,14.98,76.23
+North,Apparel,Local,Local,Road,Medium,Overstocked,844,922.0,1152.0,850,16.07,1470.34,843.53,0,6.36,70.4,90.76,0.73,83.01,19.77,75.39
+South,Apparel,Central,International,Road,Low,Optimal,958,1024.0,931.0,923,14.97,1331.82,1813.58,0,9.23,92.32,93.11,1.03,86.44,17.73,76.51
+West,Home Goods,Regional,International,Road,Medium,Stockout Risk,1215,1000.0,809.0,1037,17.61,2180.01,706.54,4,11.85,87.29,82.3,1.5,69.89,38.02,68.03
+South,Industrial Supplies,Local,Distributor,Road,Medium,Overstocked,495,378.0,880.0,346,12.18,635.97,703.56,3,6.21,70.62,76.36,0.56,71.5,31.63,77.47
+East,FMCG,Local,Distributor,Road,Medium,Optimal,1870,1870.0,2771.0,1265,7.56,1654.97,3990.35,0,3.59,95.59,100.0,0.67,95.31,7.56,88.11
+North,FMCG,Local,Distributor,Road,High,Overstocked,1701,1674.0,2724.0,1206,4.09,1752.85,3456.49,1,3.01,77.94,98.41,0.62,88.7,8.06,83.78
+South,Industrial Supplies,Local,Distributor,Road,Medium,Optimal,400,306.0,497.0,188,4.11,469.14,795.54,2,2.51,65.77,76.5,0.8,76.26,20.18,83.75
+East,Electronics,Local,Local,Road,High,Optimal,2200,2430.0,1892.0,1599,14.58,2152.22,2343.14,0,7.1,75.61,89.55,1.16,83.14,18.76,74.08
+West,FMCG,Local,Local,Road,High,Optimal,2900,3190.0,3446.0,2160,9.0,3633.71,2601.22,1,5.38,78.88,90.0,0.84,83.62,16.33,75.47
+South,Apparel,Central,International,Road,Medium,Optimal,721,871.0,656.0,809,22.61,1024.37,1240.61,1,13.48,61.32,79.2,1.1,67.35,34.27,59.34
+North,FMCG,Central,International,Road,High,Overstocked,3520,3128.0,4763.0,2093,18.3,5644.94,3343.51,0,6.85,92.52,88.86,0.74,87.38,22.75,72.51
+West,Apparel,Local,International,Sea,Medium,Optimal,1230,942.0,1716.0,905,15.5,3358.4,2874.24,2,5.11,84.5,76.59,0.72,78.38,31.53,78.26
+South,FMCG,Central,Local,Road,Low,Optimal,1088,1288.0,1617.0,818,2.05,897.14,1167.0,1,2.71,87.73,81.62,0.67,85.57,12.74,89.06
+East,Electronics,Central,Local,Road,High,Optimal,2278,2731.0,2316.0,1609,9.18,3781.12,1862.18,1,4.76,72.15,80.11,0.98,79.09,20.47,74.39
+North,Apparel,Regional,Distributor,Sea,High,Optimal,2455,2308.0,2946.0,1466,17.47,4272.69,2281.01,3,8.52,87.37,94.01,0.83,79.56,29.87,70.43
+South,FMCG,Regional,Distributor,Air,Low,Optimal,1011,981.0,920.0,525,1.0,5351.02,950.68,0,1.0,91.07,97.03,1.1,95.73,2.19,84.38
+North,Apparel,Local,Local,Road,Medium,Optimal,712,858.0,746.0,590,5.24,1385.57,1289.29,1,2.25,93.54,79.49,0.95,86.73,16.78,90.73
+South,Electronics,Regional,Local,Air,Medium,Overstocked,1063,939.0,1858.0,777,13.72,3114.33,2680.52,0,5.78,88.62,88.33,0.57,87.29,18.39,78.66
+South,Apparel,Regional,International,Sea,Low,Optimal,886,921.0,1037.0,853,20.7,1880.59,1379.56,1,12.06,74.6,96.05,0.85,77.99,25.61,64.41
+West,Electronics,Local,Distributor,Road,Medium,Stockout Risk,1739,1913.0,815.0,971,3.98,2351.49,1067.42,4,3.74,96.33,89.99,2.13,82.95,21.32,86.61
+South,Industrial Supplies,Local,Local,Road,Medium,Stockout Risk,468,440.0,482.0,322,9.01,932.78,777.08,4,4.3,84.19,94.02,0.97,80.77,24.74,84.75
+South,FMCG,Regional,Local,Road,Medium,Optimal,1348,1352.0,1366.0,1186,8.24,1496.0,2266.92,3,5.81,77.92,99.7,0.99,81.9,18.36,78.7
+North,FMCG,Local,International,Road,Medium,Stockout Risk,1915,1929.0,2110.0,1932,20.96,4395.63,1189.48,5,10.64,73.38,99.27,0.91,71.34,37.92,61.74
+South,Home Goods,Local,Local,Road,Medium,Optimal,1262,1337.0,1517.0,1226,8.16,1586.47,2683.53,1,6.5,80.21,94.06,0.83,84.25,13.87,77.82
+North,Industrial Supplies,Regional,International,Sea,Low,Optimal,1021,857.0,730.0,747,23.11,1246.31,1443.51,0,14.1,86.3,83.94,1.4,76.85,29.54,65.14
+South,Apparel,Local,International,Sea,High,Overstocked,918,814.0,1550.0,998,23.46,2053.48,897.36,1,16.01,63.39,88.67,0.59,68.65,31.32,52.8
+North,Apparel,Central,Distributor,Road,Medium,Optimal,1541,1381.0,2226.0,1302,9.41,3468.9,3169.21,6,4.42,80.72,89.62,0.69,73.79,33.56,78.28
+West,Home Goods,Regional,International,Sea,Medium,Overstocked,996,1109.0,1792.0,1004,19.37,1394.54,3439.27,0,10.87,80.18,88.65,0.56,80.2,23.91,69.46
+East,FMCG,Regional,International,Road,Low,Optimal,1126,1187.0,1498.0,952,15.44,1780.45,2825.1,2,8.53,87.72,94.58,0.75,82.06,24.27,75.61
+West,Industrial Supplies,Regional,Distributor,Road,High,Overstocked,1444,1473.0,2315.0,821,3.87,1361.59,1446.89,0,4.04,87.94,97.99,0.62,92.24,4.67,85.52
+North,Industrial Supplies,Regional,International,Air,Medium,Optimal,671,777.0,520.0,706,8.7,2226.93,386.4,4,3.9,79.9,84.2,1.29,76.66,28.35,81.62
+North,Industrial Supplies,Local,Local,Road,Low,Overstocked,866,781.0,988.0,466,2.32,1475.72,968.11,0,1.7,78.11,90.18,0.88,89.39,6.25,87.01
+East,Industrial Supplies,Local,Local,Road,Medium,Optimal,848,833.0,1131.0,529,7.79,1302.15,1199.69,1,5.17,70.67,98.23,0.75,84.66,11.83,78.2
+West,FMCG,Local,International,Air,Low,Optimal,1286,1191.0,1561.0,932,17.97,2979.28,2546.2,1,7.52,74.86,92.61,0.82,81.39,24.26,71.32
+North,Apparel,Regional,Distributor,Road,High,Optimal,1586,1585.0,1599.0,1198,12.33,3705.69,3170.14,1,8.3,88.42,99.94,0.99,86.56,15.69,72.35
+West,Apparel,Regional,Distributor,Road,Low,Optimal,509,409.0,423.0,405,14.03,544.69,803.12,2,6.27,89.72,80.35,1.2,79.84,28.56,83.26
+North,Industrial Supplies,Regional,Distributor,Road,Low,Overstocked,332,339.0,584.0,398,13.79,685.12,1115.28,1,10.9,78.47,97.89,0.57,80.76,17.97,70.34
+West,Electronics,Local,Distributor,Sea,Medium,Optimal,941,1042.0,1302.0,642,15.41,2050.91,1958.49,1,7.47,73.92,89.27,0.72,80.03,23.04,73.04
+North,Electronics,Regional,Distributor,Sea,High,Stockout Risk,1824,1846.0,1234.0,1222,14.78,3356.29,1039.15,5,12.95,89.17,98.79,1.48,72.81,31.93,63.99
+North,Electronics,Local,Distributor,Road,Medium,Optimal,2251,2435.0,2738.0,1883,4.56,3786.44,3035.2,2,2.22,67.49,91.83,0.82,82.35,14.5,78.06
+North,Home Goods,Central,Distributor,Road,High,Stockout Risk,1696,1575.0,1073.0,964,11.06,3350.91,805.33,5,5.77,81.94,92.87,1.58,76.11,30.58,76.19
+North,FMCG,Central,International,Road,Low,Optimal,1171,1092.0,1129.0,1102,16.23,2717.71,846.48,2,6.03,73.84,93.25,1.04,80.62,25.6,74.53
+North,FMCG,Regional,Local,Air,Low,Stockout Risk,1247,1601.0,799.0,1556,12.4,4125.87,527.89,6,3.72,83.89,71.61,1.56,68.98,43.76,79.29
+East,Home Goods,Local,Local,Road,Low,Optimal,973,959.0,1250.0,907,13.66,1477.13,2114.83,3,7.76,80.47,98.56,0.78,80.19,24.24,75.6
+North,FMCG,Regional,International,Road,Low,Overstocked,784,529.0,1153.0,741,22.68,809.17,758.44,2,16.68,93.58,67.47,0.68,65.89,42.36,63.06
+West,Home Goods,Local,Local,Road,Low,Overstocked,422,319.0,780.0,444,11.45,372.61,488.17,0,6.74,74.84,75.59,0.54,78.43,21.21,78.21
+North,Electronics,Local,International,Road,Low,Stockout Risk,997,1106.0,1026.0,791,22.98,980.76,1713.29,2,12.45,77.28,89.07,0.97,73.6,34.02,66.28
+North,Apparel,Local,International,Road,Low,Stockout Risk,389,421.0,330.0,437,12.54,500.43,360.57,4,7.71,66.41,91.77,1.18,72.12,29.16,73.48
+South,Industrial Supplies,Regional,Local,Road,High,Overstocked,1712,1679.0,2566.0,1033,9.69,1790.91,4150.24,0,4.82,95.11,98.07,0.67,93.28,10.46,85.23
+North,FMCG,Regional,Distributor,Road,Medium,Optimal,2023,1970.0,1719.0,1428,6.82,3104.49,1045.27,4,4.9,75.59,97.38,1.18,79.19,21.2,76.53
+West,Apparel,Regional,Distributor,Road,Medium,Stockout Risk,612,594.0,330.0,325,3.09,783.45,652.47,3,2.13,91.51,97.06,1.85,88.05,14.27,91.59
+North,Home Goods,Regional,Distributor,Road,Low,Optimal,740,843.0,926.0,611,6.61,1578.83,833.98,1,3.52,70.96,86.08,0.8,82.13,15.51,81.02
+North,Apparel,Regional,Local,Road,Low,Overstocked,926,911.0,1146.0,727,8.45,888.79,701.89,0,6.33,81.77,98.38,0.81,88.55,9.1,80.05
+East,Electronics,Regional,International,Sea,Medium,Stockout Risk,1309,1420.0,1216.0,1501,23.96,4345.8,1845.72,4,15.97,78.64,91.52,1.08,66.83,40.69,52.76
+North,Home Goods,Central,Distributor,Air,Medium,Optimal,1362,1452.0,1883.0,1253,10.98,7250.06,3112.35,2,4.74,81.62,93.39,0.72,83.91,20.29,70.18
+West,FMCG,Local,Distributor,Road,Low,Optimal,1670,1647.0,1342.0,1332,5.48,1922.24,2115.69,5,3.78,95.74,98.62,1.24,83.56,22.7,87.23
+East,FMCG,Regional,Distributor,Road,Medium,Stockout Risk,1508,1431.0,1169.0,1137,8.04,3399.59,1175.79,1,4.83,75.72,94.89,1.29,85.09,13.42,76.1
+South,Apparel,Local,International,Road,Low,Stockout Risk,661,621.0,535.0,487,11.51,1552.5,673.02,3,7.99,78.73,93.95,1.24,77.91,23.93,74.46
+North,Industrial Supplies,Central,International,Road,Low,Optimal,912,794.0,1256.0,823,19.01,2151.31,1599.17,2,9.69,93.07,87.06,0.73,79.6,30.85,74.14
+South,Electronics,Local,Distributor,Sea,Low,Overstocked,590,602.0,875.0,560,8.75,1430.67,1137.84,0,4.9,78.35,97.97,0.67,88.98,9.56,80.78
+West,FMCG,Regional,Local,Road,Medium,Stockout Risk,1563,1454.0,1383.0,1289,5.69,3154.39,1547.74,3,5.07,77.16,93.03,1.13,80.11,18.48,76.56
+South,Home Goods,Regional,International,Sea,Low,Optimal,240,268.0,314.0,421,26.77,627.45,401.71,0,15.41,73.75,88.33,0.76,73.94,31.44,60.02
+South,FMCG,Regional,Local,Road,Medium,Optimal,1424,1591.0,1714.0,1040,15.91,2853.39,3349.3,1,8.1,95.18,88.27,0.83,84.37,23.93,76.52
+West,Home Goods,Regional,Distributor,Sea,Low,Optimal,778,891.0,672.0,881,18.63,2466.2,1111.27,2,15.6,85.6,85.48,1.16,71.27,31.11,59.44
+East,FMCG,Regional,Local,Sea,Medium,Overstocked,1634,1199.0,2491.0,928,10.14,5439.44,1779.07,0,7.14,91.41,73.38,0.66,81.4,20.79,72.02
+South,FMCG,Local,Distributor,Road,High,Stockout Risk,2566,2476.0,2825.0,2087,3.22,4123.16,3407.85,3,2.79,96.24,96.49,0.91,88.37,14.62,84.86
+North,FMCG,Central,Local,Sea,Medium,Optimal,682,743.0,647.0,707,15.28,990.35,1376.2,2,12.59,69.6,91.06,1.05,72.24,25.52,63.67
+East,Apparel,Regional,Distributor,Road,Medium,Stockout Risk,50,45.0,52.0,81,2.72,70.5,88.5,1,2.83,82.79,90.0,0.96,87.15,10.05,89.03
+East,FMCG,Central,Local,Road,High,Overstocked,1733,1823.0,2081.0,1252,13.84,1942.76,3096.35,0,4.73,69.43,94.81,0.83,85.81,15.92,77.4
+South,FMCG,Regional,International,Road,High,Overstocked,1318,1277.0,2016.0,929,9.5,2354.39,3661.5,0,5.03,82.65,96.89,0.65,89.54,10.74,79.92
+East,FMCG,Regional,Distributor,Road,High,Optimal,2091,2134.0,2980.0,1265,10.73,2261.75,4122.04,2,5.48,88.1,97.94,0.7,86.38,18.22,80.84
+South,FMCG,Local,Local,Road,Low,Optimal,940,981.0,1105.0,910,14.62,1843.0,1971.06,1,8.15,73.68,95.64,0.85,81.52,19.7,72.03
+East,Home Goods,Regional,International,Road,Medium,Optimal,1386,1308.0,1303.0,1120,11.12,1695.49,945.31,3,4.76,74.74,94.37,1.06,80.29,23.37,79.43
+North,FMCG,Local,International,Road,Medium,Overstocked,2295,2627.0,4419.0,1452,11.53,5165.01,7830.3,4,4.65,74.69,85.53,0.52,75.07,30.65,72.54
+South,Industrial Supplies,Local,Local,Road,Low,Overstocked,569,598.0,649.0,341,2.1,907.69,380.21,1,1.0,80.56,94.9,0.88,90.13,7.47,90.31
+East,FMCG,Central,Local,Air,High,Optimal,2434,2487.0,2396.0,2290,14.42,11223.02,4678.55,0,6.85,79.62,97.82,1.02,87.29,15.29,57.23
+West,Industrial Supplies,Regional,Distributor,Sea,Medium,Optimal,1334,1416.0,1500.0,886,14.12,4469.69,1013.84,0,8.05,91.77,93.85,0.89,87.74,16.58,72.29
+South,Industrial Supplies,Regional,Local,Sea,Low,Stockout Risk,498,425.0,560.0,448,14.23,968.78,835.86,1,8.48,72.34,85.34,0.89,77.25,23.43,72.76
+East,FMCG,Local,International,Sea,Low,Optimal,905,873.0,796.0,1039,25.94,1066.25,1381.98,1,12.49,61.44,96.46,1.14,74.41,30.69,61.27
+East,Electronics,Local,International,Road,Medium,Optimal,1748,1814.0,1230.0,1432,16.99,2905.9,1852.51,0,8.25,75.81,96.22,1.42,84.38,18.5,70.3
+South,Home Goods,Local,Local,Road,Low,Optimal,658,659.0,853.0,544,12.17,1072.75,1080.44,1,4.0,73.5,99.85,0.77,87.1,15.56,81.86
+North,Electronics,Central,International,Road,Low,Overstocked,988,1115.0,1207.0,911,23.41,1227.74,2302.63,1,16.55,68.94,87.15,0.82,68.97,31.89,55.07
+West,FMCG,Local,Local,Air,High,Optimal,213,179.0,242.0,281,10.08,574.22,411.22,1,2.91,74.4,84.04,0.88,82.88,19.8,85.33
+North,Apparel,Central,Local,Road,Medium,Overstocked,1763,2081.0,2533.0,1677,15.68,2640.33,5103.74,1,4.33,72.4,81.96,0.7,80.23,26.23,77.66
+North,Industrial Supplies,Central,Local,Road,Medium,Optimal,712,814.0,806.0,510,8.07,1290.47,1491.74,5,5.06,88.5,85.67,0.88,75.94,30.47,83.79
+North,Apparel,Local,Local,Sea,Low,Overstocked,1076,1127.0,1499.0,921,15.1,2330.71,2234.09,0,8.79,88.32,95.26,0.72,86.63,17.0,74.15
+East,Home Goods,Local,International,Air,Low,Optimal,723,730.0,737.0,484,7.21,1987.76,432.08,1,1.33,81.39,99.03,0.98,91.46,10.93,87.69
+North,FMCG,Regional,International,Sea,Low,Overstocked,791,926.0,1030.0,811,15.8,1381.02,1210.54,0,10.54,93.44,82.93,0.77,81.85,22.63,74.13
+North,Apparel,Regional,International,Sea,Medium,Optimal,1483,1249.0,1098.0,1056,23.44,2297.65,1176.4,1,16.57,93.09,84.22,1.35,73.96,33.08,60.09
+East,FMCG,Central,International,Sea,Low,Optimal,1349,1092.0,1413.0,913,25.13,2120.44,1868.21,1,13.96,77.92,80.95,0.95,71.63,36.08,61.12
+East,Electronics,Regional,Local,Road,High,Optimal,1392,1211.0,1546.0,677,6.4,3114.19,2477.11,2,2.34,68.56,87.0,0.9,80.81,18.27,79.52
+East,Industrial Supplies,Regional,Distributor,Sea,Medium,Overstocked,526,515.0,878.0,437,18.87,1188.99,1418.99,0,9.99,76.46,97.91,0.6,83.39,19.71,70.53
+East,Industrial Supplies,Local,International,Sea,Medium,Optimal,1290,1181.0,1517.0,890,19.44,1741.46,2279.93,3,12.87,75.07,91.55,0.85,71.27,32.82,63.22
+South,Industrial Supplies,Central,Local,Road,Low,Overstocked,779,735.0,983.0,523,5.46,1312.38,2116.66,1,3.52,88.51,94.35,0.79,89.41,11.05,86.83
+North,Electronics,Central,Distributor,Sea,High,Optimal,1458,1320.0,2002.0,1153,16.17,2297.15,3572.57,2,9.0,69.0,90.53,0.73,75.49,26.62,68.0
+East,Home Goods,Regional,International,Sea,Medium,Optimal,1247,1301.0,1506.0,1564,23.72,2236.71,1035.29,1,10.81,62.32,95.67,0.83,76.03,28.79,62.5
+East,Home Goods,Regional,International,Road,Medium,Stockout Risk,1053,1146.0,498.0,945,17.5,1846.34,453.08,1,9.21,72.35,91.17,2.11,78.56,24.37,69.51
+North,Apparel,Central,Distributor,Sea,Low,Overstocked,647,767.0,1095.0,722,18.23,862.31,2388.06,0,9.12,97.63,81.45,0.59,83.8,25.65,79.29
+North,Industrial Supplies,Regional,Local,Sea,High,Optimal,2140,2254.0,2268.0,1578,17.16,3160.72,1753.1,3,11.57,97.24,94.67,0.94,79.21,29.29,69.57
+South,Electronics,Local,International,Road,Medium,Overstocked,1264,1415.0,2073.0,959,18.29,1169.32,3396.45,0,6.03,86.85,88.05,0.61,86.5,23.07,81.6
+South,Industrial Supplies,Central,Local,Road,High,Optimal,1485,1530.0,1224.0,862,12.02,3321.15,919.67,1,9.55,95.46,96.97,1.21,86.03,16.57,72.75
+South,Home Goods,Central,International,Air,High,Optimal,1968,1713.0,2711.0,1550,8.78,5361.0,1993.35,2,2.61,80.75,87.04,0.73,83.6,20.63,78.04
+North,Apparel,Central,Local,Road,Low,Optimal,504,466.0,472.0,435,8.86,427.2,697.03,0,5.39,99.0,92.46,1.07,91.72,11.88,88.05
+South,Apparel,Local,Local,Sea,Low,Stockout Risk,341,267.0,166.0,319,10.87,930.03,181.77,4,5.59,97.27,78.3,2.05,77.24,32.88,86.1
+South,Electronics,Regional,Local,Road,Medium,Stockout Risk,1879,1904.0,1200.0,1230,9.65,2500.13,1281.46,4,7.46,83.7,98.67,1.57,79.11,23.52,75.08
+West,Electronics,Local,International,Sea,Low,Optimal,751,541.0,997.0,734,22.85,1030.57,1206.28,1,12.81,89.8,72.04,0.75,72.63,37.37,69.21
+North,Home Goods,Central,Local,Road,Low,Optimal,710,711.0,1036.0,638,4.83,1554.14,1548.73,1,3.74,75.62,99.86,0.69,87.89,8.22,82.03
+North,Apparel,Local,International,Sea,Medium,Optimal,1521,1565.0,1437.0,1598,22.89,4356.98,2549.26,1,14.84,63.65,97.11,1.06,72.84,27.38,50.5
+North,Electronics,Regional,Local,Sea,Medium,Optimal,1541,1451.0,2172.0,1015,15.46,4997.45,1369.6,2,12.91,68.01,94.16,0.71,72.6,24.46,54.36
+North,Industrial Supplies,Regional,Local,Road,Low,Optimal,1184,1344.0,962.0,1006,3.09,2555.49,1690.13,3,4.41,85.3,86.49,1.23,80.52,18.5,81.54
+East,Industrial Supplies,Local,International,Sea,Low,Overstocked,824,720.0,945.0,839,25.57,1244.81,1181.01,1,16.42,80.95,87.38,0.87,72.18,33.95,58.9
+South,FMCG,Regional,International,Road,Medium,Optimal,1421,1354.0,1212.0,994,14.98,2349.6,2182.85,5,7.19,77.2,95.29,1.17,74.35,33.53,73.97
+West,Apparel,Regional,Local,Road,Low,Optimal,726,567.0,769.0,452,6.43,1287.02,747.23,1,4.68,86.9,78.1,0.94,82.16,18.52,84.08
+East,Industrial Supplies,Central,Distributor,Sea,Medium,Optimal,961,963.0,1268.0,1040,21.36,1933.66,2761.97,5,13.19,82.99,99.79,0.76,71.37,38.11,64.56
+South,Industrial Supplies,Central,Local,Road,Medium,Optimal,1117,1318.0,1384.0,1065,3.04,2635.85,2001.7,1,3.73,99.0,82.01,0.81,87.5,13.57,86.85
+West,Home Goods,Regional,Distributor,Road,Medium,Overstocked,610,711.0,1156.0,769,16.57,839.98,2263.57,1,10.76,68.74,83.44,0.53,73.41,26.53,67.38
+West,Home Goods,Central,International,Road,Low,Optimal,811,790.0,691.0,884,21.91,1843.88,672.99,0,10.62,77.345,97.41,1.17,82.81,22.95,68.19
+North,Electronics,Regional,Local,Sea,Medium,Optimal,1665,1537.0,2091.0,900,10.58,5294.44,3889.45,1,7.88,99.0,92.31,0.8,86.96,16.99,73.11
+West,FMCG,Local,Distributor,Road,Medium,Optimal,2218,2377.0,2940.0,1851,6.92,1864.69,1859.69,1,1.77,66.02,92.83,0.75,85.0,13.12,82.45
+North,FMCG,Regional,Local,Road,Low,Overstocked,765,805.0,1102.0,806,14.76,1080.59,819.42,0,7.84,75.33,94.77,0.69,84.16,16.85,74.71
+West,FMCG,Central,International,Sea,Medium,Optimal,1788,1853.0,1995.0,2026,27.77,2216.64,1412.82,1,14.01,70.25,96.36,0.9,75.06,32.56,58.52
+North,Electronics,Local,Local,Road,Medium,Optimal,1754,1956.0,1578.0,1345,8.99,1521.69,1769.55,3,3.45,92.89,88.48,1.11,84.07,23.6,87.85
+North,Electronics,Regional,Local,Road,Medium,Optimal,1636,1551.0,2122.0,1215,9.85,1831.43,1359.24,2,5.66,75.9,94.8,0.77,82.05,18.59,77.7
+East,Apparel,Central,International,Road,Low,Optimal,709,841.0,513.0,627,13.62,1574.68,987.83,1,7.64,86.78,81.38,1.38,80.32,24.4,77.53
+West,Electronics,Regional,Local,Road,Low,Optimal,957,808.0,1291.0,627,11.68,1470.02,1502.01,4,8.08,81.85,84.43,0.74,73.04,31.24,75.39
+North,Industrial Supplies,Regional,Distributor,Road,Medium,Optimal,1361,1331.0,1270.0,990,2.92,2381.04,1788.7,1,1.52,79.64,97.8,1.07,90.4,7.14,85.98
+North,Electronics,Central,Distributor,Road,High,Overstocked,1387,1775.0,2484.0,1504,15.43,2591.54,2710.53,0,10.4,67.26,72.03,0.56,71.63,26.62,64.08
+North,Industrial Supplies,Central,Distributor,Road,High,Overstocked,2178,2107.0,3634.0,1335,15.49,2688.29,8083.99,0,10.53,85.31,96.74,0.6,84.66,16.79,69.04
+North,FMCG,Regional,Local,Road,Medium,Stockout Risk,2103,1985.0,2069.0,1671,16.94,4544.42,3720.56,2,7.46,99.0,94.39,1.02,85.88,25.85,75.49
+South,FMCG,Regional,International,Road,Medium,Stockout Risk,1520,1619.0,1085.0,1302,25.23,2523.79,1264.91,3,13.56,72.89,93.49,1.4,70.72,37.84,59.59
+South,Home Goods,Central,Local,Road,Low,Overstocked,777,881.0,1147.0,561,8.76,1353.6,2420.78,0,6.7,90.68,86.62,0.68,86.29,14.11,81.04
+East,FMCG,Central,International,Road,High,Overstocked,1925,1885.0,2740.0,1451,25.82,3176.69,5687.35,0,8.95,74.22,97.92,0.7,83.88,26.65,67.87
+South,Electronics,Central,Local,Sea,Low,Overstocked,1093,943.0,1614.0,875,19.39,1310.67,2368.73,1,12.81,89.01,86.28,0.68,77.42,28.21,68.4
+East,Apparel,Regional,Local,Road,Low,Stockout Risk,581,530.0,697.0,471,3.53,1142.59,1130.8,3,4.23,75.8,91.22,0.83,79.98,17.04,81.94
+North,Industrial Supplies,Regional,Distributor,Sea,High,Stockout Risk,930,801.0,748.0,722,14.27,2932.14,1486.16,3,12.52,97.94,86.13,1.24,75.44,29.82,68.35
+North,FMCG,Local,Local,Air,High,Stockout Risk,2380,2050.0,1339.0,1603,12.95,7351.18,1555.07,4,3.08,92.83,86.13,1.78,81.38,31.83,76.65
+West,Apparel,Central,Distributor,Air,Medium,Overstocked,1470,1391.0,1931.0,1021,11.18,4077.21,3336.41,0,3.76,91.01,94.63,0.76,92.11,13.33,81.44
+West,FMCG,Regional,Distributor,Sea,Low,Optimal,982,931.0,1153.0,625,11.04,1514.64,1029.92,1,6.27,73.83,94.81,0.85,83.15,16.45,76.51
+North,Home Goods,Local,Local,Road,Low,Overstocked,781,656.0,1426.0,476,11.71,1396.24,1759.99,1,4.75,99.0,83.99,0.55,87.17,21.45,87.34
+South,FMCG,Central,Local,Road,High,Stockout Risk,2206,2078.0,1700.0,1436,8.75,5234.43,2937.38,2,4.56,73.76,94.2,1.3,82.41,17.74,72.3
+North,Apparel,Central,International,Sea,Medium,Optimal,1593,1690.0,2154.0,1674,26.53,2242.78,4915.69,2,18.39,65.29,93.91,0.74,66.36,35.63,48.22
+West,FMCG,Central,International,Road,Low,Optimal,1963,1386.0,1928.0,1360,23.33,3720.39,1484.25,1,9.42,65.32,70.61,1.02,69.4,38.42,63.15
+North,Apparel,Local,Local,Road,Medium,Stockout Risk,1629,1968.0,1721.0,1036,8.63,2635.39,1996.09,2,3.9,99.0,79.19,0.95,84.12,23.62,86.51
+North,FMCG,Central,Distributor,Sea,Medium,Optimal,2302,2465.0,1776.0,2115,6.4,6484.12,3794.85,5,7.8,85.55,92.92,1.3,75.0,25.9,66.8
+North,FMCG,Central,International,Road,High,Stockout Risk,2163,2477.0,1030.0,1709,15.02,4611.03,1674.75,1,7.09,63.76,85.48,2.1,76.55,24.16,65.52
+East,Electronics,Central,Local,Sea,Low,Optimal,993,944.0,916.0,873,19.46,1709.76,1262.2,4,11.85,74.45,95.07,1.08,71.15,34.77,65.14
+South,Industrial Supplies,Local,International,Road,High,Optimal,1429,1134.0,1753.0,1071,21.14,2879.44,1939.76,0,10.57,81.52,79.36,0.82,77.59,29.4,67.43
+East,Apparel,Central,International,Road,Medium,Stockout Risk,1542,1518.0,1092.0,965,9.42,2605.99,1542.34,1,4.01,92.56,98.44,1.41,91.36,13.38,84.42
+South,Home Goods,Regional,International,Road,Low,Optimal,787,718.0,1098.0,716,13.42,1566.22,2165.73,1,5.55,61.96,91.23,0.72,79.65,20.26,74.28
+East,Electronics,Regional,Local,Road,Medium,Optimal,1588,1680.0,2122.0,1220,6.42,1319.97,3513.8,2,3.53,83.34,94.21,0.75,85.83,15.4,85.24
+North,Apparel,Regional,International,Sea,Medium,Stockout Risk,728,742.0,738.0,646,15.02,1241.19,603.33,4,9.84,61.6,98.08,0.99,71.0,29.12,66.26
+South,FMCG,Central,Distributor,Road,Medium,Optimal,1455,1578.0,1660.0,1395,4.54,1874.57,2422.68,1,5.21,87.67,91.55,0.88,86.53,11.25,82.05
+West,FMCG,Central,Distributor,Road,Low,Stockout Risk,1209,1221.0,734.0,971,15.17,1762.59,642.19,3,9.73,93.89,99.01,1.65,81.73,25.57,75.1
+West,Apparel,Central,Local,Air,High,Stockout Risk,2012,2200.0,1183.0,1683,9.08,4947.52,1255.82,9,2.75,92.2,90.66,1.7,72.03,42.82,82.04
+East,Electronics,Central,Local,Road,Low,Optimal,1035,925.0,1279.0,597,10.86,2352.08,2297.49,3,6.29,86.64,89.37,0.81,79.98,25.11,78.6
+East,FMCG,Regional,Local,Road,Medium,Stockout Risk,603,555.0,596.0,477,2.91,923.7,856.2,5,2.58,85.63,92.04,1.01,79.93,22.76,88.64
+East,FMCG,Regional,Distributor,Road,Low,Overstocked,1115,1210.0,1525.0,912,6.0,1796.43,1029.68,1,4.9,81.46,91.48,0.73,85.26,12.74,80.96
+East,FMCG,Regional,Local,Sea,High,Optimal,2890,3483.0,2091.0,2236,19.89,3270.27,3864.91,1,15.2,78.23,79.48,1.38,69.95,31.43,56.38
+South,Apparel,Local,Local,Road,Medium,Optimal,1295,1387.0,1360.0,1094,10.2,2951.81,1620.86,1,5.49,87.89,92.9,0.95,86.78,16.38,79.35
+East,Industrial Supplies,Central,International,Road,Medium,Optimal,1591,1531.0,1879.0,1082,13.3,2368.65,3234.28,2,9.42,90.59,96.23,0.85,82.46,21.48,73.49
+West,Apparel,Regional,Local,Road,Medium,Overstocked,908,1018.0,1344.0,807,5.05,1067.43,1153.09,0,2.98,78.05,87.89,0.68,87.29,9.9,85.27
+West,Apparel,Local,Local,Road,Medium,Overstocked,1024,918.0,1644.0,1004,16.37,2345.01,903.02,1,5.66,78.2,89.65,0.62,83.05,23.84,77.34
+South,FMCG,Regional,International,Sea,Medium,Optimal,1606,1404.0,1205.0,1162,25.25,4658.02,2270.89,0,17.11,64.98,87.42,1.33,69.73,30.28,45.75
+West,Industrial Supplies,Regional,Distributor,Air,Medium,Optimal,1100,987.0,1325.0,930,6.82,2750.34,2416.52,2,3.02,86.05,89.73,0.83,85.45,17.6,84.15
+East,Industrial Supplies,Local,Local,Air,Medium,Optimal,993,884.0,807.0,744,7.05,3989.55,695.81,1,2.06,83.04,89.02,1.23,87.63,14.77,82.63
+North,Apparel,Regional,Distributor,Road,Low,Overstocked,719,741.0,1245.0,678,15.85,1298.62,1107.63,0,8.82,79.83,96.94,0.58,85.07,17.07,73.65
+North,Home Goods,Regional,Distributor,Road,High,Overstocked,1543,1581.0,1804.0,1222,5.63,2326.63,3515.66,2,4.25,68.24,97.54,0.86,82.5,13.28,77.21
+North,Electronics,Central,Local,Road,Low,Stockout Risk,223,265.0,111.0,336,10.88,378.77,175.63,2,8.08,72.17,81.17,2.01,73.93,25.08,74.72
+West,FMCG,Central,Local,Air,High,Overstocked,2039,2140.0,3586.0,1169,7.31,7183.31,5928.6,1,4.12,97.77,95.05,0.57,91.37,12.62,76.4
+West,Home Goods,Regional,Distributor,Road,Medium,Optimal,1423,1421.0,1601.0,836,11.89,1702.3,2982.51,1,6.52,87.12,99.86,0.89,87.99,15.28,79.61
+West,Home Goods,Regional,International,Road,Low,Optimal,585,687.0,533.0,763,20.31,626.0,814.98,0,11.95,77.06,82.56,1.1,76.21,27.28,67.94
+West,Electronics,Local,Local,Sea,High,Stockout Risk,2453,3179.0,1770.0,2539,14.14,6975.24,1004.27,5,9.2,74.22,70.4,1.39,62.88,42.65,59.6
+South,Apparel,Central,Distributor,Road,Low,Overstocked,621,595.0,777.0,726,16.47,928.06,1762.32,2,12.03,94.21,95.81,0.8,80.61,24.81,72.3
+South,FMCG,Regional,Distributor,Sea,Low,Optimal,1458,1577.0,1535.0,1076,14.97,4320.74,2347.84,1,7.31,78.38,91.84,0.95,82.21,21.57,70.06
+North,Home Goods,Local,Local,Road,Medium,Optimal,669,467.0,645.0,541,14.08,1024.88,656.24,2,5.88,78.59,69.81,1.04,73.76,32.82,79.72
+East,Home Goods,Central,Local,Road,Low,Overstocked,815,744.0,1087.0,632,11.93,973.34,2155.49,0,5.05,69.7,91.29,0.75,84.33,15.41,78.82
+East,Home Goods,Regional,International,Sea,Low,Optimal,599,627.0,547.0,603,24.03,1021.44,739.66,2,11.48,91.81,95.33,1.1,80.39,32.57,72.49
+West,Electronics,Local,Distributor,Road,High,Overstocked,808,874.0,1267.0,628,4.89,1627.15,1850.36,0,2.01,74.82,91.83,0.64,88.84,8.16,85.1
+North,Industrial Supplies,Central,International,Road,Low,Optimal,680,711.0,568.0,730,20.79,1552.55,483.04,1,9.72,79.5,95.44,1.2,81.34,25.95,71.23
+North,Home Goods,Local,Local,Sea,High,Optimal,969,1147.0,1079.0,941,9.25,2158.55,1586.38,3,6.45,82.7,81.63,0.9,76.13,26.6,77.5
+East,Electronics,Central,Distributor,Road,Low,Optimal,1139,1307.0,808.0,1021,7.35,2243.5,888.08,2,5.94,72.53,85.25,1.41,77.59,19.92,75.29
+East,Apparel,Local,Distributor,Road,Medium,Optimal,1172,1227.0,860.0,1025,6.49,2781.27,1345.76,1,3.24,73.73,95.31,1.36,86.33,11.7,79.95
+North,Industrial Supplies,Central,Local,Sea,High,Optimal,1616,1570.0,1203.0,1368,10.25,3719.86,2305.88,0,5.39,83.96,97.15,1.34,89.6,11.39,76.8
+East,FMCG,Local,Local,Road,Medium,Stockout Risk,1115,1181.0,621.0,789,4.85,1531.88,545.76,3,1.88,89.51,94.08,1.8,86.76,17.22,89.96
+West,Apparel,Regional,Local,Road,Low,Optimal,484,506.0,553.0,446,4.2,825.35,849.05,3,2.59,73.62,95.45,0.88,82.56,16.02,85.22
+North,Electronics,Local,Local,Road,High,Optimal,2263,2407.0,3003.0,1925,17.85,3606.26,3189.84,3,8.91,96.52,93.64,0.75,81.33,30.4,73.76
+South,FMCG,Regional,International,Air,Medium,Stockout Risk,2077,1874.0,1291.0,1666,24.15,7956.78,2425.72,4,14.39,64.18,90.23,1.61,64.35,41.39,44.2
+East,Industrial Supplies,Central,Distributor,Sea,High,Optimal,2655,2021.0,3109.0,1721,25.68,5096.49,3412.54,2,15.33,68.05,76.12,0.85,63.88,41.9,49.33
+West,FMCG,Local,Local,Sea,High,Stockout Risk,2630,3126.0,1994.0,2431,17.68,6904.59,1411.79,5,11.34,70.13,81.14,1.32,63.48,41.89,54.24
+South,Home Goods,Regional,Distributor,Road,Low,Overstocked,759,914.0,1218.0,803,13.37,1357.92,809.8,0,10.32,96.74,79.58,0.62,81.72,21.54,75.6
+West,Industrial Supplies,Central,Local,Road,Medium,Optimal,797,791.0,973.0,723,16.82,1911.59,709.05,1,5.94,85.31,99.25,0.82,87.9,20.45,79.8
+North,FMCG,Local,Distributor,Sea,High,Optimal,2542,2455.0,2035.0,1385,6.48,5571.42,1913.94,0,3.85,72.16,96.58,1.25,87.99,7.85,72.55
+North,FMCG,Local,Local,Sea,High,Stockout Risk,3850,3888.0,2892.0,3319,19.22,12835.99,2053.73,4,12.07,96.56,99.01,1.33,77.83,32.95,48.58
+West,FMCG,Central,International,Sea,Medium,Overstocked,1187,1247.0,2337.0,1134,24.96,2050.75,3984.27,0,16.31,90.28,94.95,0.51,79.49,26.98,60.27
+East,FMCG,Local,Local,Sea,Low,Stockout Risk,954,996.0,264.0,931,25.2,3055.51,359.14,2,15.61,99.0,95.6,3.61,78.16,33.63,62.23
+East,FMCG,Central,International,Sea,Medium,Stockout Risk,2080,2050.0,1697.0,1680,15.06,3455.59,2003.52,5,10.05,93.38,98.56,1.23,76.68,32.3,70.85
+North,Electronics,Local,Local,Road,Medium,Optimal,914,831.0,645.0,711,14.73,1038.59,406.05,2,5.86,70.67,90.92,1.42,79.19,25.03,77.36
+West,Electronics,Local,Local,Sea,Medium,Optimal,1695,1574.0,1544.0,1204,12.12,5186.47,2021.38,1,9.98,95.68,92.86,1.1,84.22,18.31,68.14
+West,Industrial Supplies,Regional,International,Road,Medium,Optimal,1171,1079.0,1370.0,696,14.71,1659.88,2494.67,0,7.41,72.26,92.14,0.85,82.9,17.85,73.46
+East,Electronics,Central,Local,Road,Medium,Optimal,1050,1024.0,1334.0,603,10.09,1465.98,2548.87,1,6.62,90.29,97.52,0.79,87.86,14.41,80.85
+South,FMCG,Local,Distributor,Air,Medium,Overstocked,1544,1502.0,1983.0,909,8.89,7472.04,2248.26,1,3.63,97.99,97.28,0.78,92.69,13.31,76.86
+East,Home Goods,Central,Distributor,Air,Medium,Optimal,1187,1226.0,1596.0,1094,6.77,2620.12,2488.96,2,4.22,72.95,96.71,0.74,83.42,14.75,78.09
+South,Home Goods,Regional,Local,Road,Low,Optimal,732,558.0,519.0,430,13.73,868.45,870.35,0,8.23,96.64,76.23,1.41,82.61,23.24,80.76
+West,Electronics,Central,International,Road,Medium,Optimal,545,598.0,427.0,715,20.11,1096.15,295.75,2,12.34,92.27,90.28,1.28,77.88,30.67,70.76
+South,FMCG,Local,Local,Road,Low,Overstocked,593,591.0,956.0,522,10.42,1150.18,1192.72,0,3.16,99.0,99.66,0.62,96.47,10.55,91.03
+South,FMCG,Local,International,Road,Medium,Optimal,1607,1607.0,1753.0,967,10.72,2849.48,971.92,1,5.4,87.85,100.0,0.92,89.34,14.05,79.73
+East,Electronics,Regional,Local,Air,Low,Optimal,867,956.0,946.0,586,12.93,3007.61,1448.87,2,4.78,85.81,89.73,0.92,83.63,23.7,80.03
+North,Electronics,Regional,International,Road,Medium,Optimal,2043,2162.0,1441.0,1793,15.93,2288.3,1301.14,3,11.78,87.58,94.18,1.42,76.41,28.26,68.03
+East,Industrial Supplies,Central,Distributor,Road,Medium,Overstocked,963,1041.0,1585.0,1107,16.4,2046.73,1392.47,0,12.65,67.24,91.9,0.61,76.32,19.64,60.69
+East,FMCG,Central,Distributor,Road,High,Overstocked,2406,2424.0,3009.0,1649,17.73,5071.51,6068.49,0,8.15,86.45,99.25,0.8,88.2,18.03,69.26
+North,Electronics,Local,International,Air,Low,Optimal,727,623.0,681.0,545,13.4,3914.32,1201.15,2,2.53,65.79,85.69,1.07,79.46,25.79,76.67
+West,FMCG,Local,Distributor,Road,High,Optimal,1819,1801.0,2035.0,1686,9.56,3744.19,3305.2,3,3.05,83.8,99.01,0.89,85.89,19.96,81.38
+North,FMCG,Local,Local,Sea,High,Optimal,2103,2147.0,1614.0,1090,7.86,2927.58,2015.99,2,5.57,79.1,97.91,1.3,84.03,15.36,76.6
+West,Industrial Supplies,Local,Distributor,Road,Medium,Optimal,1368,1671.0,1214.0,1163,14.14,3058.96,1082.81,1,6.58,96.89,77.85,1.13,82.67,26.33,79.65
+South,Electronics,Central,Local,Road,Medium,Optimal,1299,1174.0,1000.0,1012,13.14,1221.02,1854.47,1,7.83,87.88,90.38,1.3,83.55,20.32,78.21
+East,FMCG,Local,International,Air,Low,Overstocked,982,1124.0,1807.0,1075,9.8,2971.41,2962.61,2,4.28,92.77,85.54,0.54,84.41,22.25,83.19
+East,Electronics,Central,International,Road,Medium,Stockout Risk,821,931.0,1014.0,822,14.4,1432.48,957.45,3,9.09,80.72,86.6,0.81,74.73,29.76,73.11
+South,FMCG,Local,International,Air,Medium,Overstocked,1878,1379.0,3097.0,1070,22.27,5107.99,4812.45,2,8.56,85.2,73.43,0.61,74.0,39.56,67.99
+East,Apparel,Central,Distributor,Road,High,Overstocked,1637,1399.0,1937.0,753,4.64,2863.36,3680.51,1,3.79,89.95,85.46,0.85,86.39,13.79,83.55
+North,FMCG,Regional,Local,Road,Medium,Overstocked,1859,2005.0,3032.0,1279,4.52,3607.78,5721.93,0,3.19,71.52,92.15,0.61,86.94,7.66,77.7
+South,FMCG,Regional,Local,Air,Medium,Overstocked,2562,2546.0,3523.0,1826,14.7,6154.06,6644.36,2,5.96,99.0,99.38,0.73,89.13,21.62,75.19
+North,Apparel,Regional,Distributor,Sea,Medium,Optimal,1121,1119.0,1546.0,1026,17.32,2508.79,1277.16,3,10.54,77.41,99.82,0.73,77.08,27.39,67.01
+North,FMCG,Central,Distributor,Sea,High,Stockout Risk,1545,1232.0,1618.0,1069,21.98,5126.81,1280.0,4,12.75,81.75,79.74,0.95,66.71,43.42,58.54
+East,Apparel,Local,International,Sea,Medium,Stockout Risk,1520,1766.0,1072.0,1477,22.92,4409.93,914.11,2,9.09,62.64,83.82,1.42,71.46,36.06,61.59
+North,Industrial Supplies,Regional,International,Sea,High,Optimal,1239,1395.0,1616.0,966,10.42,3028.67,3143.29,4,8.43,93.99,87.41,0.77,76.77,28.79,75.14
+West,Industrial Supplies,Regional,International,Road,Medium,Overstocked,1228,1184.0,1903.0,782,13.24,1262.22,1638.39,2,7.45,71.06,96.42,0.65,79.62,21.34,73.84
+West,Home Goods,Regional,International,Road,Medium,Optimal,775,815.0,1109.0,581,10.12,837.52,1558.72,1,3.21,68.25,94.84,0.7,84.82,15.52,82.34
+East,FMCG,Regional,Distributor,Road,Medium,Stockout Risk,1929,2095.0,1439.0,1343,9.33,2907.3,2665.79,2,4.46,96.68,91.39,1.34,87.25,19.44,84.14
+West,Apparel,Local,Local,Road,Low,Overstocked,697,689.0,724.0,531,3.85,1317.02,1225.62,0,1.0,70.99,98.85,0.96,91.34,4.31,86.6
+East,FMCG,Local,Local,Air,Medium,Optimal,2255,2629.0,1873.0,2242,5.6,12186.18,1680.09,2,1.0,90.76,83.41,1.2,86.44,18.9,70.31
+East,Home Goods,Local,Distributor,Sea,Medium,Stockout Risk,554,552.0,386.0,615,11.71,732.76,514.25,3,8.7,93.49,99.64,1.44,82.88,21.85,79.15
+East,FMCG,Regional,Local,Road,Medium,Optimal,875,902.0,715.0,714,9.27,782.8,1113.06,2,5.82,70.66,96.91,1.22,81.32,17.17,77.96
+West,Electronics,Central,Local,Road,Low,Overstocked,374,351.0,713.0,317,8.94,396.8,1182.75,0,5.8,99.0,93.85,0.52,91.8,11.4,87.29
+North,Home Goods,Regional,Distributor,Road,Low,Optimal,1018,1158.0,1348.0,615,4.46,1913.57,1728.81,1,2.94,67.2,86.25,0.76,81.83,13.29,80.37
+South,Home Goods,Local,International,Road,Medium,Overstocked,1439,1661.0,2669.0,993,8.47,3017.29,3561.09,0,2.23,75.0,84.57,0.54,86.12,14.64,81.87
+West,Industrial Supplies,Local,Local,Air,Medium,Optimal,1137,1206.0,1420.0,837,3.85,2309.23,2021.88,1,1.0,68.27,93.93,0.8,86.72,9.61,83.76
+West,Apparel,Central,Local,Sea,Low,Optimal,513,582.0,488.0,545,10.95,1228.72,607.61,1,8.83,70.91,86.55,1.05,76.97,19.66,71.1
+West,FMCG,Central,Local,Sea,Low,Overstocked,1119,1195.0,1631.0,867,13.39,3185.01,3620.86,0,8.41,73.32,93.21,0.69,82.54,16.11,68.66
+East,Electronics,Local,Local,Sea,Low,Overstocked,1292,1131.0,2211.0,1046,9.08,3427.29,1587.38,0,4.63,82.22,87.54,0.58,86.56,14.06,78.4
+South,Apparel,Central,Local,Road,High,Overstocked,1670,1556.0,3005.0,1398,11.55,1941.47,6666.6,1,5.9,77.65,93.17,0.56,83.9,17.61,77.52
+East,Electronics,Central,International,Sea,Low,Optimal,709,620.0,978.0,896,28.66,2182.06,1684.44,2,11.78,77.01,87.45,0.72,73.64,40.35,65.08
+East,Industrial Supplies,Regional,Distributor,Road,Medium,Optimal,1257,1433.0,1536.0,1017,6.13,1573.98,2997.92,3,3.88,80.42,86.0,0.82,79.66,21.73,83.15
+South,FMCG,Central,Local,Road,Medium,Optimal,1970,1637.0,2158.0,1010,14.0,3641.37,2394.18,1,7.81,80.84,83.1,0.91,79.26,24.09,71.18
+North,Electronics,Regional,Distributor,Air,High,Stockout Risk,2483,2537.0,2548.0,1577,9.09,5438.3,3763.84,4,3.22,74.38,97.83,0.97,80.73,23.29,74.75
+North,Home Goods,Regional,International,Sea,High,Overstocked,1792,1770.0,3184.0,1725,16.11,3667.02,2191.3,0,8.73,77.15,98.77,0.56,85.13,16.6,68.19
+East,FMCG,Central,Distributor,Sea,Medium,Optimal,1628,1557.0,1711.0,1208,18.22,3673.06,3864.58,0,10.88,93.88,95.64,0.95,86.06,19.96,68.89
+South,Industrial Supplies,Regional,Distributor,Sea,Medium,Overstocked,803,754.0,1405.0,591,8.71,1521.16,2716.36,3,5.45,68.46,93.9,0.57,77.86,21.15,76.53
+West,FMCG,Regional,International,Air,Low,Optimal,664,623.0,509.0,525,14.58,2918.1,869.53,0,5.26,83.05,93.83,1.3,88.34,17.05,78.43
+North,Apparel,Local,Distributor,Sea,Medium,Overstocked,1426,1496.0,2311.0,1066,8.52,4762.49,1989.98,0,6.11,68.65,95.09,0.62,84.33,10.48,68.63
+East,FMCG,Regional,International,Air,High,Overstocked,3478,2865.0,4807.0,1750,5.45,11591.87,8561.98,1,2.35,67.3,82.37,0.72,81.08,15.83,61.78
+West,Apparel,Central,Local,Road,Medium,Overstocked,1308,1073.0,1928.0,774,3.65,3044.59,3358.51,1,3.72,80.09,82.03,0.68,82.79,14.17,80.36
+North,FMCG,Regional,Distributor,Road,Low,Optimal,1245,1364.0,1200.0,1152,8.13,2643.97,1275.0,2,5.6,65.24,90.44,1.04,77.92,18.62,72.96
+South,Industrial Supplies,Regional,International,Road,Low,Stockout Risk,657,577.0,508.0,625,12.39,1202.64,950.64,6,8.54,82.35,87.82,1.29,69.45,37.26,75.17
+South,Industrial Supplies,Local,Local,Road,High,Optimal,2310,1822.0,3364.0,1350,6.29,3023.22,5436.51,1,2.34,71.18,78.87,0.69,80.84,18.07,80.49
+South,Home Goods,Central,International,Air,Medium,Optimal,936,1017.0,796.0,1110,22.81,3480.76,1722.86,1,10.17,82.3,91.35,1.18,80.16,29.6,67.23
+East,Industrial Supplies,Local,Local,Road,High,Overstocked,1272,1179.0,1488.0,775,10.96,1460.37,1421.93,0,6.41,87.36,92.69,0.85,87.87,13.88,80.4
+South,Apparel,Central,Distributor,Road,Low,Overstocked,451,426.0,541.0,329,6.72,477.17,428.05,0,3.86,71.25,94.46,0.83,87.01,8.94,82.68
+North,Apparel,Central,International,Road,Medium,Optimal,1426,1178.0,1617.0,1244,21.74,1207.01,3463.74,1,8.18,74.65,82.61,0.88,77.17,32.03,73.57
+South,FMCG,Regional,International,Air,Low,Stockout Risk,1285,1478.0,1043.0,775,6.09,3667.72,1787.5,4,1.95,77.17,84.98,1.23,78.2,25.43,81.75
+North,FMCG,Regional,Local,Sea,Medium,Stockout Risk,1678,1552.0,737.0,1000,17.09,4079.05,489.36,3,9.87,77.23,92.49,2.28,75.14,30.09,65.09
+East,Electronics,Local,International,Sea,Medium,Optimal,1698,1669.0,1425.0,1620,30.0,4049.88,784.33,0,13.97,81.07,98.29,1.19,80.7,30.68,58.1
+East,Industrial Supplies,Regional,International,Road,High,Optimal,1963,1919.0,2928.0,1893,20.37,3260.41,5485.45,2,7.21,71.38,97.76,0.67,80.41,27.93,70.33
+North,Industrial Supplies,Regional,International,Sea,Medium,Stockout Risk,570,555.0,392.0,637,18.57,1346.45,282.27,3,8.74,86.83,97.37,1.45,80.38,29.62,75.82
+West,Industrial Supplies,Regional,Local,Road,Medium,Optimal,947,926.0,945.0,651,8.18,1042.03,829.57,2,7.05,81.29,97.78,1.0,83.05,15.73,78.16
+East,Apparel,Central,Local,Road,Medium,Overstocked,1373,1599.0,2051.0,1284,6.09,2267.63,1831.53,1,3.48,81.19,83.54,0.67,83.83,16.01,82.76
+North,Electronics,Regional,International,Air,Medium,Overstocked,1821,1855.0,2594.0,1633,6.59,4610.86,4379.82,0,2.91,68.08,98.13,0.7,88.46,7.34,75.17
+South,Home Goods,Local,Local,Sea,High,Stockout Risk,1006,1190.0,1006.0,1043,19.56,2795.99,1549.14,3,7.64,94.32,81.71,1.0,77.87,36.88,77.3
+East,Electronics,Central,International,Air,Low,Optimal,1096,1011.0,1528.0,777,12.84,4759.16,2646.59,1,3.73,65.42,92.24,0.72,82.69,19.28,72.43
+West,Electronics,Central,Local,Sea,Medium,Optimal,1568,1316.0,1136.0,854,24.93,3627.76,2402.64,1,17.73,99.0,83.93,1.38,74.17,34.69,56.82
+North,FMCG,Central,International,Air,High,Overstocked,1823,2199.0,3620.0,1242,19.44,4588.44,5849.23,0,10.49,89.39,79.37,0.5,79.64,27.69,66.45
+West,Home Goods,Regional,Distributor,Road,Medium,Optimal,1749,1496.0,1947.0,951,14.7,1808.76,1496.51,1,6.98,71.08,85.53,0.9,78.5,23.82,73.66
+North,FMCG,Local,Local,Road,Medium,Optimal,1168,1486.0,1594.0,1218,6.03,1256.11,1259.11,1,3.87,78.64,72.77,0.73,79.04,20.25,83.28
+East,FMCG,Regional,International,Road,High,Optimal,3010,2466.0,4358.0,1513,14.45,2444.74,7839.45,4,6.48,78.17,81.93,0.69,72.85,35.01,75.49
+North,Apparel,Regional,International,Sea,Medium,Optimal,1526,1688.0,2145.0,1626,27.79,3635.32,2019.62,2,13.75,71.79,89.38,0.71,71.04,38.7,56.6
+East,Apparel,Local,Local,Road,Low,Overstocked,1050,1123.0,1312.0,855,9.87,1000.61,1521.75,0,4.27,90.83,93.05,0.8,91.0,12.65,86.66
+North,Electronics,Central,Local,Sea,High,Overstocked,2046,2184.0,3411.0,1714,13.83,4828.75,6502.38,0,9.19,92.36,93.26,0.6,86.54,16.53,69.45
+West,Industrial Supplies,Local,International,Road,Low,Stockout Risk,971,1023.0,1140.0,993,15.54,1079.41,1405.6,4,7.87,74.12,94.64,0.85,74.9,31.02,74.29
+East,FMCG,Local,Local,Air,Low,Optimal,1106,1063.0,1138.0,737,1.0,5566.41,948.8,1,1.0,78.13,96.11,0.97,89.95,5.89,80.05
+North,Home Goods,Local,Distributor,Air,High,Overstocked,1855,1770.0,3217.0,1028,9.49,7386.56,4941.38,0,3.0,88.93,95.42,0.58,92.63,11.32,75.57
+South,Electronics,Local,Distributor,Road,High,Optimal,2326,2027.0,2058.0,1228,7.89,3414.14,2491.27,0,4.1,90.92,87.15,1.13,89.13,13.03,82.09
+North,Apparel,Regional,Distributor,Road,Medium,Optimal,760,913.0,541.0,635,5.84,727.67,702.05,2,4.73,81.01,79.87,1.4,79.03,20.56,83.35
+West,FMCG,Local,International,Road,Medium,Overstocked,213,185.0,282.0,481,18.16,493.33,178.55,0,6.46,62.0,86.85,0.76,79.44,23.42,74.67
+West,Home Goods,Regional,Distributor,Road,Low,Overstocked,1102,1066.0,2070.0,868,17.25,2234.47,2784.36,1,12.62,86.17,96.73,0.53,80.56,21.89,66.04
+South,Industrial Supplies,Local,International,Road,Low,Optimal,937,708.0,1387.0,767,16.04,1227.9,1948.46,2,5.94,70.07,75.56,0.68,73.58,32.48,76.63
+West,FMCG,Local,Distributor,Road,Low,Overstocked,1480,1153.0,2613.0,899,7.87,2890.42,2807.34,1,5.4,97.38,77.91,0.57,83.99,20.04,82.5
+South,Electronics,Regional,Local,Road,Medium,Optimal,683,492.0,695.0,330,2.31,1289.43,858.55,2,2.07,83.85,72.04,0.98,79.66,20.16,88.38
+West,Home Goods,Regional,Local,Road,Medium,Overstocked,1563,1709.0,2477.0,1095,15.9,3631.6,1751.13,3,6.08,84.14,90.66,0.63,80.02,29.64,75.65
+North,Apparel,Central,Distributor,Road,Low,Overstocked,918,1015.0,1227.0,786,13.32,1224.12,1611.93,0,7.22,82.45,89.43,0.75,84.69,17.55,77.79
+West,FMCG,Local,Distributor,Road,Low,Optimal,835,860.0,773.0,829,17.49,1724.89,706.04,2,8.03,68.58,97.01,1.08,78.62,25.35,70.99
+North,FMCG,Central,Distributor,Road,Medium,Overstocked,2825,2227.0,4000.0,1927,10.84,2907.66,7693.03,0,4.92,82.63,78.83,0.71,83.33,19.31,79.0
+East,FMCG,Regional,International,Road,Medium,Optimal,2169,2198.0,2324.0,1219,20.6,5015.24,2634.74,3,10.2,87.36,98.66,0.93,79.5,31.13,65.55
+North,FMCG,Local,International,Road,Medium,Optimal,2263,2245.0,3235.0,1404,19.57,2132.65,2378.93,0,7.98,90.34,99.2,0.7,89.32,19.89,76.78
+East,FMCG,Central,International,Road,High,Stockout Risk,2117,2087.0,1153.0,1784,18.86,1989.27,1941.19,4,12.73,83.37,98.58,1.84,73.73,32.76,65.48
+South,Home Goods,Regional,Distributor,Road,Low,Optimal,1159,1159.0,1722.0,778,17.92,2719.66,2231.96,3,9.21,75.5,100.0,0.67,78.0,27.92,68.67
+North,FMCG,Regional,Local,Sea,Medium,Optimal,1058,1012.0,1331.0,854,20.57,1894.74,2509.84,1,15.45,75.61,95.65,0.79,74.71,25.64,57.91
+East,FMCG,Central,Distributor,Sea,Medium,Optimal,2811,3006.0,2273.0,1715,9.01,4195.72,5044.36,0,4.89,78.31,93.06,1.24,87.26,11.78,75.13
+North,Industrial Supplies,Regional,Local,Road,Low,Optimal,498,527.0,633.0,599,10.25,1083.69,1218.87,2,7.12,85.03,94.18,0.79,82.66,19.25,79.05
+North,FMCG,Regional,International,Road,Medium,Overstocked,1304,1549.0,2243.0,1444,11.45,1783.66,2580.43,2,6.26,88.59,81.21,0.58,79.87,25.63,80.41
+North,Home Goods,Local,International,Road,High,Overstocked,1442,1228.0,1915.0,861,16.36,1223.71,3374.41,0,11.01,91.42,85.16,0.75,81.65,22.3,72.9
+North,Industrial Supplies,Local,Local,Sea,High,Stockout Risk,1179,1060.0,1149.0,976,15.1,2642.84,1501.8,6,9.78,73.45,89.91,1.03,66.72,39.14,67.07
+East,Home Goods,Local,Distributor,Sea,Medium,Optimal,1329,1541.0,1715.0,1303,15.38,3597.09,2604.45,2,8.0,90.22,84.05,0.77,79.53,28.43,73.71
+North,FMCG,Central,Local,Sea,High,Overstocked,981,1048.0,1634.0,740,10.6,2626.44,1345.26,0,8.06,72.02,93.17,0.6,82.55,13.33,70.11
+North,Industrial Supplies,Regional,Distributor,Sea,Medium,Stockout Risk,456,383.0,391.0,576,18.72,934.97,540.92,4,12.49,93.92,83.99,1.17,71.5,38.46,71.28
+North,Electronics,Regional,International,Sea,Low,Optimal,787,668.0,1028.0,665,21.37,2473.42,672.25,1,11.66,81.8,84.88,0.77,76.28,30.75,66.16
+North,Electronics,Regional,Distributor,Road,High,Stockout Risk,926,991.0,552.0,716,17.72,1907.0,882.61,5,13.04,74.66,92.98,1.68,67.06,37.19,62.42
+West,FMCG,Central,Local,Sea,Medium,Optimal,1457,1480.0,1816.0,1370,24.34,3334.8,3217.81,0,15.27,99.0,98.42,0.8,83.93,24.97,62.34
+East,FMCG,Regional,Distributor,Road,High,Overstocked,2348,2170.0,2884.0,1308,8.15,1993.2,4271.69,0,6.13,88.62,92.42,0.81,88.37,11.18,80.25
+North,Electronics,Local,Local,Road,Medium,Stockout Risk,1195,1181.0,973.0,833,3.86,1723.28,683.45,4,2.94,73.13,98.83,1.23,81.04,17.66,82.53
+West,Apparel,Central,International,Road,Medium,Optimal,1665,1815.0,2354.0,1340,11.18,3884.02,4071.99,1,6.28,69.9,90.99,0.71,80.82,18.12,70.47
+East,Apparel,Regional,Distributor,Road,High,Optimal,2148,2603.0,1971.0,2223,13.3,2969.48,2039.48,4,8.19,80.87,78.82,1.09,70.73,35.11,71.81
+West,FMCG,Central,Local,Road,Medium,Optimal,1648,1495.0,1716.0,939,11.72,1349.68,3291.91,1,7.0,95.35,90.72,0.96,86.37,18.77,81.84
+North,Home Goods,Local,Local,Sea,Low,Overstocked,711,673.0,768.0,789,15.34,2228.31,951.69,3,10.22,90.53,94.66,0.93,78.88,27.48,72.16
+South,Electronics,Local,Distributor,Sea,High,Optimal,1363,1243.0,1513.0,959,23.38,2260.24,1922.33,0,11.03,84.45,91.2,0.9,82.0,26.9,68.65
+East,Apparel,Central,Local,Road,Medium,Overstocked,1366,1398.0,1589.0,1232,7.78,2751.39,1838.54,2,6.64,83.61,97.66,0.86,84.0,15.38,76.18
+South,Electronics,Central,International,Road,High,Overstocked,2101,2111.0,2190.0,1873,16.74,2667.05,2775.21,1,7.56,87.26,99.52,0.96,86.86,20.26,75.6
+West,FMCG,Local,Distributor,Sea,High,Stockout Risk,2191,2074.0,819.0,1400,22.89,6085.98,1220.88,3,11.73,95.5,94.66,2.68,78.61,35.03,62.74
+North,Apparel,Regional,Local,Road,High,Stockout Risk,1501,1377.0,1170.0,819,8.66,3168.46,2247.04,3,5.96,89.77,91.74,1.28,81.92,21.96,78.53
+North,FMCG,Local,Distributor,Road,Low,Optimal,1025,1116.0,751.0,699,12.43,1992.76,616.2,2,2.72,87.67,91.12,1.36,86.65,22.65,86.79
+East,Home Goods,Central,Local,Sea,High,Stockout Risk,2037,2046.0,1248.0,1645,17.1,4579.33,2520.49,3,8.25,70.59,99.56,1.63,77.58,27.28,65.31
+North,Industrial Supplies,Central,International,Air,Medium,Stockout Risk,849,908.0,647.0,742,14.77,3570.22,1268.01,3,6.85,91.98,93.05,1.31,82.05,27.55,76.59
+North,Home Goods,Regional,Distributor,Road,Medium,Optimal,709,724.0,720.0,878,15.38,990.05,1156.5,1,6.62,74.25,97.88,0.98,83.98,19.56,77.01
+West,FMCG,Central,Local,Road,Medium,Optimal,857,894.0,650.0,512,4.88,1312.17,756.49,2,4.28,83.33,95.68,1.32,85.6,13.27,83.76
+West,Apparel,Central,Distributor,Road,High,Stockout Risk,987,1007.0,1000.0,658,8.62,923.15,712.86,3,3.7,90.17,97.97,0.99,86.47,19.43,87.76
+South,FMCG,Central,Distributor,Road,Low,Stockout Risk,826,894.0,694.0,678,15.78,1913.71,1263.8,4,9.1,83.28,91.77,1.19,74.95,32.41,72.87
+East,Industrial Supplies,Local,International,Sea,High,Optimal,1611,1183.0,1411.0,1365,27.53,2909.58,2349.97,0,10.78,82.86,73.43,1.14,75.64,38.16,67.35
+North,Electronics,Local,Local,Road,Medium,Stockout Risk,1022,1003.0,1043.0,784,9.44,1255.46,663.47,4,4.36,85.48,98.14,0.98,82.47,23.52,84.36
+East,Industrial Supplies,Local,Distributor,Sea,Medium,Stockout Risk,2024,2138.0,1084.0,1651,18.83,5517.3,908.93,3,11.57,92.15,94.37,1.87,77.83,31.08,63.22
+North,FMCG,Local,International,Air,Low,Overstocked,732,859.0,842.0,783,20.83,2784.0,1262.78,0,9.0,91.88,82.65,0.87,82.9,27.77,73.87
+South,FMCG,Local,Local,Air,Medium,Optimal,1751,2013.0,1248.0,1391,11.3,5345.24,2120.34,2,3.45,75.06,85.04,1.4,80.63,23.95,74.69
+East,FMCG,Central,Local,Road,High,Optimal,2349,2013.0,2582.0,1179,7.22,2121.66,5786.46,1,5.34,85.53,85.7,0.91,83.82,16.27,80.64
+North,Apparel,Central,International,Air,Low,Optimal,1036,1196.0,1282.0,840,5.98,2268.71,2669.44,1,1.44,80.31,84.56,0.81,86.01,15.49,86.57
+South,FMCG,Local,Local,Road,Medium,Optimal,1436,1363.0,1247.0,1138,6.88,2532.26,1269.89,2,3.04,74.57,94.92,1.15,84.38,15.58,81.11
+North,FMCG,Regional,Distributor,Road,High,Overstocked,2525,2452.0,4274.0,1406,4.95,4611.3,5326.06,2,5.9,84.54,97.11,0.59,84.78,12.77,74.13
+East,Home Goods,Local,Distributor,Road,Low,Optimal,457,458.0,402.0,455,13.8,892.39,319.44,1,4.57,66.85,99.78,1.14,84.84,17.22,79.09
+South,FMCG,Regional,Local,Road,Medium,Optimal,3158,3233.0,4243.0,2115,17.18,4931.22,7012.34,1,7.92,93.03,97.63,0.74,87.29,21.46,71.98
+North,FMCG,Regional,International,Road,Medium,Stockout Risk,1110,1311.0,365.0,1093,20.64,2103.9,410.0,3,9.6,75.95,81.89,3.04,71.38,37.88,69.28
+East,Home Goods,Regional,Local,Road,Low,Optimal,902,1096.0,883.0,942,5.45,1946.35,815.57,2,5.15,83.53,78.49,1.02,78.76,20.72,80.78
+South,Home Goods,Regional,Distributor,Road,Low,Optimal,1245,1319.0,1272.0,983,6.59,2207.1,2427.16,2,3.34,88.42,94.06,0.98,87.24,15.63,85.33
+North,FMCG,Local,Local,Road,Low,Overstocked,1098,1096.0,1512.0,1116,15.72,2530.77,1042.18,0,6.56,99.0,99.82,0.73,93.13,15.79,81.4
+North,Industrial Supplies,Local,International,Sea,Medium,Overstocked,423,428.0,552.0,672,20.26,698.97,304.56,0,12.83,86.82,98.82,0.77,83.46,20.73,68.96
+West,Industrial Supplies,Local,Local,Road,Low,Stockout Risk,651,630.0,639.0,590,13.43,1283.02,507.73,4,7.4,85.94,96.77,1.02,79.07,28.05,78.36
+South,Home Goods,Regional,Local,Road,Low,Optimal,486,517.0,698.0,432,6.73,684.81,1330.55,2,4.97,85.55,93.62,0.7,84.74,15.95,84.32
+North,FMCG,Local,International,Sea,Low,Overstocked,1050,1078.0,1539.0,1294,20.66,2031.5,1033.44,1,9.32,83.98,97.33,0.68,83.52,25.06,72.4
+West,Home Goods,Regional,Local,Road,Low,Optimal,400,452.0,407.0,459,12.36,408.17,668.65,1,9.5,91.61,87.0,0.98,81.63,20.89,77.65
+North,Industrial Supplies,Local,Local,Road,Medium,Optimal,762,691.0,705.0,510,9.08,744.9,1123.92,0,3.18,69.64,90.68,1.08,85.97,12.81,83.01
+West,FMCG,Central,Distributor,Sea,Medium,Stockout Risk,1287,1487.0,978.0,1014,9.43,2797.97,1036.49,5,7.15,69.47,84.46,1.32,68.67,32.31,70.82
+North,Home Goods,Local,Local,Sea,Medium,Optimal,1237,1209.0,1177.0,1145,15.25,3623.66,1950.79,1,8.76,69.33,97.74,1.05,80.56,19.49,65.87
+West,FMCG,Regional,Local,Sea,Low,Optimal,993,920.0,719.0,763,11.88,2626.25,1349.67,0,7.91,92.16,92.65,1.38,87.56,14.82,76.46
+West,Industrial Supplies,Local,International,Sea,Medium,Optimal,1206,1324.0,1199.0,891,18.8,2265.07,1942.15,0,10.75,66.28,90.22,1.01,77.4,22.71,63.75
+North,Apparel,Central,Distributor,Sea,Low,Optimal,611,505.0,429.0,491,19.3,1359.2,387.7,1,14.59,73.18,82.65,1.42,70.41,29.57,59.99
+West,Industrial Supplies,Local,Local,Road,High,Stockout Risk,194,150.0,151.0,205,9.5,236.85,185.56,3,3.52,91.11,77.32,1.28,79.65,28.57,89.81
+North,Apparel,Central,Local,Sea,Medium,Stockout Risk,919,1094.0,850.0,863,12.7,1946.02,901.76,4,9.11,71.42,80.96,1.08,68.19,33.65,69.23
+East,Home Goods,Local,International,Road,Low,Optimal,726,785.0,594.0,597,14.01,1588.35,359.99,1,6.35,90.75,91.87,1.22,86.27,20.59,81.28
+East,FMCG,Regional,International,Road,Medium,Overstocked,1729,1818.0,2011.0,1555,21.61,3585.08,3651.14,2,12.01,83.97,94.85,0.86,77.74,30.34,63.84
+North,Home Goods,Regional,Local,Road,High,Overstocked,2828,3001.0,4633.0,2697,15.88,6461.57,6129.23,1,8.81,74.8,93.88,0.61,80.53,21.66,61.61
+South,FMCG,Local,Local,Road,High,Overstocked,2388,2447.0,3229.0,2300,15.09,4958.45,2411.77,0,6.38,77.75,97.53,0.74,87.19,16.08,70.42
+South,Industrial Supplies,Central,Local,Road,Medium,Stockout Risk,645,688.0,644.0,632,13.82,821.87,1317.02,1,8.97,97.25,93.33,1.0,85.79,19.82,79.55
+South,Apparel,Central,International,Sea,Low,Optimal,716,601.0,772.0,786,24.97,2238.12,672.43,1,13.98,67.8,83.94,0.93,70.13,34.73,57.8
+West,Home Goods,Regional,Local,Road,High,Optimal,1662,1700.0,1673.0,1389,6.79,3974.72,1997.87,2,3.91,75.85,97.71,0.99,84.81,14.37,76.81
+East,FMCG,Local,International,Road,Low,Optimal,564,536.0,503.0,468,13.66,1187.33,523.71,1,4.31,75.68,95.04,1.12,85.65,18.98,81.66
+East,FMCG,Local,Local,Road,Medium,Optimal,1447,1313.0,1257.0,868,3.79,3380.79,2215.68,3,1.48,98.78,90.74,1.15,88.31,17.49,89.76
+East,Electronics,Regional,International,Air,Medium,Optimal,1434,1490.0,1238.0,915,4.3,3511.66,845.76,1,1.0,86.39,96.09,1.16,92.01,9.2,86.74
+North,Industrial Supplies,Central,Distributor,Road,High,Optimal,666,703.0,653.0,550,3.43,910.45,563.5,1,4.39,83.04,94.44,1.02,87.2,8.99,84.27
+South,FMCG,Regional,Local,Sea,Low,Stockout Risk,840,840.0,776.0,650,19.12,1552.49,775.62,1,14.32,76.24,100.0,1.08,77.52,22.45,61.06
+North,Apparel,Local,Distributor,Sea,Low,Optimal,389,291.0,348.0,471,22.76,1175.92,598.16,1,8.88,72.79,74.81,1.12,73.28,36.17,71.67
+East,FMCG,Central,Local,Road,High,Optimal,2503,1984.0,3452.0,1360,7.63,4214.14,2975.45,1,6.82,92.04,79.26,0.73,81.71,19.26,75.35
+South,FMCG,Central,International,Sea,Medium,Optimal,1762,1733.0,1669.0,1517,22.8,4869.25,1808.88,1,16.01,87.95,98.35,1.06,78.18,26.79,54.41
+East,FMCG,Regional,International,Sea,Medium,Stockout Risk,1666,1528.0,1081.0,1198,30.0,3933.55,1524.41,1,17.16,85.52,91.72,1.54,74.1,36.65,53.29
+East,Apparel,Regional,Distributor,Road,Low,Overstocked,949,944.0,1550.0,766,3.55,1956.63,1067.44,0,4.02,83.63,99.47,0.61,91.7,3.76,83.05
+West,Apparel,Central,Distributor,Air,Medium,Optimal,942,1010.0,1379.0,651,1.0,3654.15,2454.36,1,1.0,92.82,92.78,0.68,92.46,7.22,88.37
+North,Electronics,Local,Local,Road,Medium,Stockout Risk,907,827.0,723.0,751,12.7,1580.11,987.78,3,5.68,75.18,91.18,1.25,78.36,26.23,77.96
+East,FMCG,Central,Distributor,Road,Medium,Optimal,1672,1994.0,1525.0,1259,16.43,3898.34,3232.44,4,7.33,89.91,80.74,1.1,74.52,37.47,74.34
+West,Industrial Supplies,Central,Local,Road,Low,Optimal,704,663.0,527.0,613,8.16,923.92,824.73,2,4.71,98.24,94.18,1.34,88.37,17.16,88.16
+East,FMCG,Central,Distributor,Sea,Medium,Optimal,2055,2127.0,2492.0,1243,7.93,3190.93,5080.15,1,6.99,77.08,96.5,0.82,83.83,12.66,72.62
+East,FMCG,Regional,International,Road,High,Optimal,2333,2010.0,3089.0,1630,22.42,3827.42,2466.47,3,9.42,72.21,86.16,0.76,72.12,37.96,65.0
+North,Apparel,Regional,Distributor,Road,High,Overstocked,1440,1470.0,1864.0,1079,15.62,1611.11,1214.63,0,7.3,76.6,97.92,0.77,86.12,16.45,75.09
+South,FMCG,Regional,International,Sea,High,Stockout Risk,1976,1819.0,1353.0,1366,15.3,4406.02,2486.51,3,11.44,74.94,92.05,1.46,72.85,28.48,60.59
+West,FMCG,Central,Local,Sea,Medium,Stockout Risk,891,914.0,641.0,1075,21.02,2072.73,994.01,3,11.99,74.86,97.42,1.39,74.16,32.05,64.24
+South,FMCG,Central,Distributor,Road,Medium,Stockout Risk,2244,2067.0,2096.0,1554,16.19,5202.59,1943.4,5,5.75,75.35,92.11,1.07,74.21,36.01,70.46
+South,Industrial Supplies,Regional,Distributor,Sea,High,Overstocked,1276,1100.0,2254.0,1183,20.47,3032.59,4210.11,0,14.85,93.04,86.21,0.57,78.58,25.99,62.01
+North,FMCG,Local,Distributor,Road,High,Overstocked,979,1113.0,1602.0,997,11.56,1508.81,1474.77,0,2.71,88.58,86.31,0.61,89.64,17.03,88.07
+East,Apparel,Local,Local,Road,Medium,Overstocked,893,888.0,1191.0,499,2.17,1605.53,1889.03,1,2.24,97.75,99.44,0.75,94.78,5.73,91.56
+South,FMCG,Regional,Local,Air,Low,Optimal,1679,1673.0,1989.0,949,12.06,6698.65,1245.01,0,5.8,74.79,99.64,0.84,87.77,12.2,67.14
+East,Apparel,Central,Distributor,Sea,Low,Optimal,680,636.0,657.0,525,16.6,1623.0,786.7,2,9.21,93.37,93.53,1.04,82.42,25.85,76.27
+North,Industrial Supplies,Regional,International,Sea,Low,Optimal,1209,1181.0,1039.0,1342,27.56,1957.57,1527.55,3,17.47,63.74,97.68,1.16,65.99,38.49,50.18
+North,Industrial Supplies,Local,International,Road,Medium,Stockout Risk,987,1000.0,1101.0,930,10.06,935.14,881.05,5,5.92,77.12,98.68,0.9,76.79,27.25,79.38
+East,Industrial Supplies,Regional,Distributor,Air,Medium,Optimal,1113,960.0,1561.0,705,6.91,2511.23,1125.49,1,3.24,82.35,86.25,0.71,85.31,15.74,83.09
+West,Electronics,Regional,Local,Road,Low,Optimal,958,1117.0,958.0,832,2.78,1859.59,1525.46,1,3.64,70.24,83.4,1.0,80.89,12.75,79.99
+South,Apparel,Central,International,Sea,Low,Optimal,528,586.0,717.0,834,24.57,858.78,1031.35,2,17.57,85.43,89.02,0.74,70.5,35.63,58.73
+North,FMCG,Regional,Distributor,Sea,High,Optimal,3073,2711.0,4171.0,2292,19.94,5755.92,2743.01,0,8.49,85.0,88.22,0.74,83.64,24.65,66.75
+South,Apparel,Local,Local,Sea,Medium,Optimal,1711,1648.0,1238.0,1266,11.76,3145.92,1096.06,0,8.47,99.0,96.32,1.38,89.99,13.23,76.33
+East,Industrial Supplies,Central,International,Sea,Medium,Optimal,1422,1429.0,1434.0,1433,16.02,1701.75,1981.74,2,8.57,68.9,99.51,0.99,79.04,22.88,70.05
+East,Industrial Supplies,Regional,International,Road,Low,Optimal,691,695.0,693.0,644,25.31,554.4,966.2,2,11.79,63.87,99.42,1.0,74.53,32.21,64.45
+West,Home Goods,Regional,Distributor,Road,High,Optimal,1088,1104.0,1597.0,642,4.89,1667.7,2307.87,1,3.27,94.04,98.53,0.68,92.5,8.81,88.26
+North,Home Goods,Local,International,Road,High,Optimal,2202,2246.0,3067.0,2149,17.88,2798.14,5350.77,3,4.15,67.11,98.0,0.72,80.26,28.68,76.11
+South,Apparel,Central,Local,Air,Low,Overstocked,742,705.0,930.0,502,10.16,2174.75,1978.75,1,6.61,69.26,95.01,0.8,81.74,15.49,73.11
+West,Industrial Supplies,Central,International,Sea,High,Overstocked,1657,1670.0,2923.0,1192,13.61,3395.55,2894.44,1,10.79,90.73,99.22,0.57,84.4,17.26,68.69
+West,FMCG,Regional,Distributor,Road,Low,Optimal,50,48.0,39.0,304,17.75,54.69,76.27,1,5.69,71.17,96.0,1.28,83.48,22.68,79.86
+North,Industrial Supplies,Central,Local,Road,High,Optimal,1092,1096.0,1440.0,954,7.71,2357.13,1772.34,1,4.33,86.92,99.63,0.76,90.05,11.19,82.6
+South,Apparel,Regional,International,Road,Medium,Optimal,754,761.0,612.0,589,15.32,1325.27,806.51,4,8.13,80.42,99.07,1.23,77.76,29.02,75.16
+West,FMCG,Central,Distributor,Road,Medium,Overstocked,974,915.0,1174.0,605,10.85,1708.51,2419.55,0,4.02,94.69,93.94,0.83,92.53,13.27,86.87
+North,FMCG,Local,International,Sea,Low,Optimal,657,730.0,623.0,705,11.03,2146.97,870.93,3,8.48,81.21,88.89,1.05,76.27,25.47,73.01
+South,Apparel,Local,International,Sea,High,Stockout Risk,1758,1674.0,1877.0,1467,25.85,5170.53,1175.67,1,15.9,71.96,95.22,0.94,73.19,31.09,49.21
+North,Home Goods,Regional,Local,Road,High,Overstocked,1202,1197.0,2056.0,817,7.66,1533.21,2450.32,1,5.69,88.99,99.58,0.58,89.19,11.16,82.18
+North,Electronics,Local,International,Sea,Low,Overstocked,824,830.0,1064.0,660,26.31,1393.72,1597.87,0,9.42,77.93,99.27,0.77,84.81,26.6,71.69
+East,FMCG,Regional,Local,Road,Low,Overstocked,849,932.0,1449.0,714,12.89,1093.82,1913.52,0,8.17,82.97,90.22,0.59,84.15,16.8,76.31
+West,Home Goods,Local,Distributor,Air,Medium,Overstocked,989,1174.0,1574.0,880,2.65,4374.7,1172.92,0,1.0,82.78,81.29,0.63,88.15,10.13,83.89
+South,Industrial Supplies,Local,Distributor,Sea,Medium,Optimal,740,804.0,735.0,672,12.28,1130.99,1305.38,1,10.82,71.47,91.35,1.01,76.8,19.07,67.49
+West,Industrial Supplies,Regional,Local,Road,Low,Optimal,677,649.0,493.0,563,2.98,632.03,799.5,1,2.26,93.46,95.86,1.37,92.43,7.97,92.23
+North,Apparel,Regional,Local,Air,Medium,Optimal,805,846.0,572.0,693,6.47,3794.26,908.4,0,2.34,94.5,94.91,1.41,94.5,8.51,85.91
+West,FMCG,Regional,Local,Road,Medium,Overstocked,1879,1955.0,1906.0,1540,15.85,4482.77,3208.96,0,11.12,95.89,95.96,0.99,86.44,17.47,67.36
+South,FMCG,Central,International,Road,High,Optimal,1973,2399.0,1728.0,1873,12.81,4174.7,3468.04,1,5.72,70.85,78.41,1.14,77.21,24.78,71.28
+East,Home Goods,Central,International,Road,Medium,Overstocked,1371,1339.0,2574.0,1100,20.79,1900.43,4831.47,3,11.88,89.13,97.67,0.53,77.92,31.72,69.09
+East,Home Goods,Local,Local,Sea,Medium,Optimal,1038,1000.0,1084.0,953,16.6,1950.21,1924.72,0,6.64,80.58,96.34,0.96,87.22,18.06,76.91
+North,Apparel,Regional,Distributor,Road,Medium,Overstocked,1437,1668.0,1897.0,1142,15.85,2322.9,2314.42,1,8.02,90.45,83.92,0.76,81.74,25.61,76.34
+West,Electronics,Central,Local,Sea,Low,Optimal,1107,1025.0,1386.0,865,14.06,3162.87,1283.18,3,10.26,85.99,92.59,0.8,76.98,27.02,68.81
+West,Industrial Supplies,Regional,Distributor,Air,Medium,Stockout Risk,756,881.0,588.0,676,1.69,4034.59,518.34,4,1.0,72.5,83.47,1.29,77.45,21.64,81.5
+North,Electronics,Regional,Local,Road,High,Overstocked,2592,3157.0,3253.0,1611,17.55,3987.6,3224.15,0,6.12,88.09,78.2,0.8,83.27,26.27,76.03
+East,Apparel,Local,Local,Sea,Medium,Stockout Risk,875,893.0,797.0,646,11.01,2739.69,1316.23,3,5.58,72.27,97.94,1.1,80.1,21.83,74.92
+East,Industrial Supplies,Central,Local,Road,Medium,Overstocked,717,621.0,1283.0,554,9.22,1052.9,1804.86,2,6.12,68.39,86.61,0.56,76.85,21.24,76.12
+North,FMCG,Central,International,Sea,Low,Optimal,848,957.0,832.0,1318,30.0,2073.83,1371.1,1,17.8,71.4,87.15,1.02,68.33,38.47,51.58
+North,Electronics,Regional,International,Road,Medium,Overstocked,1685,1793.0,3188.0,1390,24.31,2646.46,5434.36,1,12.83,77.57,93.59,0.53,77.1,30.21,62.2
+East,Apparel,Central,International,Road,Medium,Overstocked,1145,1095.0,1452.0,1105,21.18,2124.82,2282.55,0,13.85,63.68,95.63,0.79,75.54,22.93,57.06
+North,FMCG,Central,Local,Road,Medium,Optimal,1644,1526.0,1789.0,1361,11.09,3139.03,2570.17,3,4.7,79.99,92.82,0.92,81.12,23.96,78.18
+South,FMCG,Regional,Distributor,Road,Low,Overstocked,766,848.0,1374.0,866,11.33,1294.46,1260.91,0,5.93,68.33,89.3,0.56,82.41,15.61,75.99
+West,Electronics,Central,International,Sea,High,Overstocked,2037,1817.0,3387.0,1635,21.06,5142.21,4557.32,1,12.44,77.15,89.2,0.6,75.85,28.71,57.75
+North,FMCG,Local,Local,Road,Medium,Optimal,69,63.0,58.0,272,11.94,59.1,91.72,0,7.07,99.0,91.3,1.19,89.64,15.42,85.44
+North,Electronics,Central,Local,Sea,Low,Optimal,665,478.0,708.0,648,21.27,1604.87,748.04,0,15.35,68.16,71.88,0.94,66.85,32.52,56.47
+South,FMCG,Local,Local,Road,High,Optimal,1849,2138.0,1399.0,1376,7.3,3157.95,1899.43,3,2.15,78.19,84.37,1.32,80.26,23.55,82.7
+West,FMCG,Local,Local,Road,Medium,Stockout Risk,2054,1790.0,1515.0,1061,17.42,3999.88,1016.81,6,7.08,79.87,87.15,1.36,70.06,42.56,71.62
+West,FMCG,Regional,International,Air,Medium,Optimal,2014,2249.0,2758.0,1570,4.35,11073.95,4668.83,2,1.0,83.13,88.33,0.73,86.25,15.68,70.29
+West,Industrial Supplies,Local,Distributor,Road,Medium,Stockout Risk,1255,1117.0,1559.0,631,6.74,2122.1,2650.46,2,1.91,77.37,89.0,0.81,84.14,17.81,85.05
+North,Apparel,Central,International,Road,Medium,Overstocked,1019,1107.0,1704.0,1241,17.57,1563.91,2341.03,0,10.17,64.02,91.36,0.6,77.81,21.02,65.67
+West,Home Goods,Central,Distributor,Road,Medium,Optimal,1020,988.0,1143.0,588,8.04,1641.94,827.17,2,6.09,70.74,96.86,0.89,81.05,15.96,75.68
+North,FMCG,Regional,Local,Road,Medium,Overstocked,1379,1242.0,2477.0,935,2.25,1334.25,2470.32,0,3.94,83.94,90.07,0.56,88.57,6.22,84.57
+North,FMCG,Central,Distributor,Air,Low,Stockout Risk,794,873.0,801.0,693,5.91,2560.88,1132.48,4,2.72,89.88,90.05,0.99,82.38,23.22,86.29
+North,FMCG,Regional,Local,Sea,Low,Stockout Risk,660,727.0,657.0,624,14.11,1930.06,1217.01,4,11.63,81.36,89.85,1.0,71.27,31.5,67.2
+West,Apparel,Local,International,Sea,Low,Overstocked,895,845.0,1183.0,911,21.85,2717.41,823.86,1,8.91,61.2,94.41,0.76,77.21,27.42,64.98
+North,Industrial Supplies,Regional,International,Road,Medium,Optimal,1143,1436.0,1442.0,1177,22.13,2511.62,1551.09,1,9.28,91.14,74.37,0.79,77.31,35.72,73.65
+West,Industrial Supplies,Regional,International,Sea,Medium,Optimal,1276,1456.0,1298.0,1360,26.38,1431.42,892.17,1,10.7,68.23,85.89,0.98,74.2,35.36,66.14
+West,Industrial Supplies,Regional,Local,Sea,Medium,Overstocked,1201,1002.0,1934.0,624,15.91,1561.79,2534.06,0,10.27,87.04,83.43,0.62,80.69,22.54,72.38
+West,FMCG,Central,Local,Sea,Medium,Optimal,1997,2188.0,1429.0,1462,22.54,5393.67,1600.55,0,13.42,80.1,90.44,1.4,78.26,26.37,56.16
+East,FMCG,Local,International,Air,Medium,Stockout Risk,2245,2052.0,1855.0,1985,14.89,8196.4,2049.15,5,5.25,83.39,91.4,1.21,76.48,35.0,67.75
+South,FMCG,Central,Local,Road,Medium,Optimal,471,507.0,370.0,379,5.86,551.2,508.85,2,4.4,94.61,92.36,1.27,87.13,15.58,88.46
+East,FMCG,Local,International,Sea,Medium,Stockout Risk,2463,2525.0,2390.0,1817,12.9,4014.43,3946.09,3,5.8,83.8,97.48,1.03,82.6,23.91,75.33
+West,Industrial Supplies,Local,Local,Sea,Medium,Optimal,1394,1528.0,1869.0,999,17.72,3990.47,3074.86,2,7.22,85.39,90.39,0.75,81.32,28.23,73.02
+East,Apparel,Regional,Distributor,Road,Medium,Optimal,1162,984.0,1587.0,885,4.06,2646.95,2822.91,3,3.03,69.92,84.68,0.73,77.42,20.19,79.5
+East,Electronics,Central,International,Air,Medium,Optimal,1027,885.0,858.0,651,21.37,4268.55,1039.31,0,11.18,81.74,86.17,1.2,79.41,26.9,63.43
+West,Apparel,Local,Local,Sea,High,Overstocked,613,725.0,967.0,964,22.54,1540.44,786.21,1,14.96,89.48,81.73,0.63,73.79,33.18,63.77
+East,FMCG,Central,International,Road,Low,Stockout Risk,1072,815.0,888.0,718,12.21,1721.23,1713.36,1,8.08,79.93,76.03,1.21,76.29,25.13,74.3
+South,Industrial Supplies,Regional,Distributor,Road,Low,Optimal,823,734.0,595.0,742,15.74,804.35,1002.28,2,10.01,68.81,89.19,1.38,73.96,26.73,68.98
+West,Apparel,Regional,Distributor,Road,Low,Optimal,343,321.0,366.0,377,10.05,551.06,605.26,0,6.85,80.84,93.59,0.94,86.12,12.62,79.42
+North,FMCG,Central,Distributor,Sea,High,Overstocked,2010,2166.0,3342.0,1332,16.34,3548.59,6278.2,1,9.5,93.91,92.24,0.6,84.04,22.78,71.92
+South,Electronics,Local,International,Road,High,Stockout Risk,2436,2694.0,1184.0,1663,15.38,2278.7,996.49,5,5.77,86.99,89.41,2.06,76.16,36.28,79.9
+North,FMCG,Regional,Distributor,Road,Low,Stockout Risk,624,615.0,219.0,486,4.34,1053.31,157.59,3,5.07,73.19,98.56,2.85,81.06,14.92,79.66
+South,Home Goods,Regional,Local,Road,Medium,Overstocked,1588,1649.0,2145.0,1126,13.83,2026.05,3815.37,0,6.12,88.63,96.16,0.74,89.69,15.37,80.21
+West,Industrial Supplies,Regional,Local,Road,Low,Stockout Risk,588,550.0,680.0,597,17.99,885.69,556.52,5,7.54,76.2,93.54,0.86,73.14,37.24,75.97
+North,FMCG,Regional,International,Road,Medium,Optimal,1583,1729.0,1488.0,1339,18.2,1644.11,2585.11,0,12.66,85.98,90.78,1.06,80.61,21.89,67.11
+South,Home Goods,Central,Local,Road,Medium,Stockout Risk,796,674.0,591.0,710,17.85,791.41,423.17,5,11.29,91.69,84.67,1.35,70.16,40.65,73.31
+East,FMCG,Central,Distributor,Road,Medium,Optimal,1603,1729.0,1446.0,972,7.36,2717.09,2430.91,2,4.63,66.26,92.14,1.11,79.74,17.17,75.06
+North,Electronics,Regional,Local,Sea,Medium,Overstocked,1314,1338.0,2012.0,1308,18.93,2185.21,2279.21,0,14.68,94.51,98.17,0.65,83.31,19.66,64.52
+East,Electronics,Regional,Local,Road,Medium,Stockout Risk,232,197.0,172.0,241,9.64,414.05,219.93,4,4.63,82.17,84.91,1.35,76.74,29.01,84.54
+East,Home Goods,Regional,Local,Air,High,Optimal,1635,1681.0,1398.0,1354,10.06,7827.55,2296.09,1,6.6,84.06,97.19,1.17,86.21,14.52,66.01
+North,Industrial Supplies,Regional,Distributor,Air,Medium,Optimal,1632,1724.0,2327.0,1380,13.58,4378.63,1432.06,2,5.25,66.06,94.36,0.7,79.85,22.5,70.36
+South,FMCG,Regional,Local,Sea,Low,Stockout Risk,951,958.0,985.0,806,11.76,2568.41,1794.85,3,9.28,90.18,99.26,0.97,81.34,22.05,73.24
+East,FMCG,Regional,International,Road,Low,Optimal,763,829.0,854.0,480,9.65,1357.06,695.25,2,5.79,62.3,91.35,0.89,77.31,19.78,74.33
+East,Industrial Supplies,Central,Local,Sea,High,Optimal,1498,1771.0,1824.0,1456,16.23,3821.11,3769.12,0,8.24,83.25,81.78,0.82,81.2,23.52,70.68
+West,Apparel,Local,Distributor,Sea,Low,Overstocked,737,751.0,936.0,519,9.36,1431.77,940.38,0,4.8,69.43,98.1,0.79,86.89,10.12,78.3
+West,Home Goods,Central,Local,Air,Medium,Optimal,328,295.0,349.0,383,16.75,1489.65,689.35,1,4.94,93.37,89.94,0.94,87.66,24.11,85.08
+North,Electronics,Regional,Local,Sea,Medium,Stockout Risk,380,362.0,379.0,518,22.72,1251.81,376.74,2,9.0,68.66,95.26,1.0,77.06,31.28,70.04
+South,Home Goods,Local,International,Sea,Medium,Stockout Risk,1026,902.0,1308.0,1087,30.0,1589.27,1211.25,5,10.84,91.26,87.91,0.78,71.63,51.5,72.45
+North,Industrial Supplies,Regional,Local,Sea,High,Optimal,1468,1272.0,1566.0,932,12.19,3978.07,2306.93,0,7.25,73.3,86.65,0.94,81.4,17.53,69.35
+South,FMCG,Regional,Local,Road,Low,Overstocked,775,853.0,1382.0,853,14.42,843.63,1724.64,0,6.32,93.18,89.94,0.56,88.45,18.45,83.59
+North,FMCG,Regional,Local,Sea,Medium,Stockout Risk,2150,2615.0,2290.0,2064,20.63,3571.69,2374.14,4,14.4,99.0,78.37,0.94,68.89,42.61,63.6
+West,FMCG,Central,International,Sea,Low,Optimal,1515,1481.0,1159.0,1258,22.97,4846.78,1199.8,1,15.16,92.3,97.76,1.31,79.91,27.2,57.46
+East,Apparel,Local,International,Road,High,Optimal,1610,1656.0,1465.0,997,14.23,1817.36,1817.8,1,4.89,61.19,97.14,1.1,82.18,18.71,74.86
+North,Industrial Supplies,Regional,Local,Road,Medium,Optimal,751,750.0,733.0,592,6.56,1390.25,1285.37,3,5.09,79.29,99.87,1.02,83.02,16.61,80.76
+North,Home Goods,Regional,International,Air,Low,Optimal,805,864.0,617.0,478,3.83,1767.91,1035.34,1,1.59,84.06,92.67,1.3,89.64,10.1,88.42
+South,FMCG,Regional,Local,Road,High,Stockout Risk,2637,2332.0,2941.0,1176,11.51,4161.64,2005.51,1,4.74,97.71,88.43,0.9,88.42,19.47,81.32
+South,Home Goods,Local,International,Sea,Low,Stockout Risk,802,700.0,574.0,794,27.57,2614.63,672.53,4,17.32,93.03,87.28,1.4,67.6,45.99,57.92
+East,FMCG,Central,Distributor,Sea,Medium,Optimal,2248,2855.0,2579.0,2590,18.24,7099.12,2726.01,3,7.08,76.9,73.0,0.87,71.03,39.04,64.39
+North,Home Goods,Local,Local,Road,High,Optimal,1535,1417.0,1897.0,1235,3.38,2437.46,1233.43,2,2.48,92.61,92.31,0.81,88.54,13.12,87.84
+West,FMCG,Central,Local,Road,Medium,Optimal,2472,2763.0,1893.0,1723,15.56,5831.78,2335.82,3,5.95,87.93,88.23,1.31,80.25,30.27,72.55
+North,Industrial Supplies,Central,Local,Road,Low,Optimal,1020,1032.0,850.0,761,10.72,1589.18,1163.72,3,5.1,77.52,98.82,1.2,82.2,21.19,79.81
+East,Apparel,Central,International,Road,High,Optimal,1755,1727.0,2179.0,1268,23.37,4083.0,1698.16,1,12.21,90.79,98.4,0.81,82.71,27.34,64.47
+North,FMCG,Central,International,Road,Low,Overstocked,1390,1131.0,2089.0,762,20.11,2447.83,4418.2,1,12.26,69.58,81.37,0.67,71.39,30.9,61.35
+East,Industrial Supplies,Local,International,Air,Low,Stockout Risk,810,908.0,611.0,729,15.9,3054.68,960.01,5,3.99,91.31,87.9,1.33,78.49,37.41,83.17
+South,Electronics,Regional,Local,Air,Medium,Overstocked,1497,1428.0,2243.0,1168,14.31,7179.28,4412.47,2,4.63,78.46,95.39,0.67,83.93,22.82,69.6
+South,FMCG,Central,Local,Air,Medium,Optimal,1722,2190.0,2295.0,1616,14.76,8646.45,3014.32,1,7.36,87.22,72.82,0.75,77.71,28.96,63.76
+West,Apparel,Local,International,Road,Low,Overstocked,437,455.0,505.0,653,16.99,850.63,384.14,0,8.4,63.46,95.88,0.87,81.02,18.64,70.5
+North,FMCG,Regional,Distributor,Air,Medium,Optimal,652,674.0,518.0,451,3.16,2027.77,882.64,0,1.0,74.94,96.63,1.26,91.56,4.51,86.33
+East,FMCG,Regional,Local,Road,High,Optimal,2974,3298.0,3985.0,2138,6.17,3446.01,7077.56,3,2.92,92.08,89.11,0.75,84.62,20.53,84.74
+North,Industrial Supplies,Local,Distributor,Sea,Medium,Overstocked,726,642.0,886.0,617,5.54,1966.53,894.4,1,5.59,74.33,88.43,0.82,81.72,13.5,77.1
+North,Home Goods,Central,Local,Air,Medium,Stockout Risk,1273,1561.0,686.0,882,4.43,5838.17,1447.42,2,3.38,76.76,77.38,1.86,78.45,20.15,74.33
+West,Electronics,Regional,International,Road,Medium,Optimal,744,558.0,1106.0,710,21.13,1695.35,1277.61,0,15.14,66.07,75.0,0.67,67.63,31.13,56.07
+North,Apparel,Central,Local,Road,Low,Overstocked,750,735.0,1443.0,463,7.2,1033.92,1164.52,3,3.2,93.01,98.0,0.52,87.69,18.0,89.39
+South,Electronics,Local,International,Sea,Low,Optimal,495,542.0,621.0,633,30.0,894.15,574.67,1,18.15,77.36,90.51,0.8,70.65,37.13,55.08
+East,FMCG,Central,Local,Road,High,Optimal,1374,1367.0,1432.0,1221,14.6,2449.73,2695.36,0,6.53,93.46,99.49,0.96,91.66,14.8,79.97
+South,FMCG,Regional,International,Road,High,Stockout Risk,2091,2272.0,2143.0,1488,15.69,4146.61,2651.08,3,7.8,83.39,91.34,0.98,78.35,29.15,70.94
+North,Electronics,Local,Local,Sea,Medium,Stockout Risk,1826,1911.0,1607.0,1644,10.36,4295.84,2836.33,3,5.03,77.68,95.35,1.14,81.1,22.22,74.46
+North,Industrial Supplies,Local,Local,Sea,Low,Optimal,778,649.0,861.0,467,11.28,2494.17,1439.79,1,6.87,72.42,83.42,0.9,78.21,21.25,72.89
+South,Home Goods,Local,Distributor,Road,Medium,Optimal,755,816.0,565.0,518,7.52,1651.73,755.32,1,3.04,82.38,91.92,1.34,87.5,14.09,85.26
+West,FMCG,Regional,Local,Road,High,Overstocked,3160,3142.0,4457.0,2566,9.76,3607.78,4220.31,0,3.94,68.73,99.43,0.71,88.04,9.99,75.36
+East,Industrial Supplies,Regional,International,Air,High,Optimal,151,128.0,227.0,465,20.79,768.78,415.4,3,12.0,62.05,84.77,0.67,66.52,36.88,63.04
+South,Industrial Supplies,Local,Distributor,Road,Medium,Stockout Risk,1029,1081.0,468.0,777,12.9,1941.54,380.66,2,5.0,96.87,94.95,2.2,88.01,21.59,85.09
+East,Apparel,Local,Local,Road,High,Optimal,2229,2545.0,3265.0,1339,5.53,2948.44,3973.65,2,2.69,71.03,85.82,0.68,80.66,17.87,79.9
+South,FMCG,Regional,Local,Air,High,Optimal,2970,2837.0,3293.0,1677,4.44,14668.74,6114.2,0,2.53,87.57,95.52,0.9,92.79,6.23,61.21
+West,Home Goods,Local,Local,Road,Low,Overstocked,614,659.0,1069.0,560,7.87,663.25,984.72,0,2.89,88.24,92.67,0.57,91.6,10.8,89.34
+North,Industrial Supplies,Central,Distributor,Road,Low,Optimal,823,1007.0,943.0,821,7.98,927.5,1377.07,1,4.74,92.74,77.64,0.87,83.4,20.26,86.45
+West,Electronics,Local,Distributor,Air,Medium,Optimal,1742,1710.0,2455.0,1483,10.91,5540.27,2995.86,0,2.19,84.34,98.16,0.71,93.25,11.64,79.59
+West,FMCG,Regional,Local,Air,Low,Overstocked,1536,1607.0,1978.0,1218,4.42,5821.69,2609.86,1,3.26,83.69,95.38,0.78,88.82,9.6,76.68
+North,Industrial Supplies,Regional,Local,Road,Medium,Optimal,819,639.0,1182.0,630,15.28,1465.96,989.01,2,9.84,95.56,78.02,0.69,76.91,30.74,75.99
+East,FMCG,Local,Distributor,Road,Medium,Optimal,1202,1204.0,917.0,958,16.46,2221.9,1237.39,3,8.65,72.95,99.83,1.31,77.86,26.53,70.04
+South,Industrial Supplies,Local,International,Sea,Low,Stockout Risk,484,442.0,498.0,437,19.56,1282.34,350.93,5,11.64,87.41,91.32,0.97,71.06,39.7,70.32
+North,Apparel,Central,Local,Sea,Medium,Overstocked,1721,1596.0,1966.0,1186,22.18,3919.58,2551.9,1,8.91,69.4,92.74,0.88,78.68,28.42,64.98
+South,FMCG,Central,Distributor,Road,Medium,Optimal,1491,1603.0,2093.0,1024,16.47,2993.89,2013.35,3,9.34,95.93,92.49,0.71,80.35,29.47,73.98
+North,Apparel,Local,International,Sea,High,Optimal,1480,1707.0,1291.0,1668,27.36,2049.77,1913.55,0,10.79,93.97,84.66,1.15,82.33,33.5,72.42
+North,Industrial Supplies,Local,Distributor,Road,Low,Optimal,640,634.0,634.0,541,9.4,1478.9,781.31,0,5.32,87.02,99.06,1.01,91.11,9.78,82.44
+North,FMCG,Central,Local,Sea,Low,Overstocked,399,492.0,521.0,566,14.83,589.93,468.18,0,8.39,96.88,76.69,0.77,82.67,24.15,81.08
+East,FMCG,Regional,Local,Sea,High,Optimal,3781,3596.0,5256.0,1868,10.62,7543.21,7919.66,2,10.19,78.75,95.11,0.72,78.34,19.24,57.82
+West,Electronics,Local,International,Sea,Medium,Optimal,2187,2009.0,2157.0,1860,23.92,2986.06,1427.91,1,13.39,80.23,91.86,1.01,76.6,30.51,61.18
+South,Electronics,Central,International,Road,High,Stockout Risk,2444,2717.0,2057.0,2058,13.44,5806.32,3255.62,3,10.64,87.23,88.83,1.19,75.59,27.91,63.01
+South,FMCG,Local,Local,Sea,Low,Optimal,1249,1352.0,1385.0,1072,18.84,3430.27,1699.88,3,13.92,97.43,91.75,0.9,75.88,32.14,64.37
+South,Industrial Supplies,Regional,Local,Road,Medium,Stockout Risk,1093,1120.0,1153.0,792,2.82,875.5,1226.92,4,2.15,90.58,97.53,0.95,85.74,17.14,91.08
+East,FMCG,Regional,International,Sea,Medium,Overstocked,1657,1874.0,1866.0,1775,20.91,1887.48,2187.0,0,8.94,79.33,86.9,0.89,81.31,26.15,72.06
+South,Apparel,Regional,Local,Road,Medium,Optimal,1160,1015.0,1259.0,883,6.2,1410.17,1479.87,1,2.86,74.37,87.5,0.92,84.14,14.53,83.71
+East,Electronics,Regional,Distributor,Air,High,Overstocked,1563,1750.0,2348.0,1132,8.48,3956.2,2594.13,0,5.34,71.58,88.04,0.67,83.37,13.27,72.7
+South,FMCG,Central,Local,Road,Low,Stockout Risk,1335,1564.0,911.0,1025,9.92,1109.3,2028.71,4,3.95,76.24,82.85,1.47,75.22,30.11,82.7
+North,Electronics,Central,Local,Road,Medium,Overstocked,1367,1366.0,1902.0,882,7.97,1201.31,4284.05,2,5.21,75.95,99.93,0.72,84.31,14.67,79.91
+North,Industrial Supplies,Local,Local,Road,Low,Optimal,867,781.0,662.0,700,3.11,2039.31,1146.7,0,3.17,76.97,90.08,1.31,87.6,7.08,82.58
+East,Apparel,Central,Distributor,Road,Low,Overstocked,589,503.0,834.0,660,13.56,1182.17,1778.98,0,9.21,79.06,85.4,0.71,80.44,19.4,72.88
+East,Industrial Supplies,Local,International,Sea,Medium,Optimal,1002,1265.0,953.0,1145,15.01,3000.49,754.41,1,10.1,86.23,73.75,1.05,75.05,28.84,69.53
+South,Home Goods,Local,Local,Road,High,Overstocked,1967,2156.0,2389.0,1722,17.28,4575.49,4046.98,0,6.25,94.96,90.39,0.82,89.13,21.12,76.63
+South,Industrial Supplies,Central,Local,Road,Medium,Stockout Risk,1385,1222.0,442.0,876,2.32,2407.87,883.34,3,2.23,84.56,88.23,3.13,83.12,17.03,85.98
+West,Home Goods,Central,Distributor,Road,Medium,Optimal,1822,1883.0,2224.0,1184,4.4,1742.42,4772.38,2,2.96,74.22,96.65,0.82,84.98,12.41,82.78
+East,Industrial Supplies,Central,Local,Road,High,Overstocked,2165,2414.0,3344.0,1622,11.64,4179.76,4521.33,0,7.98,68.44,88.5,0.65,80.1,16.24,66.02
+East,Industrial Supplies,Local,International,Road,Medium,Optimal,673,570.0,767.0,588,12.9,1516.69,1285.75,2,7.27,71.87,84.7,0.88,75.9,25.69,73.92
+South,FMCG,Regional,International,Road,Medium,Stockout Risk,1283,1166.0,1361.0,924,21.65,2232.99,1558.55,2,9.9,66.16,90.88,0.94,74.0,31.96,65.48
+West,FMCG,Regional,Local,Sea,Medium,Overstocked,1510,1147.0,2559.0,841,17.56,2381.7,4384.19,1,9.36,89.86,75.96,0.59,77.47,30.51,73.37
+South,Industrial Supplies,Central,International,Road,High,Overstocked,1536,1347.0,2574.0,1043,25.26,2821.31,3585.49,0,12.08,71.39,87.7,0.6,76.46,30.18,61.49
+East,FMCG,Central,International,Sea,Low,Optimal,1198,1053.0,1531.0,957,21.88,1624.41,3073.11,1,8.54,68.94,87.9,0.78,77.24,30.05,70.28
+West,Electronics,Regional,Local,Road,Medium,Optimal,189,210.0,171.0,363,15.14,195.8,182.06,0,8.39,96.64,88.89,1.11,86.88,19.58,81.81
+West,Apparel,Central,Distributor,Sea,Low,Overstocked,573,648.0,777.0,618,19.48,1677.21,1778.03,4,13.24,79.06,86.91,0.74,68.05,38.05,63.81
+South,Home Goods,Regional,Distributor,Sea,Low,Stockout Risk,562,549.0,429.0,555,12.85,1821.06,629.44,3,7.8,94.61,97.69,1.31,83.38,23.78,79.06
+North,Industrial Supplies,Central,International,Air,Medium,Optimal,1028,1078.0,1306.0,804,15.13,3925.34,2358.46,1,7.31,83.83,95.14,0.79,84.72,20.41,72.5
+North,Electronics,Local,Local,Sea,High,Stockout Risk,1383,1415.0,1418.0,1627,22.92,3097.22,1940.39,7,14.23,70.08,97.69,0.98,61.93,47.18,56.23
+North,FMCG,Regional,Local,Road,Medium,Stockout Risk,915,924.0,791.0,578,8.24,1928.43,660.4,4,5.02,85.84,99.02,1.16,82.21,21.97,81.77
+West,Home Goods,Regional,International,Sea,Low,Optimal,664,603.0,494.0,922,28.95,965.18,368.07,1,16.36,84.49,90.81,1.34,74.32,35.96,60.65
+South,Industrial Supplies,Regional,Local,Air,Medium,Overstocked,1157,1287.0,1838.0,912,1.41,5873.27,2362.97,0,1.0,86.18,88.76,0.63,91.61,5.9,81.84
+West,Home Goods,Regional,International,Air,Low,Overstocked,975,1054.0,1541.0,1037,13.76,1872.31,1853.99,0,6.33,91.4,91.9,0.63,88.68,17.0,80.93
+East,Industrial Supplies,Local,Distributor,Sea,Medium,Overstocked,1558,1472.0,2867.0,1334,20.37,3909.93,4989.07,2,11.76,74.51,94.48,0.54,75.49,29.24,60.84
+East,FMCG,Central,International,Road,Medium,Overstocked,1947,1887.0,3090.0,1873,17.47,1814.94,4016.29,0,10.1,88.26,96.92,0.63,85.89,18.7,72.57
+South,Electronics,Regional,Distributor,Road,High,Optimal,2275,1996.0,2387.0,1700,5.59,4973.78,3556.42,1,2.33,84.9,87.74,0.95,87.38,13.83,80.64
+North,Home Goods,Central,Local,Road,Medium,Overstocked,904,929.0,998.0,827,9.35,1563.16,991.12,0,3.27,96.98,97.23,0.91,95.01,10.46,89.36
+North,Industrial Supplies,Local,Distributor,Road,High,Optimal,1424,1408.0,1306.0,1186,4.68,2933.01,1171.03,1,4.04,92.64,98.88,1.09,91.51,8.46,83.71
+West,Apparel,Regional,Local,Road,Low,Optimal,909,1073.0,1355.0,962,12.72,1038.56,2554.65,1,10.17,86.3,81.96,0.67,77.87,23.27,73.43
+West,FMCG,Local,Local,Road,Low,Overstocked,778,847.0,1121.0,893,17.16,1347.98,676.89,0,7.89,78.08,91.13,0.69,83.53,20.71,74.89
+West,FMCG,Regional,Local,Sea,Medium,Overstocked,1881,1565.0,2693.0,1076,12.93,2391.55,3802.75,0,7.51,75.83,83.2,0.7,80.57,19.65,72.84
+South,Industrial Supplies,Local,Local,Sea,Low,Overstocked,1035,961.0,1134.0,704,12.89,2949.77,1937.24,0,7.4,98.83,92.85,0.91,89.8,15.75,78.82
+West,FMCG,Central,Local,Air,Low,Optimal,1349,1284.0,965.0,881,1.0,3726.63,1943.58,3,1.0,78.65,95.18,1.4,85.31,12.93,83.97
+South,Industrial Supplies,Local,Local,Sea,High,Optimal,2061,1677.0,2054.0,1104,11.6,2852.04,3686.88,2,9.51,78.2,81.37,1.0,74.08,25.72,68.61
+West,Industrial Supplies,Local,International,Road,Low,Stockout Risk,411,396.0,321.0,704,25.04,631.13,241.6,2,6.98,77.28,96.35,1.28,81.62,33.17,77.93
+North,Apparel,Local,Distributor,Sea,Medium,Stockout Risk,1520,1535.0,1080.0,1261,13.47,2024.54,1262.83,2,9.66,96.29,99.01,1.41,84.62,20.53,75.43
+East,Apparel,Local,Local,Sea,High,Optimal,1390,1465.0,1842.0,1035,11.07,3491.34,1744.54,2,5.88,85.7,94.6,0.75,84.21,19.89,76.81
+North,Electronics,Local,Local,Road,Medium,Optimal,1582,1589.0,2204.0,1374,16.43,1636.07,3190.26,0,8.78,92.97,99.56,0.72,89.31,16.61,76.98
+South,FMCG,Local,Local,Sea,Low,Stockout Risk,1528,1166.0,1554.0,924,21.05,2220.57,1392.96,2,13.13,72.77,76.31,0.98,67.33,37.19,61.03
+North,Home Goods,Regional,Local,Road,Medium,Optimal,1374,1212.0,1019.0,1079,9.23,2937.42,1957.64,2,6.41,83.71,88.21,1.35,80.95,20.61,76.29
+North,Home Goods,Local,Local,Road,Medium,Stockout Risk,890,854.0,838.0,683,12.69,1067.55,1177.55,4,3.11,81.62,95.96,1.06,81.99,27.64,86.08
+West,FMCG,Central,Distributor,Sea,High,Optimal,2306,2378.0,2804.0,2403,20.16,6219.24,2204.44,0,12.49,71.67,96.88,0.82,79.34,21.41,53.8
+West,Electronics,Central,Local,Sea,Medium,Optimal,1355,1446.0,1090.0,834,10.0,2966.53,2406.83,1,10.96,81.12,93.28,1.24,79.75,16.02,66.35
+West,Apparel,Local,International,Road,Medium,Optimal,747,859.0,1040.0,816,15.68,1581.12,1402.66,1,10.46,77.89,85.01,0.72,76.54,25.01,69.21
+North,Apparel,Local,Distributor,Sea,Low,Overstocked,700,592.0,1046.0,670,17.73,1052.08,1582.86,0,7.86,73.51,84.57,0.67,80.12,23.9,74.18
+North,Home Goods,Central,Local,Air,Medium,Overstocked,702,560.0,882.0,471,1.83,2122.05,766.69,0,1.52,71.57,79.77,0.8,84.29,9.92,84.09
+North,FMCG,Local,Local,Road,Low,Stockout Risk,828,784.0,770.0,696,7.02,1971.44,427.56,1,4.15,97.44,94.69,1.08,91.13,12.48,86.9
+North,Electronics,Local,Local,Sea,High,Stockout Risk,794,808.0,523.0,788,20.21,2173.44,932.63,3,8.74,90.14,98.24,1.52,81.51,30.92,75.12
+East,Apparel,Regional,Local,Road,High,Overstocked,1759,1967.0,3039.0,1048,4.06,3685.22,3804.84,0,3.34,85.27,88.18,0.58,88.84,8.79,81.36
+West,Industrial Supplies,Regional,International,Road,Medium,Optimal,1004,806.0,1346.0,873,13.57,905.81,1346.33,0,4.87,63.99,80.28,0.75,79.23,21.46,77.6
+North,Apparel,Regional,Local,Sea,High,Stockout Risk,1115,1409.0,1196.0,783,12.52,1830.19,986.89,4,10.13,99.0,73.63,0.93,71.5,36.4,75.7
+West,Industrial Supplies,Regional,Local,Sea,Medium,Overstocked,1002,905.0,1329.0,735,12.28,1618.14,1787.49,1,7.25,77.16,90.32,0.75,81.43,19.49,75.34
+East,FMCG,Regional,Local,Air,Low,Overstocked,905,811.0,1645.0,420,1.77,3660.86,2473.38,1,1.25,94.97,89.61,0.55,91.63,9.26,88.5
+North,Apparel,Regional,International,Sea,Low,Optimal,776,761.0,677.0,614,24.81,1263.11,1205.56,1,11.7,65.48,98.07,1.15,76.77,28.92,63.66
+North,Home Goods,Local,Distributor,Road,Medium,Stockout Risk,1120,1063.0,564.0,616,5.9,2230.31,429.22,3,2.98,65.07,94.91,1.99,79.84,17.94,79.0
+North,Electronics,Regional,Distributor,Air,High,Overstocked,1594,1682.0,2271.0,1307,11.64,5317.27,3336.18,0,6.11,72.47,94.48,0.7,85.08,13.85,68.65
+East,FMCG,Central,Local,Road,High,Overstocked,3356,3675.0,4608.0,2524,15.83,5065.31,8046.52,0,7.91,78.36,90.49,0.73,83.35,19.63,67.33
+South,Apparel,Central,International,Sea,Low,Optimal,510,500.0,716.0,560,18.67,776.81,1334.31,0,7.63,74.16,98.04,0.71,85.22,19.45,75.4
+West,FMCG,Central,Distributor,Road,Medium,Optimal,1387,1422.0,1611.0,887,8.38,2834.98,2771.05,1,4.78,95.97,97.48,0.86,91.11,12.72,83.43
+North,Apparel,Central,Local,Road,Medium,Optimal,1215,1347.0,1600.0,1214,15.41,1494.19,2213.17,1,8.93,70.77,89.14,0.76,77.74,23.09,70.32
+South,FMCG,Central,Distributor,Road,Medium,Optimal,1841,1838.0,1824.0,1474,8.56,1910.34,3756.31,1,6.91,80.23,99.84,1.01,85.87,11.96,76.34
+West,Electronics,Central,Local,Road,Medium,Overstocked,1733,1296.0,2298.0,1178,5.09,4152.65,2599.29,2,5.2,97.2,74.78,0.75,80.83,21.84,80.27
+West,Apparel,Regional,Local,Road,Low,Optimal,756,788.0,1020.0,793,10.92,782.77,1357.1,3,4.87,97.6,95.77,0.74,86.38,22.61,87.94
+South,Home Goods,Central,International,Road,Low,Optimal,493,511.0,555.0,326,8.01,443.36,983.66,2,4.06,83.36,96.35,0.89,86.06,16.14,85.98
+East,Industrial Supplies,Central,Distributor,Sea,Medium,Optimal,1354,1334.0,1235.0,916,8.97,2782.78,2530.84,2,5.65,73.52,98.52,1.1,82.77,16.23,75.06
+East,FMCG,Local,Local,Road,Low,Stockout Risk,929,979.0,674.0,529,2.62,2073.3,428.78,5,1.0,72.09,94.62,1.38,79.03,21.44,85.39
+North,Apparel,Regional,Local,Air,High,Optimal,633,581.0,541.0,628,13.37,2705.17,903.75,0,6.84,68.34,91.79,1.17,82.37,16.66,71.29
+East,Industrial Supplies,Central,International,Road,Medium,Stockout Risk,1514,1759.0,1521.0,1561,26.99,2393.97,1959.73,4,15.52,72.16,83.82,1.0,62.97,46.8,55.71
+West,FMCG,Local,International,Road,Medium,Overstocked,1373,1088.0,1643.0,1119,16.64,2489.27,1996.99,1,9.06,70.35,79.24,0.84,74.04,28.28,67.89
+North,Apparel,Local,Distributor,Road,High,Optimal,1303,1160.0,1909.0,732,13.46,1349.77,1177.37,0,7.0,77.0,89.03,0.68,83.41,17.85,76.34
+West,Apparel,Central,International,Road,Medium,Overstocked,1627,1303.0,2615.0,979,22.63,1861.75,2729.91,1,8.16,84.01,80.09,0.62,78.65,33.93,75.08
+East,Apparel,Central,Distributor,Road,Medium,Optimal,1260,1073.0,1389.0,556,5.17,1649.5,1694.52,1,4.42,68.12,85.16,0.91,80.19,14.44,78.22
+West,Home Goods,Local,Local,Sea,Medium,Overstocked,1344,1273.0,2403.0,932,14.72,2504.33,3896.38,7,12.1,87.81,94.72,0.56,67.45,40.17,67.02
+East,Electronics,Regional,Local,Sea,Medium,Overstocked,1146,1197.0,1814.0,1078,20.3,3814.16,2145.73,2,11.89,97.56,95.55,0.63,81.5,28.75,67.69
+East,Home Goods,Local,International,Air,Medium,Stockout Risk,1330,1319.0,1418.0,1039,7.43,2974.82,2517.97,3,2.16,67.04,99.17,0.94,82.64,17.76,79.71
+North,Industrial Supplies,Local,International,Road,High,Optimal,1867,2330.0,2091.0,1423,16.46,2112.69,1446.38,2,10.67,62.92,75.2,0.89,66.94,33.05,63.22
+North,FMCG,Central,Distributor,Road,Medium,Stockout Risk,1213,1286.0,1030.0,929,13.4,2345.12,1331.02,3,5.96,77.4,93.98,1.18,79.62,25.81,76.5
+West,FMCG,Local,Local,Road,Low,Optimal,1153,1439.0,1060.0,1021,2.16,2035.31,589.11,2,1.0,78.37,75.2,1.09,80.47,18.75,87.35
+North,Industrial Supplies,Central,Local,Road,High,Overstocked,1558,1732.0,2612.0,1037,14.02,2775.39,3203.3,1,6.44,97.07,88.83,0.6,86.7,21.82,80.56
+West,FMCG,Regional,Distributor,Road,Low,Optimal,1368,1469.0,1462.0,1120,17.63,1929.15,906.06,1,6.31,84.45,92.62,0.94,85.0,23.92,78.77
+South,Apparel,Central,Local,Road,Low,Optimal,1077,1348.0,1359.0,1230,14.03,1819.45,1750.15,2,10.1,73.34,74.84,0.79,69.98,30.76,68.08
+East,Apparel,Regional,Local,Road,Low,Optimal,246,213.0,342.0,225,6.25,227.15,529.2,1,3.16,90.64,86.59,0.72,87.58,14.95,90.41
+East,Home Goods,Regional,International,Road,Low,Optimal,551,573.0,773.0,583,21.94,660.98,1115.66,1,6.41,62.31,96.01,0.71,80.55,26.87,74.52
+East,Home Goods,Regional,Distributor,Sea,Medium,Overstocked,1699,2137.0,2643.0,1766,15.26,3600.53,3813.08,0,9.58,80.87,74.22,0.64,76.61,25.57,67.74
+East,Apparel,Regional,Local,Road,Medium,Stockout Risk,936,1163.0,1001.0,635,7.65,1627.76,1115.42,2,4.75,89.87,75.75,0.94,79.79,24.02,84.13
+East,FMCG,Central,International,Road,Medium,Optimal,1484,1527.0,1845.0,930,8.48,2069.98,1891.53,2,4.16,79.06,97.1,0.8,85.15,16.31,81.16
+West,Home Goods,Central,International,Air,Low,Optimal,745,856.0,882.0,674,12.51,2818.34,941.73,2,3.58,79.59,85.1,0.84,81.66,25.14,80.95
+East,Industrial Supplies,Regional,Local,Sea,Medium,Optimal,1077,1133.0,1200.0,770,9.85,1223.3,2088.75,1,9.99,82.79,94.8,0.9,81.67,15.26,72.36
+South,Electronics,Central,Local,Sea,Medium,Stockout Risk,1093,1102.0,1005.0,1136,22.57,1931.52,903.08,9,16.55,69.34,99.18,1.09,55.5,52.9,53.75
+South,Apparel,Regional,Local,Road,Low,Optimal,712,691.0,1061.0,634,12.15,1437.18,1382.65,4,3.83,78.39,97.05,0.67,80.85,26.66,82.92
+East,FMCG,Regional,Local,Sea,Medium,Overstocked,486,559.0,815.0,498,13.44,770.73,1415.96,1,9.57,70.98,84.98,0.6,75.7,22.78,70.58
+North,FMCG,Central,Distributor,Sea,Medium,Optimal,1242,1262.0,1371.0,750,11.97,1743.78,1072.97,0,8.97,71.9,98.39,0.91,83.44,12.61,70.06
+West,Apparel,Regional,Local,Air,Low,Optimal,761,760.0,901.0,380,2.64,2357.62,1772.3,2,1.76,81.85,99.87,0.84,89.21,9.36,86.21
+South,FMCG,Central,Local,Road,High,Optimal,1596,1755.0,1905.0,1143,16.89,2096.26,2902.74,2,10.25,93.48,90.04,0.84,80.19,27.54,73.26
+South,Industrial Supplies,Regional,Distributor,Sea,Medium,Stockout Risk,1078,937.0,713.0,782,16.19,3457.48,940.44,4,10.72,93.29,86.92,1.51,74.14,34.76,69.48
+North,FMCG,Central,Local,Road,Low,Optimal,1072,1001.0,1240.0,681,5.5,1349.66,1077.88,3,3.91,69.31,93.38,0.86,79.43,18.15,80.21
+East,Industrial Supplies,Central,Local,Road,Medium,Overstocked,1137,1112.0,1577.0,1091,15.63,1167.74,2892.59,0,7.8,97.6,97.8,0.72,90.83,16.51,81.29
+North,Industrial Supplies,Central,Distributor,Sea,Medium,Optimal,941,807.0,905.0,1031,22.54,2712.28,790.6,0,15.05,69.23,85.76,1.04,72.27,28.24,55.12
+West,FMCG,Central,Local,Road,Medium,Stockout Risk,1487,1498.0,1410.0,1127,17.1,1536.1,2160.54,4,7.19,83.85,99.26,1.05,79.62,30.73,77.63
+West,FMCG,Central,Distributor,Sea,Low,Overstocked,901,1043.0,1299.0,962,15.73,2657.96,1752.12,3,8.56,76.83,84.24,0.69,73.46,32.03,70.49
+North,Home Goods,Regional,Local,Sea,Medium,Optimal,923,1018.0,1052.0,831,17.57,1314.44,1491.22,1,10.42,88.94,89.71,0.88,80.99,25.02,73.15
+North,Electronics,Local,Local,Road,Medium,Optimal,1888,1661.0,2571.0,1368,2.44,3565.57,2497.77,3,2.55,74.32,87.98,0.73,80.16,17.25,79.9
+West,Industrial Supplies,Local,Distributor,Road,Medium,Optimal,1368,1250.0,1913.0,763,3.68,1488.24,1622.44,0,2.55,86.44,91.37,0.72,91.04,7.13,87.79
+South,Industrial Supplies,Regional,International,Air,Medium,Optimal,362,331.0,472.0,282,8.13,1234.31,663.13,1,3.1,89.08,91.44,0.77,88.95,14.89,88.0
+South,FMCG,Central,Distributor,Road,Medium,Optimal,1542,1440.0,1490.0,1442,14.63,2092.15,2472.93,0,11.36,94.33,93.39,1.03,84.91,17.28,71.3
+North,Industrial Supplies,Local,International,Road,High,Optimal,1698,1717.0,1712.0,1368,10.97,3957.6,1296.62,0,7.29,80.88,98.88,0.99,87.54,11.42,71.59
+North,FMCG,Local,International,Air,Low,Overstocked,780,710.0,1029.0,904,23.03,1612.74,1316.69,0,12.53,69.1,91.03,0.76,76.61,26.62,62.37
+North,Apparel,Local,Distributor,Sea,Low,Overstocked,599,672.0,1041.0,954,21.48,1132.94,1115.2,1,12.4,72.79,87.81,0.58,74.31,29.69,64.72
+East,FMCG,Regional,International,Sea,Medium,Stockout Risk,916,760.0,518.0,524,13.79,2716.82,352.47,3,10.21,68.9,82.97,1.77,69.39,30.6,64.69
+South,Electronics,Central,Local,Sea,Low,Overstocked,538,553.0,831.0,669,19.65,1202.48,641.7,2,10.97,79.32,97.21,0.65,78.44,27.43,69.4
+South,Apparel,Regional,Distributor,Road,Medium,Overstocked,1322,1383.0,1760.0,1058,12.94,1284.29,1465.83,0,8.21,96.24,95.39,0.75,89.24,14.79,79.83
+North,Home Goods,Regional,Local,Road,Low,Overstocked,1206,1346.0,2108.0,1137,16.74,1184.11,3255.98,0,10.18,69.25,88.39,0.57,78.07,21.38,67.99
+North,Electronics,Central,Local,Sea,High,Overstocked,1272,1306.0,2172.0,1126,13.13,2915.63,4321.73,0,11.88,87.01,97.33,0.59,83.94,14.2,66.38
+North,Electronics,Central,International,Sea,High,Optimal,1911,2050.0,2417.0,1864,17.33,5263.95,4182.96,3,8.13,85.81,92.73,0.79,79.11,30.24,68.72
+South,Electronics,Regional,Local,Sea,Low,Overstocked,1278,1177.0,1246.0,852,6.52,3856.41,863.83,1,5.12,97.07,92.1,1.03,89.16,13.01,80.99
+South,Electronics,Central,Local,Road,Medium,Overstocked,965,829.0,987.0,646,12.55,1790.72,942.74,1,8.15,86.16,85.91,0.98,81.24,21.52,75.89
+South,Apparel,Regional,Local,Road,Medium,Overstocked,1181,1197.0,1867.0,1066,6.45,1423.86,1339.62,0,5.41,92.54,98.65,0.63,92.25,6.99,84.03
+North,Home Goods,Regional,International,Sea,Low,Stockout Risk,874,971.0,388.0,931,25.78,2122.21,637.15,5,12.91,78.62,88.9,2.25,66.75,46.89,63.43
+North,Home Goods,Central,Distributor,Road,Medium,Stockout Risk,1497,1343.0,1838.0,1016,10.64,3030.63,1969.63,7,7.01,80.14,89.71,0.81,68.87,38.09,73.82
+North,Home Goods,Regional,Distributor,Road,Medium,Optimal,1480,1318.0,1908.0,965,7.76,2896.5,1992.78,0,7.17,86.67,89.05,0.78,85.66,12.14,75.74
+North,Home Goods,Regional,Local,Sea,Low,Optimal,420,449.0,490.0,483,11.22,675.18,341.82,5,9.72,71.37,93.1,0.86,69.6,30.65,70.59
+West,Electronics,Regional,Local,Sea,Medium,Optimal,861,946.0,668.0,905,11.03,1981.6,1041.86,0,5.88,88.67,90.13,1.29,87.83,14.98,80.79
+East,Industrial Supplies,Central,International,Air,High,Stockout Risk,711,805.0,490.0,825,12.12,2768.92,439.74,4,7.07,79.89,86.78,1.45,74.39,30.74,74.16
+West,Industrial Supplies,Regional,International,Road,High,Optimal,1454,1422.0,1960.0,1011,14.52,2696.86,2705.97,2,7.9,80.87,97.8,0.74,82.1,22.07,72.95
+South,Industrial Supplies,Regional,Distributor,Sea,Low,Optimal,863,781.0,885.0,686,8.58,2183.37,884.5,2,5.46,88.48,90.5,0.98,83.89,19.05,81.16
+East,Electronics,Central,Local,Road,High,Overstocked,2034,2212.0,3767.0,1477,13.01,4721.05,5381.32,0,7.11,87.18,91.25,0.54,86.62,16.51,72.28
+East,Apparel,Regional,Distributor,Road,Low,Overstocked,281,280.0,493.0,210,4.73,362.06,339.9,1,3.54,94.78,99.64,0.57,92.81,8.21,90.61
+North,Electronics,Central,International,Air,High,Stockout Risk,1170,1267.0,1045.0,1267,24.19,5247.67,1186.66,3,9.78,70.69,91.71,1.12,73.32,37.51,60.91
+South,Home Goods,Local,Local,Air,Medium,Stockout Risk,1114,1133.0,755.0,806,14.74,2416.91,1145.75,4,5.06,93.66,98.29,1.48,83.87,28.76,83.04
+West,Apparel,Regional,Distributor,Air,Medium,Optimal,584,566.0,553.0,558,9.5,2495.77,748.12,2,4.62,79.9,96.92,1.06,84.83,17.4,79.63
+North,Industrial Supplies,Local,Distributor,Road,High,Overstocked,1578,1670.0,1887.0,1212,7.85,3090.31,2613.57,1,4.38,91.78,94.17,0.84,89.3,13.52,82.45
+East,FMCG,Regional,Local,Sea,Low,Optimal,1650,1575.0,2121.0,976,8.63,4716.57,1980.15,3,8.35,96.72,95.45,0.78,82.57,20.45,72.67
+North,Apparel,Regional,International,Air,Medium,Optimal,943,773.0,685.0,753,19.12,3885.22,1335.12,1,8.08,71.72,81.97,1.38,76.32,29.66,67.41
+North,Apparel,Local,Distributor,Road,Low,Optimal,643,636.0,772.0,717,17.64,857.17,1194.59,1,5.04,79.61,98.91,0.83,87.26,21.41,82.05
+North,Home Goods,Regional,Distributor,Air,Low,Optimal,822,868.0,1072.0,729,8.9,1986.13,1149.18,4,4.33,88.68,94.4,0.77,81.99,24.47,83.88
+South,Electronics,Regional,Distributor,Road,Medium,Optimal,1448,1337.0,1873.0,1242,16.66,3119.67,2107.69,1,11.44,87.62,92.33,0.77,80.56,23.06,67.03
+North,FMCG,Central,Local,Road,Medium,Optimal,2267,2174.0,2303.0,1762,4.9,5191.67,4672.68,1,3.84,77.52,95.9,0.98,86.88,9.87,74.96
+East,FMCG,Regional,International,Air,Medium,Overstocked,1704,1528.0,2702.0,852,11.1,7038.92,4645.71,0,4.37,72.15,89.67,0.63,85.05,15.23,68.51
+East,Industrial Supplies,Local,Local,Road,High,Stockout Risk,1455,1331.0,1530.0,1052,8.6,2003.26,2154.9,3,4.48,84.95,91.48,0.95,82.11,22.01,82.43
+West,FMCG,Local,Local,Road,Low,Overstocked,1040,1202.0,1555.0,741,9.76,2156.1,2328.23,1,3.18,79.6,84.42,0.67,84.04,19.32,83.11
+East,Industrial Supplies,Central,Local,Road,High,Overstocked,1279,1117.0,2044.0,934,17.76,1776.32,3188.95,1,10.28,82.93,87.33,0.63,78.8,26.16,70.69
+West,Home Goods,Regional,Local,Road,Medium,Stockout Risk,1178,1217.0,1195.0,885,4.41,2276.55,2268.15,3,2.7,77.01,96.69,0.99,83.73,15.73,83.05
+West,Industrial Supplies,Central,Local,Road,Medium,Optimal,830,909.0,833.0,590,9.2,1359.26,832.25,2,6.62,86.71,90.48,1.0,82.28,19.67,79.99
+East,FMCG,Regional,Local,Air,Low,Overstocked,978,998.0,1810.0,839,5.61,2079.14,2468.53,1,1.53,83.85,97.96,0.54,91.5,9.76,87.84
+West,Industrial Supplies,Regional,International,Sea,High,Stockout Risk,1530,1447.0,756.0,1258,15.34,2205.2,896.91,3,8.45,75.24,94.58,2.02,76.8,27.51,71.16
+West,FMCG,Central,Local,Road,Medium,Overstocked,1548,1559.0,3050.0,900,13.81,1557.25,4472.6,0,10.63,94.4,99.29,0.51,87.72,14.09,73.88
+North,Apparel,Regional,International,Road,Medium,Overstocked,1277,1331.0,1719.0,1099,13.41,1774.31,3368.03,1,4.67,83.65,95.77,0.74,87.54,18.43,82.13
+North,Apparel,Local,International,Road,Low,Optimal,846,1054.0,1089.0,1087,21.69,2017.45,962.52,1,11.77,71.25,75.41,0.78,70.21,34.86,63.71
+West,Industrial Supplies,Regional,Distributor,Air,Medium,Stockout Risk,1245,1070.0,1258.0,724,5.64,5145.63,1141.25,3,3.31,91.29,85.94,0.99,82.92,21.26,80.24
+North,Industrial Supplies,Regional,International,Road,Medium,Overstocked,631,698.0,814.0,496,7.93,1235.43,549.94,0,4.31,87.11,89.38,0.78,88.75,12.18,84.99
+East,FMCG,Central,Local,Sea,Low,Optimal,469,468.0,691.0,556,9.51,1103.86,1479.6,0,6.56,81.04,99.79,0.68,88.63,9.6,78.93
+South,FMCG,Local,International,Road,Medium,Optimal,1380,1313.0,1933.0,930,21.94,1212.68,1326.59,2,14.1,61.51,95.14,0.71,70.13,30.55,57.77
+South,Home Goods,Local,Distributor,Air,Low,Overstocked,1055,877.0,1836.0,568,4.41,3911.74,2580.61,1,2.05,97.64,83.13,0.57,89.23,14.49,87.19
+East,Industrial Supplies,Regional,Local,Sea,Low,Stockout Risk,415,460.0,381.0,549,17.07,968.66,447.49,4,8.41,68.86,89.16,1.09,71.12,34.74,71.86
+East,Industrial Supplies,Local,International,Road,Medium,Overstocked,511,534.0,1004.0,674,17.66,940.94,890.27,0,5.63,89.1,95.5,0.51,90.07,19.46,83.55
+North,FMCG,Central,Distributor,Road,Medium,Stockout Risk,2213,1864.0,2176.0,1283,6.66,1896.9,2568.18,2,3.97,69.39,84.23,1.02,78.41,19.63,79.0
+North,Home Goods,Central,International,Road,High,Optimal,1901,1855.0,1686.0,1552,23.65,3772.65,2719.14,0,12.41,64.18,97.58,1.13,77.79,24.62,56.72
+South,Electronics,Local,Distributor,Road,Low,Overstocked,677,651.0,1083.0,609,9.35,1463.94,1271.64,0,3.78,94.21,96.16,0.63,93.43,10.89,87.71
+South,Electronics,Local,Local,Road,Low,Optimal,469,367.0,537.0,365,11.18,894.31,887.54,2,4.54,94.38,78.25,0.87,82.0,26.55,87.4
+South,Electronics,Central,Distributor,Air,Medium,Optimal,719,653.0,504.0,593,15.59,1805.41,432.51,0,3.94,80.29,90.82,1.43,87.92,19.26,82.51
+East,Home Goods,Regional,Local,Sea,Low,Overstocked,988,934.0,1302.0,769,9.02,2088.4,1495.1,0,8.45,96.88,94.53,0.76,88.86,11.21,77.89
+West,Industrial Supplies,Regional,Distributor,Sea,Medium,Optimal,1099,1056.0,1204.0,813,17.86,2507.1,1858.78,1,12.65,86.37,96.09,0.91,80.35,22.76,65.48
+North,Electronics,Central,Distributor,Road,Low,Stockout Risk,672,677.0,355.0,680,10.25,1431.21,756.45,3,7.91,71.58,99.26,1.89,78.06,20.55,72.73
+West,Home Goods,Regional,Local,Road,High,Optimal,2639,2674.0,2388.0,1734,17.62,2635.16,3153.08,3,9.83,99.0,98.67,1.11,82.79,28.15,74.65
+East,Electronics,Local,International,Sea,Low,Optimal,755,762.0,718.0,691,21.77,1326.39,1232.78,1,8.43,69.81,99.07,1.05,81.47,25.47,71.37
+East,Apparel,Regional,Distributor,Sea,High,Optimal,2149,2365.0,1522.0,1248,18.93,3046.53,1229.72,1,9.49,80.32,89.95,1.41,79.85,26.28,68.89
+West,Apparel,Regional,Local,Air,Low,Stockout Risk,655,663.0,507.0,449,1.0,2489.63,919.22,4,1.0,85.5,98.78,1.29,86.06,14.82,88.56
+East,Industrial Supplies,Regional,Local,Sea,High,Overstocked,1478,1704.0,2147.0,1402,24.55,1839.85,2227.65,0,17.48,93.85,84.71,0.69,75.63,30.67,59.43
+West,Industrial Supplies,Regional,Local,Road,High,Overstocked,1298,1330.0,1594.0,1035,7.91,2466.25,3136.53,3,6.16,79.56,97.53,0.81,81.2,18.9,76.5
+North,Electronics,Regional,Local,Road,Low,Optimal,654,592.0,833.0,549,17.79,1316.28,1230.41,2,10.86,84.17,90.52,0.79,77.42,28.25,70.84
+West,Industrial Supplies,Local,Local,Air,Medium,Optimal,963,878.0,1297.0,532,6.85,2125.29,752.57,0,1.7,77.29,91.17,0.74,89.53,10.38,85.44
+East,Industrial Supplies,Local,Distributor,Sea,Low,Optimal,859,896.0,1109.0,1027,15.96,1477.39,1894.04,1,11.06,80.12,95.69,0.77,80.24,21.02,68.89
+South,Electronics,Local,Local,Sea,Low,Optimal,521,579.0,402.0,624,14.65,1504.82,554.29,0,10.76,88.72,88.87,1.3,82.52,19.1,72.02
+North,Industrial Supplies,Regional,International,Road,Medium,Stockout Risk,875,977.0,886.0,582,12.76,893.64,1556.12,5,6.07,83.28,88.34,0.99,74.56,34.09,81.02
+East,Electronics,Central,Local,Road,High,Stockout Risk,2702,3272.0,3428.0,1971,2.73,5475.59,7644.21,4,4.16,96.76,78.9,0.79,78.76,24.5,79.51
+South,Industrial Supplies,Central,Local,Road,Medium,Overstocked,1138,1322.0,1771.0,1027,16.72,1211.47,1406.5,0,5.94,77.96,83.83,0.64,82.89,23.19,79.03
+West,Industrial Supplies,Central,International,Road,Medium,Stockout Risk,871,825.0,545.0,624,13.67,1564.17,1112.38,3,6.24,76.22,94.72,1.6,79.3,25.78,77.19
+South,Apparel,Local,International,Sea,Medium,Optimal,1740,1610.0,2282.0,1326,16.16,5241.85,2128.59,1,7.97,81.89,92.53,0.76,82.67,22.48,67.91
+South,FMCG,Regional,Local,Road,Low,Optimal,972,866.0,813.0,636,3.47,2091.35,1200.69,1,2.74,98.8,89.09,1.2,90.92,11.17,89.88
+South,FMCG,Central,Local,Road,Low,Overstocked,1311,1392.0,1578.0,929,11.65,1414.58,2157.11,0,7.78,93.11,93.82,0.83,88.33,14.12,79.48
+West,Electronics,Regional,Local,Sea,High,Optimal,1659,1977.0,2040.0,1196,17.62,4445.26,2687.86,0,13.13,68.34,80.83,0.81,72.25,25.29,55.15
+North,Apparel,Central,International,Road,Low,Overstocked,749,646.0,1147.0,631,24.62,873.0,1029.49,1,16.19,92.16,86.25,0.65,74.82,33.45,63.48
+West,Electronics,Local,International,Road,Low,Overstocked,577,592.0,642.0,498,10.86,1064.21,1111.69,0,4.54,67.35,97.4,0.9,86.39,11.9,78.95
+West,Apparel,Local,Local,Air,Medium,Optimal,1698,1855.0,1893.0,1244,8.98,8741.52,1733.82,1,3.62,77.1,90.75,0.9,85.2,16.01,68.01
+South,Industrial Supplies,Local,Local,Sea,Medium,Optimal,1020,1005.0,1113.0,1083,21.19,2756.3,719.04,1,10.62,96.52,98.53,0.92,85.77,25.11,72.08
+North,Industrial Supplies,Local,Local,Sea,High,Optimal,996,796.0,1210.0,686,15.68,2077.64,1823.96,0,8.2,99.0,79.92,0.82,84.52,23.71,79.05
+North,Home Goods,Regional,Distributor,Sea,Medium,Optimal,1378,1194.0,1027.0,731,7.53,4555.35,1605.08,3,6.71,96.78,86.65,1.34,81.15,22.87,76.3
+West,Home Goods,Regional,Local,Air,High,Optimal,1413,1755.0,2022.0,1114,1.0,3876.0,3885.31,0,1.0,92.31,75.8,0.7,88.61,10.68,87.77
+South,Apparel,Regional,International,Sea,High,Optimal,1635,1474.0,2339.0,1377,12.04,4325.76,3991.9,0,8.68,61.83,90.15,0.7,78.33,15.98,62.34
+South,Electronics,Central,Distributor,Air,High,Overstocked,776,612.0,1005.0,351,3.29,2704.21,1469.33,1,1.0,67.42,78.87,0.77,81.24,15.08,82.7
+North,FMCG,Local,International,Air,High,Stockout Risk,2235,2149.0,920.0,1828,7.36,6026.85,1633.46,4,1.0,74.55,96.15,2.43,82.4,22.23,78.04
+West,FMCG,Regional,International,Road,High,Stockout Risk,2282,2823.0,1475.0,2499,12.66,2555.96,2362.17,5,9.34,69.04,76.29,1.55,63.51,38.81,66.8
+East,FMCG,Central,Local,Air,Low,Optimal,1972,1661.0,2607.0,848,2.58,4199.0,3570.76,3,2.24,73.39,84.23,0.76,78.92,18.89,78.95
+West,Home Goods,Regional,Distributor,Road,Medium,Optimal,725,656.0,897.0,408,3.65,1274.91,1488.6,1,5.01,94.44,90.48,0.81,88.05,10.79,85.7
+West,FMCG,Regional,Distributor,Air,Low,Overstocked,1165,1348.0,1319.0,794,8.55,3656.31,1235.51,0,2.43,77.39,84.29,0.88,86.42,14.83,80.88
+North,Home Goods,Central,Local,Road,Medium,Stockout Risk,1114,1199.0,735.0,915,10.86,1930.23,828.84,4,7.58,83.85,92.37,1.52,76.82,27.25,76.05
+North,Home Goods,Central,Distributor,Road,Medium,Overstocked,1145,1069.0,1955.0,736,11.24,2542.33,1862.93,2,6.5,69.83,93.36,0.59,79.19,20.56,72.75
+West,Home Goods,Central,Distributor,Road,Low,Overstocked,64,66.0,106.0,141,12.2,137.24,76.18,3,7.89,92.7,96.88,0.6,82.53,23.45,81.75
+East,Industrial Supplies,Central,Local,Road,Medium,Stockout Risk,926,802.0,456.0,530,12.17,2066.29,610.91,3,9.68,90.16,86.61,2.03,76.51,27.53,73.46
+West,FMCG,Local,Distributor,Road,Medium,Overstocked,1830,1944.0,3652.0,1443,17.92,2664.1,3928.06,0,10.18,86.64,93.77,0.5,84.3,20.41,70.18
+North,FMCG,Central,Distributor,Road,Medium,Stockout Risk,1672,1980.0,1662.0,1562,13.59,1917.05,1998.98,2,9.09,78.97,81.58,1.01,74.76,27.63,71.59
+North,Apparel,Central,Local,Sea,Medium,Optimal,1368,1481.0,1059.0,1114,22.99,2752.87,1495.81,3,13.09,93.56,91.74,1.29,75.74,36.29,66.26
+South,FMCG,Central,Distributor,Sea,Low,Optimal,1165,946.0,1559.0,763,16.61,1826.81,1893.25,2,13.47,87.64,81.2,0.75,72.42,30.8,65.62
+North,Apparel,Regional,Local,Air,Medium,Overstocked,754,867.0,1055.0,712,15.92,3839.94,2073.5,0,8.2,72.08,85.01,0.71,79.57,21.91,67.37
+South,Electronics,Regional,International,Road,Medium,Optimal,1987,2401.0,2348.0,1597,11.25,1727.85,4152.6,2,3.65,64.46,79.16,0.85,75.73,26.25,78.5
+West,Apparel,Local,Local,Road,Low,Stockout Risk,712,615.0,397.0,669,13.73,1250.97,275.74,2,4.82,90.29,86.38,1.79,83.54,25.85,84.89
+West,Apparel,Local,International,Air,Medium,Optimal,732,682.0,934.0,708,15.47,3858.64,623.68,0,2.57,72.7,93.17,0.78,88.21,18.2,78.78
+South,Apparel,Central,Local,Road,High,Overstocked,3117,3493.0,4020.0,2123,15.93,6596.56,5093.1,0,9.56,70.94,87.94,0.78,78.95,20.76,58.67
+North,Electronics,Central,Local,Road,Medium,Overstocked,1011,1127.0,1487.0,856,11.09,1686.15,3211.49,0,7.29,99.0,88.53,0.68,88.45,15.68,81.67
+West,Apparel,Regional,Local,Road,Low,Optimal,503,509.0,733.0,401,7.61,789.04,681.54,0,5.91,89.36,98.81,0.69,91.01,8.09,83.37
+East,FMCG,Central,Local,Road,Medium,Stockout Risk,2681,2544.0,2393.0,1747,16.43,6111.92,5020.74,3,6.44,91.51,94.89,1.12,82.98,28.47,72.07
+West,Home Goods,Central,Distributor,Sea,Medium,Optimal,1452,1764.0,1596.0,1591,14.21,2714.08,1651.4,1,9.74,87.27,78.51,0.91,77.33,26.14,71.15
+North,Home Goods,Regional,International,Sea,Medium,Optimal,1200,1201.0,1673.0,1440,28.44,2808.62,2271.93,1,20.0,72.81,99.92,0.72,70.95,31.81,46.1
+North,FMCG,Central,Distributor,Sea,Low,Optimal,1006,1134.0,870.0,1071,21.68,3113.62,1135.16,0,10.72,94.24,87.28,1.16,83.39,26.77,70.46
+West,Electronics,Regional,Local,Road,Medium,Optimal,489,471.0,357.0,463,10.29,624.93,645.59,0,4.79,76.86,96.32,1.37,88.14,11.76,82.2
+West,Electronics,Regional,Local,Road,High,Overstocked,1942,1971.0,3067.0,1750,6.53,2995.03,2389.65,1,3.76,77.72,98.51,0.63,87.93,10.46,79.67
+West,Home Goods,Regional,International,Road,Low,Stockout Risk,505,482.0,256.0,514,18.76,1004.08,489.08,1,7.79,81.98,95.45,1.97,83.89,23.92,76.96
+East,Electronics,Local,Local,Air,Medium,Overstocked,1416,1390.0,1713.0,827,9.74,6358.78,1807.12,0,4.96,72.72,98.16,0.83,87.58,10.47,68.89
+South,Industrial Supplies,Regional,Local,Sea,Medium,Overstocked,939,995.0,1795.0,862,15.78,2254.51,3489.86,0,8.81,73.75,94.04,0.52,82.54,18.17,69.89
+South,Electronics,Central,Distributor,Sea,Low,Overstocked,891,931.0,1599.0,920,19.16,1286.57,2074.16,0,10.16,78.58,95.51,0.56,82.91,20.96,70.62
+South,Electronics,Local,International,Sea,Medium,Optimal,1268,1523.0,1435.0,1359,26.49,3125.14,1078.59,0,12.61,83.6,79.89,0.88,76.25,34.53,63.47
+South,Electronics,Central,Local,Road,Medium,Optimal,1570,1627.0,1665.0,1235,5.13,2368.09,3051.3,4,4.84,99.0,96.37,0.94,84.75,19.92,85.18
+North,Electronics,Local,Distributor,Road,Low,Stockout Risk,870,1026.0,832.0,871,6.95,2086.25,1341.44,4,2.38,85.67,82.07,1.05,78.87,27.46,86.67
+West,Industrial Supplies,Regional,Local,Road,Medium,Optimal,1371,1276.0,1668.0,1009,3.11,1139.53,1377.86,1,1.9,77.05,93.07,0.82,87.71,9.22,86.98
+North,FMCG,Central,Distributor,Road,Medium,Stockout Risk,1015,1228.0,681.0,1081,12.82,1085.29,1238.39,1,4.6,78.02,79.01,1.49,80.34,24.55,81.99
+South,FMCG,Regional,International,Sea,Low,Stockout Risk,1205,1331.0,839.0,1159,24.27,1449.22,897.95,4,12.44,87.26,89.54,1.44,71.83,41.79,68.33
+East,Apparel,Local,International,Road,High,Optimal,1734,1568.0,1579.0,1534,17.86,4048.86,1423.66,3,9.08,70.31,90.43,1.1,73.48,31.69,64.65
+North,Apparel,Central,International,Road,Low,Stockout Risk,586,489.0,421.0,531,16.56,1380.89,710.43,3,12.73,83.45,83.45,1.39,70.67,33.18,66.75
+North,Electronics,Local,International,Road,Medium,Stockout Risk,1172,1090.0,867.0,1055,23.51,1251.55,1393.48,1,12.47,85.12,93.0,1.35,79.14,29.64,68.04
+South,Industrial Supplies,Central,International,Road,High,Optimal,870,932.0,1204.0,583,9.02,1174.69,1498.98,1,7.81,69.27,92.87,0.72,79.79,15.2,72.76
+East,Apparel,Regional,International,Sea,Low,Optimal,760,720.0,658.0,492,18.99,2179.72,977.35,1,9.2,83.61,94.74,1.16,82.64,24.43,72.23
+North,FMCG,Central,International,Road,Medium,Overstocked,1893,1907.0,2849.0,1721,21.3,3898.95,4290.98,0,13.25,77.33,99.26,0.66,80.82,21.6,58.73
+West,FMCG,Central,Local,Sea,High,Optimal,2685,2311.0,2015.0,1465,11.93,6264.64,3019.6,3,10.41,78.66,86.07,1.33,72.71,27.5,59.97
+East,FMCG,Local,International,Road,Low,Stockout Risk,1366,1669.0,700.0,1369,21.29,1172.04,953.24,1,8.32,73.23,77.82,1.95,75.0,33.5,72.93
+East,Industrial Supplies,Central,Local,Road,Medium,Optimal,1192,1139.0,944.0,719,6.44,1516.82,1365.29,3,4.9,99.0,95.55,1.26,86.63,18.22,86.8
+East,Industrial Supplies,Local,Distributor,Sea,Medium,Optimal,425,432.0,516.0,375,9.94,655.6,510.94,2,4.81,80.57,98.35,0.82,85.31,17.27,83.21
+South,Electronics,Regional,Local,Road,High,Optimal,1606,1983.0,1190.0,988,4.55,2243.99,1214.21,2,4.17,80.17,76.53,1.35,78.21,20.61,81.12
+North,Apparel,Regional,Local,Sea,Medium,Overstocked,1431,1341.0,2628.0,791,18.09,4028.88,3776.65,2,12.91,80.09,93.71,0.54,75.47,27.27,59.97
+East,Apparel,Central,International,Sea,Low,Stockout Risk,824,780.0,476.0,777,22.86,1561.07,960.41,3,16.77,61.19,94.66,1.73,64.99,35.0,51.62
+East,Home Goods,Central,Local,Road,Medium,Overstocked,1901,2033.0,2930.0,1331,4.37,2760.32,2994.08,0,3.46,79.18,93.06,0.65,88.91,7.15,81.19
+North,FMCG,Local,Local,Sea,Medium,Optimal,874,1031.0,1192.0,1069,23.5,1329.98,1029.17,1,11.82,74.15,82.04,0.73,73.21,34.02,65.88
+North,Electronics,Regional,Local,Sea,High,Stockout Risk,1452,1504.0,1509.0,1236,19.67,2655.94,1750.7,4,11.41,93.35,96.42,0.96,76.79,34.44,69.75
+West,Home Goods,Central,Distributor,Road,Medium,Optimal,942,904.0,784.0,841,4.66,1221.09,1258.0,2,4.72,73.27,95.97,1.2,82.74,12.94,80.04
+West,Home Goods,Local,International,Sea,Medium,Optimal,1689,1402.0,1492.0,1173,26.35,1919.61,1585.15,1,16.34,88.8,83.01,1.13,72.69,36.48,60.03
+South,FMCG,Local,Local,Air,Medium,Stockout Risk,1395,1392.0,691.0,785,8.66,3525.67,1029.05,1,3.24,80.73,99.78,2.02,89.64,12.08,80.53
+South,Home Goods,Regional,Distributor,Road,High,Stockout Risk,1578,1523.0,1257.0,1332,3.05,2750.34,1841.49,2,1.36,67.01,96.51,1.26,84.73,11.11,81.76
+South,Industrial Supplies,Regional,Distributor,Air,Low,Overstocked,872,948.0,1075.0,781,8.16,4708.48,1516.94,2,1.84,96.54,91.28,0.81,89.8,18.31,85.65
+West,FMCG,Local,Local,Road,Low,Overstocked,451,403.0,692.0,499,14.24,545.32,1032.76,1,5.26,96.37,89.36,0.65,87.89,21.83,87.28
+East,Apparel,Regional,International,Road,Low,Optimal,1210,1165.0,1268.0,810,11.45,1691.41,1359.2,0,7.75,82.72,96.28,0.95,86.63,12.94,75.86
+East,Home Goods,Regional,International,Road,Low,Stockout Risk,673,650.0,519.0,872,19.8,786.19,461.52,3,7.86,67.06,96.58,1.3,76.04,31.17,72.79
+North,FMCG,Central,Local,Road,Low,Stockout Risk,1062,1062.0,639.0,590,2.98,1549.7,1029.69,6,2.06,97.31,100.0,1.66,83.93,22.98,91.9
+East,FMCG,Central,International,Air,Medium,Stockout Risk,2311,2601.0,1751.0,1648,10.32,7571.59,1948.72,4,3.5,81.88,87.45,1.32,78.69,28.67,72.08
+South,Industrial Supplies,Local,Local,Sea,Medium,Overstocked,1540,1875.0,2665.0,1609,19.33,3659.26,4735.35,1,9.63,91.04,78.25,0.58,78.3,31.36,70.57
+East,Industrial Supplies,Regional,International,Sea,Medium,Stockout Risk,844,903.0,511.0,848,18.0,1688.13,546.28,5,10.78,69.25,93.01,1.65,67.97,37.46,65.76
+East,FMCG,Regional,International,Road,High,Optimal,2548,2968.0,3206.0,1741,23.39,3416.75,2564.35,2,15.48,82.11,83.52,0.79,69.84,36.65,56.69
+East,Apparel,Regional,Distributor,Road,Medium,Overstocked,1262,1188.0,1650.0,787,12.55,2046.3,2095.3,3,10.2,76.22,94.14,0.76,75.14,24.9,68.28
+West,FMCG,Regional,Distributor,Road,Low,Optimal,461,471.0,678.0,394,4.54,586.56,511.73,1,3.1,82.91,97.83,0.68,89.65,8.74,87.47
+North,Industrial Supplies,Regional,Local,Road,High,Overstocked,1267,1178.0,2344.0,1093,12.16,1657.36,2418.12,1,5.74,90.02,92.98,0.54,87.09,18.3,82.14
+West,Electronics,Local,Local,Road,Low,Optimal,864,782.0,1130.0,701,8.37,1811.81,1623.61,0,5.8,84.47,90.51,0.76,87.0,12.17,80.04
+South,Home Goods,Central,International,Sea,Medium,Optimal,726,931.0,862.0,1013,18.19,1666.16,1167.77,3,10.41,88.44,71.76,0.84,70.15,39.48,72.3
+South,FMCG,Central,Distributor,Sea,Medium,Optimal,711,721.0,531.0,694,15.54,2181.05,743.48,2,12.77,74.79,98.59,1.34,75.99,22.77,62.44
+East,Home Goods,Central,Distributor,Road,Low,Optimal,546,580.0,386.0,515,6.15,1263.16,838.96,1,3.79,88.52,93.77,1.41,88.94,11.97,86.39
+South,Home Goods,Central,Local,Road,Medium,Optimal,1207,1046.0,1212.0,1063,17.39,1841.69,1173.0,1,9.08,70.85,86.66,1.0,76.74,26.06,69.33
+East,FMCG,Local,Local,Sea,Medium,Optimal,1724,1851.0,2548.0,1101,16.57,3658.01,2209.4,4,12.4,93.15,92.63,0.68,74.42,32.85,65.66
+North,FMCG,Regional,Local,Road,High,Stockout Risk,3155,2997.0,2141.0,2642,9.76,6125.69,2823.65,3,7.7,83.85,94.99,1.47,79.84,21.76,67.23
+West,Electronics,Central,International,Road,Medium,Stockout Risk,1164,1309.0,914.0,964,10.18,2566.66,1260.04,5,7.65,88.08,87.54,1.27,73.9,31.83,75.87
+South,FMCG,Local,Local,Road,Low,Stockout Risk,1020,904.0,555.0,845,8.07,2031.03,821.01,3,2.13,75.59,88.63,1.84,81.12,22.62,84.26
+West,Apparel,Central,Local,Sea,Medium,Optimal,1697,1288.0,1839.0,1140,19.3,5297.3,2081.23,0,12.71,86.63,75.9,0.92,75.51,28.94,59.74
+West,Industrial Supplies,Central,Local,Air,Low,Overstocked,679,757.0,801.0,560,11.43,2333.22,1068.53,1,5.1,69.14,88.51,0.85,80.94,19.36,75.77
+South,Home Goods,Regional,Local,Road,Medium,Stockout Risk,670,692.0,731.0,374,6.96,1233.21,1092.7,5,4.47,76.91,96.72,0.92,77.5,24.94,81.61
+South,Industrial Supplies,Regional,Local,Air,Low,Optimal,506,334.0,429.0,388,12.71,2046.33,716.29,1,8.06,99.0,66.01,1.18,77.57,29.64,79.39
+East,Apparel,Regional,Local,Sea,High,Optimal,1937,1827.0,2155.0,1158,14.01,2575.25,2665.79,2,9.17,93.74,94.32,0.9,82.83,22.95,74.52
+West,Home Goods,Regional,International,Road,Medium,Optimal,1331,1332.0,1573.0,1387,22.86,2931.94,1239.03,4,11.25,63.98,99.92,0.85,70.83,36.22,60.7
+North,Industrial Supplies,Central,Distributor,Road,Medium,Stockout Risk,742,605.0,572.0,468,4.05,1029.44,1277.48,5,5.05,66.51,81.54,1.3,69.01,28.1,77.75
+South,Apparel,Local,Distributor,Road,High,Stockout Risk,1635,1807.0,827.0,1461,13.9,2215.55,1149.58,2,7.16,97.25,89.48,1.98,84.03,24.77,80.32
+North,Home Goods,Regional,Distributor,Sea,Medium,Overstocked,931,732.0,1770.0,827,23.06,1990.28,1995.11,0,15.88,76.76,78.63,0.53,70.83,31.61,57.2
+North,Electronics,Local,Local,Road,Low,Optimal,590,522.0,639.0,552,17.07,1183.47,758.34,2,5.12,68.54,88.47,0.92,78.54,28.35,77.9
+South,Apparel,Regional,International,Road,Low,Optimal,608,450.0,727.0,561,10.14,629.74,780.6,1,7.3,84.35,74.01,0.84,77.47,23.87,79.42
+West,FMCG,Regional,Local,Sea,Medium,Optimal,2086,2080.0,1557.0,1829,18.9,6688.5,2649.83,0,13.25,94.5,99.71,1.34,85.27,19.02,58.17
+West,Home Goods,Local,Local,Road,Medium,Optimal,2082,2003.0,2427.0,1747,17.89,4814.24,1864.9,1,10.52,84.84,96.21,0.86,82.14,22.74,64.57
+South,Industrial Supplies,Local,Local,Road,Medium,Overstocked,863,717.0,972.0,717,13.13,1412.42,692.32,1,7.9,90.53,83.08,0.89,81.59,23.23,78.47
+South,Electronics,Regional,Local,Sea,Medium,Optimal,1503,1536.0,1868.0,1106,17.83,4183.47,2109.52,2,10.45,79.6,97.8,0.8,79.24,25.37,64.42
+North,Apparel,Regional,Distributor,Sea,High,Overstocked,2251,2040.0,2775.0,1526,23.61,6974.75,3242.23,2,10.42,68.23,90.63,0.81,73.91,34.03,55.36
+North,Home Goods,Local,Local,Road,High,Optimal,1182,1129.0,1273.0,852,2.29,2156.3,999.57,1,2.46,86.92,95.52,0.93,90.48,7.42,86.75
+East,Home Goods,Central,International,Air,High,Optimal,1945,2147.0,1905.0,1237,10.93,4115.36,1513.26,1,7.37,88.6,89.61,1.02,83.92,18.42,73.42
+South,Apparel,Regional,International,Sea,Low,Stockout Risk,877,927.0,990.0,853,21.11,1199.81,850.32,1,16.12,82.32,94.3,0.89,75.24,26.72,60.0
+North,Industrial Supplies,Local,Distributor,Road,High,Optimal,1898,2180.0,2194.0,2056,16.37,2885.97,3254.0,1,6.31,78.89,85.14,0.87,80.99,25.65,75.14
+North,Electronics,Local,Distributor,Sea,Low,Stockout Risk,1333,1545.0,1074.0,1252,9.24,2343.0,766.45,2,6.04,71.94,84.1,1.24,76.94,22.27,74.71
+West,Home Goods,Regional,Local,Sea,Low,Overstocked,1144,994.0,1529.0,884,15.86,1600.19,1985.69,1,10.69,68.45,86.89,0.75,74.61,24.44,65.88
+West,Industrial Supplies,Regional,International,Road,Medium,Overstocked,617,641.0,750.0,672,20.23,1408.4,776.88,0,7.3,71.1,96.11,0.82,84.11,21.79,73.85
+West,Home Goods,Central,Local,Road,Medium,Stockout Risk,739,554.0,586.0,551,13.42,786.63,1288.53,2,4.52,78.62,74.97,1.26,76.93,30.1,82.94
+West,Electronics,Regional,Local,Air,Low,Optimal,691,590.0,675.0,489,1.9,1353.47,1209.34,0,1.0,94.55,85.38,1.02,92.52,7.75,93.6
+East,Apparel,Central,International,Road,High,Optimal,2012,2237.0,1611.0,1479,20.5,4518.01,1140.86,5,8.91,63.67,88.82,1.25,66.98,41.64,62.04
+North,Apparel,Regional,Local,Sea,Medium,Overstocked,1691,1335.0,2515.0,1210,21.11,2908.18,2164.0,2,9.31,99.0,78.95,0.67,78.63,36.2,75.13
+South,FMCG,Local,International,Road,High,Stockout Risk,1546,1207.0,1052.0,790,12.44,2501.81,1617.94,4,6.75,72.79,78.07,1.47,69.88,34.54,73.22
+North,Electronics,Central,Local,Sea,Medium,Optimal,745,694.0,635.0,808,20.99,1978.53,1193.27,0,9.78,97.69,93.15,1.17,87.24,23.73,75.7
+West,Home Goods,Local,Distributor,Road,High,Overstocked,1983,2249.0,3435.0,1741,7.02,3640.49,3375.06,0,1.67,71.42,86.59,0.58,86.49,12.39,80.64
+West,Home Goods,Local,International,Road,High,Overstocked,1325,1141.0,2051.0,897,8.14,2939.68,3050.34,1,3.3,79.2,86.11,0.65,84.42,17.03,81.15
+West,Industrial Supplies,Regional,Distributor,Sea,Low,Stockout Risk,707,765.0,389.0,693,21.4,1271.95,247.04,1,16.57,89.68,91.8,1.82,75.76,28.01,61.16
+East,FMCG,Regional,Local,Road,Medium,Stockout Risk,399,370.0,223.0,226,2.76,489.68,141.43,3,3.36,77.87,92.73,1.79,81.9,15.67,85.64
+North,Apparel,Regional,Distributor,Road,Medium,Optimal,935,964.0,995.0,737,2.49,1527.16,1155.51,1,3.06,84.25,96.9,0.94,89.7,7.06,86.03
+North,FMCG,Regional,International,Road,High,Overstocked,3246,3036.0,4364.0,1740,13.81,6504.24,8487.52,0,6.4,62.69,93.53,0.74,82.01,16.4,62.7
+East,Electronics,Central,International,Road,Low,Stockout Risk,570,476.0,542.0,368,14.22,882.34,453.93,2,7.22,85.01,83.51,1.05,78.82,27.48,79.26
+West,Apparel,Local,International,Road,Medium,Optimal,1380,1167.0,1967.0,977,24.77,1320.31,2542.97,3,12.73,86.51,84.57,0.7,71.83,40.94,67.79
+East,FMCG,Central,Local,Road,Medium,Overstocked,2007,1975.0,2467.0,1676,15.67,4140.98,2328.71,0,10.68,83.22,98.41,0.81,84.57,16.31,65.14
+North,FMCG,Central,Local,Road,High,Overstocked,2164,2352.0,4034.0,1973,17.76,3309.27,6136.52,0,6.84,95.42,91.31,0.54,88.97,21.24,78.18
+East,FMCG,Regional,Distributor,Sea,Low,Optimal,898,825.0,1152.0,613,10.55,2645.39,2045.2,3,6.81,94.78,91.87,0.78,82.37,23.8,79.4
+East,FMCG,Regional,International,Road,Medium,Overstocked,1784,1623.0,2744.0,1380,19.56,1985.83,3883.71,1,12.26,67.05,90.98,0.65,74.12,26.5,61.53
+West,Industrial Supplies,Local,International,Sea,Low,Stockout Risk,908,784.0,936.0,816,25.41,2532.77,690.09,1,16.26,91.74,86.34,0.97,74.67,34.21,59.82
+North,FMCG,Central,Local,Road,Low,Overstocked,707,619.0,855.0,669,14.78,828.0,1475.27,2,6.91,82.34,87.55,0.83,79.87,26.43,79.19
+South,FMCG,Local,International,Road,Medium,Optimal,1942,1934.0,2000.0,1721,9.0,4499.71,2897.96,2,5.34,80.18,99.59,0.97,85.12,15.83,74.17
+North,FMCG,Regional,Local,Sea,Low,Optimal,1494,1304.0,2172.0,1174,7.49,4549.33,2406.44,1,5.13,94.38,87.28,0.69,86.79,15.91,78.75
+South,Home Goods,Central,Local,Air,Low,Overstocked,636,505.0,713.0,405,5.11,1494.68,622.09,0,1.28,86.2,79.4,0.89,88.06,13.35,90.24
+North,FMCG,Regional,Distributor,Sea,Medium,Optimal,1342,1524.0,1839.0,823,8.42,4043.01,1922.58,1,9.55,95.45,86.44,0.73,82.34,17.18,71.27
+North,Electronics,Central,Local,Road,High,Optimal,1227,1213.0,1614.0,1105,6.06,2688.66,1862.54,0,5.12,79.41,98.86,0.76,89.33,6.52,78.08
+West,Industrial Supplies,Regional,International,Road,Medium,Overstocked,260,251.0,430.0,364,14.64,360.05,809.5,0,9.17,66.97,96.54,0.6,81.36,16.02,71.01
+East,Home Goods,Local,Distributor,Road,Medium,Optimal,1398,1573.0,1302.0,1167,2.84,2792.56,746.58,2,1.0,73.76,87.48,1.07,83.61,14.51,84.42
+North,Apparel,Local,International,Sea,Low,Overstocked,1549,1886.0,1648.0,1743,16.57,5150.81,972.16,0,7.58,68.04,78.24,0.94,76.81,25.27,64.72
+North,Apparel,Local,International,Sea,Low,Optimal,611,709.0,758.0,756,21.72,1732.53,829.53,1,16.1,61.58,83.96,0.81,66.46,31.47,52.73
+South,FMCG,Regional,International,Road,Medium,Stockout Risk,2338,2519.0,2622.0,2074,13.24,5297.63,1772.36,4,9.46,92.81,92.26,0.89,77.14,29.67,68.09
+East,Home Goods,Regional,Local,Sea,Medium,Stockout Risk,1783,1581.0,1027.0,1069,15.47,2256.58,1708.8,6,12.46,79.34,88.67,1.74,65.08,40.0,64.27
+North,Electronics,Local,Local,Road,Medium,Stockout Risk,1591,1715.0,761.0,1370,6.35,2750.7,905.53,2,2.21,78.27,92.21,2.09,85.19,16.13,83.44
+West,Industrial Supplies,Local,Local,Sea,Medium,Optimal,824,894.0,974.0,982,18.73,1038.38,1282.25,2,8.82,72.37,91.5,0.85,76.85,28.79,71.95
+South,Apparel,Local,Distributor,Air,Low,Optimal,652,653.0,838.0,591,12.08,2480.14,856.81,3,5.55,75.77,99.85,0.78,81.67,22.14,76.56
+North,FMCG,Local,Distributor,Sea,High,Optimal,3107,3182.0,2621.0,2496,7.89,7276.4,3491.51,0,5.55,97.92,97.59,1.19,93.09,8.86,73.39
+East,Apparel,Local,Distributor,Road,Low,Optimal,1293,997.0,1223.0,622,3.87,2349.68,825.84,0,3.07,79.85,77.11,1.06,83.88,13.03,83.01
+North,FMCG,Regional,Local,Road,Low,Overstocked,1107,1227.0,1612.0,837,12.51,1267.22,1785.55,1,4.58,76.71,89.16,0.69,83.58,20.18,81.26
+North,Industrial Supplies,Central,Local,Road,Low,Stockout Risk,674,633.0,248.0,683,17.12,671.43,432.38,4,10.04,84.6,93.92,2.72,75.09,32.89,73.93
+East,Home Goods,Central,Local,Road,Low,Optimal,576,503.0,431.0,461,8.64,733.04,823.3,0,4.76,92.08,87.33,1.34,88.83,13.71,86.6
+South,Industrial Supplies,Local,International,Sea,Medium,Optimal,417,438.0,420.0,601,17.09,515.86,562.41,2,11.52,70.38,94.96,0.99,74.87,25.77,67.02
+South,Apparel,Local,Distributor,Sea,High,Overstocked,1792,1809.0,2983.0,1720,17.54,4499.02,1743.07,0,10.97,75.33,99.05,0.6,82.53,17.92,61.46
+South,Industrial Supplies,Central,Local,Air,Medium,Stockout Risk,751,564.0,778.0,391,11.27,2798.62,686.56,4,6.53,88.04,75.1,0.97,72.88,34.56,77.63
+East,Home Goods,Regional,Local,Road,High,Stockout Risk,572,510.0,442.0,572,13.1,567.13,368.05,3,4.63,94.64,89.16,1.29,83.57,27.44,87.97
+North,Electronics,Local,Local,Road,Low,Overstocked,602,637.0,852.0,433,8.33,1174.74,678.55,0,2.9,83.85,94.19,0.71,91.03,10.66,86.95
+North,Home Goods,Central,Distributor,Sea,Medium,Stockout Risk,1311,1322.0,902.0,1105,14.07,4140.93,1393.94,4,8.6,85.07,99.16,1.45,78.48,27.74,69.85
+West,Home Goods,Regional,Local,Road,Medium,Stockout Risk,988,803.0,1218.0,778,10.82,813.51,1914.38,7,5.77,94.3,81.28,0.81,70.7,41.64,85.09
+West,Apparel,Local,International,Road,Medium,Stockout Risk,1667,1838.0,983.0,1627,17.6,2003.29,1091.85,2,9.04,66.46,89.74,1.7,74.54,28.37,67.76
+West,FMCG,Local,Local,Sea,Medium,Overstocked,1480,1295.0,1791.0,1331,21.12,3069.88,2480.04,1,10.77,86.88,87.5,0.83,79.35,29.45,68.25
+South,Electronics,Regional,Distributor,Road,Medium,Stockout Risk,1231,1157.0,1112.0,1014,15.35,1162.61,1353.96,3,9.23,86.73,93.99,1.11,78.68,27.75,75.18
+South,Home Goods,Regional,Local,Air,High,Optimal,982,1050.0,902.0,835,6.84,2358.22,878.53,1,4.46,72.26,93.08,1.09,83.96,12.94,77.94
+South,Home Goods,Regional,Local,Air,Low,Overstocked,837,785.0,1002.0,481,3.41,2783.22,933.41,1,2.5,88.1,93.79,0.84,90.13,9.23,85.74
+West,Home Goods,Central,International,Road,Medium,Optimal,1046,1094.0,1428.0,824,10.51,2504.24,1116.99,4,5.63,67.91,95.41,0.73,75.85,25.68,73.99
+West,FMCG,Regional,Local,Road,Low,Overstocked,1276,1205.0,2007.0,899,6.41,1710.44,3422.09,0,3.83,75.95,94.44,0.64,88.21,8.64,81.63
+South,FMCG,Regional,Local,Road,High,Optimal,1249,861.0,1657.0,862,16.5,1284.01,2771.21,0,11.11,92.18,68.94,0.75,76.06,28.93,72.81
+North,Home Goods,Regional,Local,Road,Medium,Overstocked,895,760.0,1156.0,510,8.75,1762.08,1796.53,1,4.34,75.6,84.92,0.77,82.06,18.12,80.4
+East,FMCG,Regional,Local,Road,Low,Overstocked,710,877.0,1408.0,656,3.07,1098.68,1892.17,0,2.35,69.56,76.48,0.5,81.81,12.48,83.92
+West,Home Goods,Local,Local,Sea,Low,Optimal,858,904.0,1244.0,692,16.03,1889.0,889.52,0,11.24,93.16,94.64,0.69,85.17,18.17,71.6
+West,Electronics,Regional,Local,Road,Low,Optimal,723,728.0,828.0,553,11.32,1683.66,724.06,2,6.84,70.96,99.31,0.87,81.21,18.26,74.16
+West,FMCG,Local,Local,Road,High,Stockout Risk,2224,2486.0,882.0,1971,11.28,2936.42,839.64,1,5.62,77.56,88.22,2.52,82.42,19.33,76.02
+North,FMCG,Local,International,Air,Medium,Overstocked,1463,1438.0,2298.0,1066,16.48,7009.51,3914.56,1,7.28,65.96,98.29,0.64,81.39,20.5,60.89
+West,Home Goods,Local,International,Sea,Medium,Overstocked,1254,1246.0,1785.0,1086,18.48,4163.32,1099.27,1,10.1,75.73,99.36,0.7,81.39,22.07,64.0
+East,FMCG,Local,Distributor,Road,Medium,Overstocked,2731,3010.0,4724.0,2643,15.3,5626.93,8009.92,0,5.84,91.67,89.78,0.58,88.5,19.39,74.31
+West,FMCG,Regional,International,Sea,Medium,Optimal,606,458.0,582.0,603,25.03,1606.38,562.93,5,12.83,90.0,75.58,1.04,65.01,51.47,68.05
+West,Electronics,Regional,Distributor,Road,Medium,Overstocked,1637,1726.0,2543.0,1496,5.52,1339.74,1728.58,0,5.68,73.31,94.56,0.64,85.74,7.69,77.89
+South,Apparel,Central,International,Sea,Medium,Stockout Risk,1784,1512.0,938.0,1042,25.32,3134.16,2105.68,6,12.54,66.77,84.75,1.9,60.48,51.42,58.54
+East,Industrial Supplies,Local,Local,Road,Medium,Overstocked,753,718.0,1336.0,791,17.02,656.29,860.2,1,5.27,82.81,95.35,0.56,86.58,22.21,82.96
+North,Home Goods,Central,Distributor,Sea,Medium,Optimal,680,537.0,571.0,584,18.17,1018.06,1075.61,0,13.09,78.72,78.97,1.19,74.23,26.58,65.35
+North,FMCG,Local,International,Sea,Low,Overstocked,1302,1437.0,1949.0,1173,23.75,4130.22,1877.16,0,11.91,93.16,89.63,0.67,82.75,27.9,65.68
+West,Apparel,Local,International,Road,Low,Optimal,604,576.0,602.0,583,12.52,818.95,668.66,2,6.46,82.4,95.36,1.0,83.07,21.04,80.13
+North,Apparel,Central,Local,Sea,Low,Overstocked,766,823.0,1191.0,709,17.15,1341.44,1427.58,0,10.29,83.85,92.56,0.64,83.07,20.13,71.83
+West,Industrial Supplies,Local,Local,Road,Medium,Stockout Risk,1150,1180.0,728.0,759,5.59,1046.32,1042.78,2,3.49,74.27,97.39,1.58,84.72,13.3,83.16
+West,FMCG,Regional,Local,Air,High,Stockout Risk,2206,2222.0,2440.0,1722,10.2,9694.55,3011.95,2,2.84,75.66,99.27,0.9,86.38,17.16,67.19
+West,FMCG,Local,International,Sea,Medium,Optimal,1349,1476.0,1513.0,929,14.07,4363.78,2658.42,0,8.3,66.05,90.59,0.89,79.92,17.84,64.29
+East,Industrial Supplies,Regional,International,Road,Low,Stockout Risk,351,327.0,202.0,422,15.56,304.57,235.91,5,7.53,63.9,93.16,1.74,69.94,34.96,73.49
+East,Home Goods,Regional,Distributor,Sea,Medium,Overstocked,950,926.0,1203.0,911,15.63,2286.84,1983.04,1,8.7,92.79,97.47,0.79,86.39,19.97,75.76
+West,FMCG,Regional,Distributor,Road,Low,Optimal,1496,1879.0,1670.0,1354,4.57,1559.8,2370.78,2,3.75,72.23,74.4,0.9,75.9,21.48,80.98
+South,Apparel,Regional,Local,Sea,Medium,Optimal,1335,1472.0,1921.0,849,10.9,1850.37,1666.05,0,10.33,73.92,89.74,0.69,79.56,15.0,67.73
+South,Electronics,Regional,Distributor,Air,Medium,Stockout Risk,1405,1755.0,1686.0,1105,13.15,3308.47,2776.68,3,6.43,88.57,75.09,0.83,75.33,33.11,76.94
+South,Home Goods,Local,Distributor,Road,High,Stockout Risk,1932,1492.0,2095.0,1046,3.94,1656.72,2878.59,5,2.0,71.07,77.23,0.92,71.69,29.72,83.93
+East,Electronics,Central,Local,Road,High,Stockout Risk,2393,2357.0,1249.0,1517,4.55,2653.24,1355.2,4,4.66,70.45,98.5,1.92,78.54,18.49,76.39
+South,FMCG,Regional,Distributor,Air,High,Optimal,1387,1635.0,1391.0,1277,6.16,5543.26,958.62,3,3.13,69.46,82.12,1.0,76.31,23.31,73.24
+East,Apparel,Central,Local,Sea,Medium,Overstocked,1530,1436.0,2568.0,1334,19.2,3577.84,3495.71,0,9.91,69.26,93.86,0.6,80.26,21.66,63.64
+South,FMCG,Central,International,Road,Low,Optimal,417,400.0,362.0,346,7.17,788.75,817.41,1,3.37,66.05,95.92,1.15,84.49,12.13,81.46
+West,Home Goods,Regional,Distributor,Air,Low,Overstocked,484,406.0,875.0,430,5.56,1925.43,1461.32,0,3.62,85.01,83.88,0.55,86.99,12.01,84.33
+West,Apparel,Central,Local,Road,Medium,Optimal,802,812.0,678.0,679,14.86,745.42,1470.97,1,8.72,68.23,98.75,1.18,80.68,18.69,71.5
+East,Industrial Supplies,Local,Distributor,Air,Medium,Optimal,1290,1096.0,1348.0,770,12.58,6518.31,2059.96,1,4.14,95.83,84.96,0.96,87.33,21.93,77.14
+West,Apparel,Regional,Local,Road,Low,Optimal,731,931.0,757.0,558,6.39,757.89,490.66,3,2.21,84.77,72.64,0.97,77.74,27.33,89.46
+West,Industrial Supplies,Regional,International,Sea,Medium,Optimal,993,1019.0,800.0,788,13.43,2481.3,1424.63,0,12.02,66.93,97.38,1.24,78.8,14.48,60.96
+North,Industrial Supplies,Regional,Distributor,Air,Medium,Stockout Risk,1525,1495.0,1332.0,1340,6.85,6892.62,1970.45,3,4.32,78.39,98.03,1.14,82.92,17.64,70.78
+South,FMCG,Regional,International,Sea,High,Optimal,2843,3394.0,3796.0,2169,21.99,4198.94,3205.17,1,9.33,91.09,80.62,0.75,79.44,33.08,70.08
+South,Industrial Supplies,Local,Distributor,Road,High,Stockout Risk,1652,1681.0,1992.0,1109,9.15,2094.25,3087.97,1,5.56,88.85,98.24,0.83,88.81,13.19,81.25
+West,FMCG,Central,Distributor,Road,Medium,Optimal,821,796.0,901.0,848,17.0,1648.02,1812.44,0,9.4,90.78,96.95,0.91,87.23,18.22,75.06
+West,Industrial Supplies,Local,International,Road,Medium,Optimal,1271,1325.0,1133.0,1375,15.98,1493.09,1962.28,2,7.34,76.83,95.75,1.12,80.94,24.35,75.32
+South,FMCG,Regional,International,Sea,Medium,Stockout Risk,1298,1202.0,1033.0,862,16.12,1740.05,1886.18,5,8.3,75.27,92.6,1.26,71.82,35.75,72.42
+East,Home Goods,Central,International,Road,Medium,Optimal,492,410.0,479.0,312,7.11,1154.86,754.91,0,3.72,68.44,83.33,1.03,82.56,13.78,80.73
+South,Electronics,Regional,International,Sea,Medium,Optimal,2011,2016.0,1939.0,1750,20.41,2400.02,2068.53,1,16.23,89.07,99.75,1.04,78.73,23.84,59.35
+West,Apparel,Regional,International,Road,Medium,Overstocked,1342,1081.0,2188.0,960,13.36,3101.61,3886.5,1,5.9,72.35,80.55,0.61,78.16,24.47,73.56
+North,FMCG,Regional,Distributor,Air,Medium,Overstocked,1745,1801.0,2401.0,998,1.07,7138.68,2792.37,2,1.0,91.64,96.79,0.73,91.34,9.02,80.89
+East,Apparel,Central,Distributor,Sea,High,Optimal,1913,2084.0,2865.0,1957,21.94,4307.61,5853.54,1,10.99,76.9,91.06,0.67,77.88,28.85,62.28
+North,Industrial Supplies,Regional,Distributor,Sea,Medium,Overstocked,1695,1491.0,2978.0,1300,19.51,5214.7,1787.0,0,16.26,71.71,87.96,0.57,72.45,24.32,48.33
+North,Industrial Supplies,Central,Distributor,Air,High,Optimal,1214,1034.0,1687.0,883,9.4,5085.12,2330.96,0,2.82,68.71,85.17,0.72,84.17,15.33,74.57
+West,FMCG,Regional,Distributor,Road,Medium,Optimal,1429,1393.0,2088.0,1023,14.41,2932.77,2653.96,2,9.72,71.0,97.48,0.68,77.7,22.08,65.86
+West,Industrial Supplies,Regional,Distributor,Road,Low,Optimal,1142,1011.0,912.0,845,6.74,1897.69,1781.47,2,5.09,95.17,88.53,1.25,85.24,18.0,84.49
+South,Apparel,Central,Local,Sea,High,Overstocked,1412,1513.0,2588.0,1305,19.75,1825.28,4459.0,2,7.24,90.05,92.85,0.55,83.33,29.28,78.8
+West,FMCG,Regional,International,Road,Medium,Optimal,2426,2491.0,3400.0,1964,15.02,5147.64,3638.13,1,6.09,75.77,97.32,0.71,84.69,19.43,70.02
+West,Apparel,Local,Local,Sea,High,Optimal,1582,1464.0,1449.0,864,13.85,2790.36,2499.52,1,7.95,74.79,92.54,1.09,80.91,20.17,70.83
+West,Home Goods,Regional,Local,Road,Medium,Stockout Risk,1000,1001.0,352.0,678,14.46,1040.96,557.25,1,6.31,68.12,99.9,2.84,83.46,17.83,75.69
+West,Apparel,Regional,International,Road,High,Stockout Risk,2758,2841.0,1976.0,2733,18.77,2666.16,2724.26,3,10.02,90.85,96.99,1.4,79.97,29.97,71.76
+West,FMCG,Local,International,Road,Medium,Overstocked,2242,2175.0,2619.0,1332,14.38,2174.04,2600.47,0,8.28,88.8,97.01,0.86,87.87,15.58,75.63
+East,Apparel,Regional,Local,Sea,High,Optimal,1880,2075.0,2705.0,1629,10.91,3764.98,3390.58,2,8.07,76.1,89.63,0.7,77.88,21.73,68.99
+North,Home Goods,Central,International,Road,Low,Optimal,1040,973.0,844.0,1063,19.22,2107.04,1296.49,1,12.2,65.64,93.56,1.23,74.73,25.13,60.98
+West,Electronics,Local,Local,Road,High,Optimal,1839,1876.0,2582.0,1471,13.13,2722.76,3445.49,1,6.95,90.83,97.99,0.71,87.83,17.27,77.78
+West,FMCG,Regional,Distributor,Road,High,Optimal,3248,3445.0,4305.0,2523,15.11,7172.11,3235.74,0,5.55,84.62,93.93,0.75,88.48,17.54,69.62
+West,Electronics,Central,Local,Sea,Low,Optimal,830,737.0,1226.0,725,13.36,1150.06,2752.4,1,8.02,91.69,88.8,0.68,83.76,21.18,79.11
+East,FMCG,Regional,Local,Road,High,Optimal,2106,2344.0,2857.0,1842,2.71,4958.58,3621.45,1,2.59,76.06,88.7,0.74,85.25,10.56,77.5
+West,FMCG,Central,Local,Road,Medium,Optimal,1456,1495.0,1175.0,1504,14.97,2611.36,882.14,3,9.94,98.43,97.32,1.24,82.06,26.04,74.31
+East,FMCG,Local,International,Road,Low,Optimal,1207,1066.0,1551.0,780,15.41,2643.88,947.34,3,7.98,70.19,88.32,0.78,73.81,30.08,69.69
+West,Electronics,Local,International,Sea,Medium,Optimal,906,1008.0,908.0,953,19.19,1289.24,1381.79,1,12.82,74.71,88.74,1.0,74.69,27.03,64.14
+South,Home Goods,Central,Distributor,Air,Medium,Stockout Risk,1371,1289.0,1253.0,1254,11.3,5198.25,1251.06,5,6.69,69.27,94.02,1.09,72.42,30.36,66.77
+North,Home Goods,Central,Distributor,Road,Low,Optimal,1029,973.0,980.0,780,8.66,2162.58,1199.71,0,5.82,83.3,94.56,1.05,88.1,10.84,78.93
+North,Electronics,Local,Distributor,Road,Low,Optimal,367,348.0,351.0,232,2.63,807.72,450.82,1,1.12,92.93,94.82,1.05,93.08,8.03,93.99
+West,Electronics,Central,Local,Sea,Medium,Overstocked,519,623.0,786.0,656,11.74,1220.45,1041.14,1,8.57,82.91,79.96,0.66,77.92,23.09,75.24
+South,Electronics,Regional,Distributor,Road,High,Optimal,1770,2036.0,1722.0,1533,9.72,1934.47,2749.14,1,6.61,72.14,84.97,1.03,78.94,19.06,74.47
+East,Apparel,Regional,Distributor,Sea,High,Optimal,1263,1435.0,1805.0,1118,20.37,1722.13,2582.51,1,11.08,67.16,86.38,0.7,73.72,29.15,64.47
+South,Apparel,Regional,Local,Road,High,Optimal,1871,1829.0,2485.0,1218,5.52,4443.79,4456.68,1,3.38,83.85,97.76,0.75,89.58,9.75,79.31
+West,FMCG,Regional,Distributor,Sea,Medium,Optimal,1160,1334.0,1622.0,1038,21.21,1946.01,1271.97,2,13.07,88.92,85.0,0.72,74.47,33.88,66.56
+South,FMCG,Local,Distributor,Sea,Medium,Optimal,1648,1488.0,1286.0,1088,11.04,5492.85,1430.42,4,8.23,85.53,90.29,1.28,75.87,28.26,67.97
+North,Electronics,Local,Local,Sea,High,Overstocked,2241,2168.0,3092.0,1989,11.73,5048.01,3708.31,2,8.54,83.85,96.74,0.72,81.84,19.7,67.75
+East,Apparel,Regional,Distributor,Road,Low,Overstocked,691,756.0,802.0,714,10.76,1278.52,818.92,2,6.56,68.45,90.59,0.86,77.81,21.19,74.8
+South,Industrial Supplies,Central,Local,Sea,Low,Overstocked,322,349.0,608.0,455,16.35,982.43,756.04,1,7.89,72.38,91.61,0.53,80.05,23.04,73.92
+East,Apparel,Central,International,Road,Medium,Optimal,1241,1347.0,1427.0,1002,18.87,1248.62,1566.25,1,7.16,74.06,91.46,0.87,81.14,25.62,75.34
+East,FMCG,Regional,International,Road,High,Optimal,3790,4096.0,4935.0,3233,26.12,8374.76,3260.13,1,12.81,81.5,91.93,0.77,77.52,32.68,51.7
+West,Home Goods,Central,Distributor,Sea,High,Optimal,1641,1768.0,1454.0,1138,14.65,2112.59,1905.68,1,10.21,81.46,92.26,1.13,80.22,21.08,69.7
+North,FMCG,Local,Distributor,Road,High,Overstocked,1887,2139.0,2041.0,1462,7.92,4407.51,2939.88,0,3.34,83.89,86.65,0.92,87.96,13.26,79.47
+South,Home Goods,Regional,Distributor,Road,Low,Optimal,1247,1082.0,1748.0,1010,14.99,2274.37,1534.91,2,8.64,80.9,86.77,0.71,77.51,26.95,72.34
+South,FMCG,Regional,Distributor,Air,Medium,Stockout Risk,2410,2613.0,2339.0,2306,8.53,7477.93,4144.83,4,5.77,90.3,91.58,1.03,79.97,25.23,70.26
+East,FMCG,Local,International,Road,Medium,Optimal,2835,2237.0,2211.0,1142,7.23,3537.66,3222.0,0,3.43,81.24,78.91,1.28,84.5,15.67,80.28
+North,Electronics,Local,Distributor,Air,Medium,Overstocked,1821,1735.0,2857.0,1561,7.64,4134.05,1809.87,0,1.54,81.12,95.28,0.64,92.09,9.53,82.8
+West,Home Goods,Central,International,Road,Low,Overstocked,955,1013.0,1660.0,969,21.47,1023.06,1653.85,0,9.84,78.47,93.93,0.58,82.65,23.9,71.77
+West,Industrial Supplies,Regional,International,Road,Medium,Optimal,798,843.0,1045.0,879,15.16,1341.73,1320.08,3,5.12,88.23,94.36,0.76,83.3,27.42,83.48
+North,Industrial Supplies,Regional,Local,Sea,Medium,Optimal,939,702.0,781.0,690,13.25,2070.35,667.46,4,10.06,92.68,74.76,1.2,70.39,36.68,73.45
+South,Electronics,Regional,Local,Road,High,Overstocked,1132,1126.0,1434.0,779,12.4,1255.27,1878.93,0,8.98,84.32,99.47,0.79,86.91,12.61,74.77
+West,Home Goods,Central,Local,Road,Medium,Optimal,1723,1512.0,1607.0,1228,7.05,3083.43,1484.59,1,5.37,79.2,87.75,1.07,82.92,15.28,76.71
+East,Home Goods,Central,International,Road,Medium,Optimal,270,325.0,231.0,278,12.89,399.98,496.85,2,8.33,71.24,79.63,1.17,72.91,27.7,73.89
+West,FMCG,Local,Distributor,Road,High,Stockout Risk,2796,2855.0,1593.0,2337,3.09,3667.04,1188.08,3,1.0,71.07,97.89,1.76,84.36,13.93,81.82
+East,FMCG,Central,Local,Sea,Medium,Optimal,904,836.0,1109.0,587,15.56,2219.57,982.08,1,10.28,81.34,92.48,0.82,80.2,21.9,69.3
+East,Home Goods,Regional,International,Air,Low,Overstocked,758,728.0,1376.0,737,15.7,3675.83,1641.93,0,5.59,72.33,96.04,0.55,86.11,17.28,73.0
+West,Electronics,Local,Local,Road,High,Optimal,1273,1485.0,1458.0,905,6.42,2224.84,1447.11,0,3.13,99.0,83.35,0.87,90.79,13.08,88.89
+North,Electronics,Regional,International,Road,Medium,Optimal,1092,1186.0,1633.0,1167,20.51,896.44,2702.34,2,10.26,75.08,91.39,0.67,76.05,30.62,70.17
+North,Apparel,Local,Local,Road,Medium,Optimal,1215,1575.0,1392.0,1154,12.06,2286.41,1687.17,1,7.03,96.14,70.37,0.87,79.41,27.25,80.11
+East,FMCG,Local,Local,Road,Medium,Optimal,2342,2162.0,3003.0,1638,16.98,4628.05,2733.02,0,8.82,91.74,92.31,0.78,86.42,20.05,70.42
+West,Home Goods,Regional,Distributor,Air,Medium,Optimal,1126,1230.0,1119.0,1239,13.39,2131.01,1901.43,0,5.32,69.54,90.76,1.01,83.83,17.08,75.86
+South,Apparel,Regional,Local,Road,Low,Stockout Risk,819,746.0,903.0,409,6.16,1203.31,909.75,4,6.23,89.76,91.09,0.91,79.2,23.06,82.01
+West,Apparel,Regional,International,Road,Low,Overstocked,663,765.0,1141.0,621,7.76,1284.95,1744.54,1,4.21,66.87,84.62,0.58,79.9,17.25,79.01
+South,FMCG,Regional,International,Road,Medium,Stockout Risk,2065,1822.0,2498.0,1611,22.21,2030.09,1984.14,6,6.23,92.3,88.23,0.83,74.39,46.92,81.08
+North,Industrial Supplies,Central,Local,Air,Low,Overstocked,789,757.0,1469.0,478,6.04,3206.96,2460.66,1,1.37,71.23,95.94,0.54,87.79,11.0,82.07
+West,Apparel,Local,Local,Air,Low,Overstocked,683,878.0,786.0,550,2.42,2890.98,563.27,0,1.0,73.95,71.45,0.87,82.5,13.84,84.27
+West,Home Goods,Central,International,Road,Medium,Stockout Risk,379,378.0,245.0,430,11.01,490.56,278.55,4,6.2,86.69,99.74,1.55,81.49,24.45,82.6
+South,FMCG,Regional,Local,Road,Medium,Overstocked,2687,3258.0,3283.0,1862,16.07,3457.95,4530.28,0,11.06,91.84,78.75,0.82,79.46,24.57,68.36
+South,Industrial Supplies,Central,Distributor,Road,Medium,Overstocked,1043,1209.0,1327.0,743,4.3,1038.16,2638.88,0,5.25,68.13,84.08,0.79,81.21,10.67,77.82
+West,Apparel,Central,International,Road,Medium,Optimal,963,1157.0,1262.0,930,20.8,1446.04,2831.51,2,13.41,86.53,79.85,0.76,71.73,35.52,66.18
+North,Apparel,Regional,Local,Road,High,Stockout Risk,2081,1665.0,2221.0,1287,8.92,4635.99,1896.21,3,6.89,69.7,80.01,0.94,71.87,26.92,67.65
+North,Apparel,Regional,Local,Road,Medium,Overstocked,1125,1100.0,2093.0,608,2.21,2416.45,3387.95,2,3.86,93.1,97.78,0.54,89.19,9.77,85.27
+East,Apparel,Local,Distributor,Air,Medium,Stockout Risk,1358,1586.0,437.0,887,1.3,4222.67,618.65,3,1.0,85.7,83.21,3.11,82.88,18.02,85.07
+South,Home Goods,Local,Local,Sea,Low,Stockout Risk,366,324.0,265.0,501,23.43,840.24,163.82,2,13.25,78.2,88.52,1.38,72.84,34.69,65.24
+North,FMCG,Local,Distributor,Air,Low,Overstocked,813,610.0,1627.0,533,3.97,3268.65,1168.54,0,1.71,92.16,75.03,0.5,87.59,13.96,87.54
+North,Electronics,Central,Local,Road,Low,Optimal,894,943.0,1115.0,572,3.28,985.82,1338.18,1,1.88,74.0,94.52,0.8,87.48,8.81,86.42
+North,Industrial Supplies,Central,International,Road,Low,Optimal,389,472.0,370.0,407,12.85,564.27,556.11,1,6.37,81.94,78.66,1.05,79.42,24.72,80.69
+East,Electronics,Regional,Distributor,Road,Low,Overstocked,813,540.0,1252.0,476,11.31,1157.95,2145.29,0,7.2,83.88,66.42,0.65,77.02,24.74,78.4
+South,Industrial Supplies,Regional,Local,Sea,Low,Overstocked,1184,1155.0,1793.0,1234,23.46,1556.49,3574.13,0,17.79,70.74,97.55,0.66,74.04,24.44,52.46
+East,Electronics,Local,Distributor,Road,Medium,Optimal,663,505.0,826.0,673,16.58,1010.52,560.15,2,6.2,77.59,76.17,0.8,75.41,32.78,78.81
+East,Home Goods,Regional,Local,Road,High,Stockout Risk,2088,2431.0,1132.0,1913,16.57,4835.93,1411.23,4,8.49,91.71,83.57,1.84,74.8,36.47,70.64
+South,Electronics,Local,International,Sea,Medium,Optimal,1348,1359.0,1263.0,1164,26.48,3559.0,1637.82,1,11.79,85.86,99.18,1.07,82.17,30.14,64.9
+East,Electronics,Regional,Local,Road,Medium,Stockout Risk,1713,1724.0,717.0,1331,8.8,3743.76,1078.36,3,7.05,89.27,99.36,2.39,83.38,19.06,75.02
+South,Home Goods,Central,International,Air,Medium,Overstocked,755,647.0,964.0,555,14.81,3631.41,888.33,0,8.8,63.93,85.7,0.78,77.18,20.53,64.15
+East,FMCG,Regional,Local,Road,Low,Overstocked,1411,1600.0,2088.0,1437,6.42,3238.94,3123.09,3,4.46,92.57,86.61,0.68,82.33,21.78,82.23
+East,Electronics,Local,International,Sea,Medium,Overstocked,1145,1115.0,1520.0,1124,29.78,3579.84,2655.27,2,20.0,63.76,97.38,0.75,65.58,37.49,41.81
