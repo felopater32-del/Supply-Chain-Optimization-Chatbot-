@@ -20,7 +20,7 @@ if os.path.exists(file_path):
     try:
         df = pd.read_csv(file_path)
         st.success("✅ تم تحميل البيانات بنجاح")
-        st.dataframe(df.head(10))
+        st.dataframe(df.head(50))
         
         st.divider()
         user_question = st.text_input("❓ اسأل المحلل الذكي عن بياناتك:")
@@ -30,7 +30,7 @@ if os.path.exists(file_path):
                     context = df.head(30).to_string()
                     prompt = f"Data:\n{context}\nQuestion: {user_question}"
                     response = client.models.generate_content(
-                        model="gemini-1.5-flash",
+                        model=model="models/gemini-1.5-flash",
                         contents=prompt
                     )
                     st.info(response.text)
