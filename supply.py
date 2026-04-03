@@ -1,42 +1,82 @@
 import streamlit as st
 import pandas as pd
-from google import genai
+import google.generativeai as genai
+import plotly.express as px
 import os
 
-# 1. إعداد الـ API
+# 1. إعدادات الصفحة والـ AI
+st.set_page_config(page_title="AI Smart Dashboard", layout="wide")
+st.title("🤖 Supply Chain Smart Analyst")
+
 try:
     API_KEY = st.secrets["GOOGLE_API_KEY"]
-    client = genai.Client(api_key=API_KEY)
-except Exception as e:
-    st.error("⚠️ تأكد من إضافة GOOGLE_API_KEY في الـ Secrets")
+    genai.configure(api_key=API_KEY)
+    model = genai.GenerativeModel('gemini-1.5-flash')
+except:
+    st.error("⚠️ تأكد من الـ API Key في الـ Secrets")
 
-st.set_page_config(page_title="Supply Chain AI", layout="wide")
-st.title("🤖 Supply Chain AI Analyst")
-
-# 2. قراءة الملف
+# 2. تحميل البيانات
 file_path = "Supply_Chain_Optimization.csv"
 
 if os.path.exists(file_path):
-    try:
-        df = pd.read_csv(file_path)
-        st.success("✅ تم تحميل البيانات بنجاح")
-        st.dataframe(df.head(50))
-        
-        st.divider()
-        user_question = st.text_input("❓ اسأل المحلل الذكي عن بياناتك:")
-        if st.button("تحليل"):
-            if user_question:
-                with st.spinner("جاري التحليل..."):
-                    context = df.head(30).to_string()
-                    prompt = f"Data:\n{context}\nQuestion: {user_question}"
-                    response = client.models.generate_content(
-                        model="gemini-2.5-flash",
-                        contents=prompt
-                    )
-                    st.info(response.text)
-            else:
-                st.warning("يرجى كتابة سؤال أولاً.")
-    except Exception as e:
-        st.error(f"❌ خطأ في قراءة الملف: {e}")
+    df = pd.read_csv(file_path)
+    
+    # --- القائمة الجانبية (Sidebar) للتحكم ---
+    st.sidebar.header("⚙️ لوحة التحكم")
+    show_data = st.sidebar.checkbox("عرض جدول البيانات")
+    chart_type = st.sidebar.selectbox("اختر نوع الرسم البياني الأساسي", ["Bar Chart", "Line Chart", "Scatter Plot"])
+
+    # --- عرض الإحصائيات السريعة ---
+    cols = st.columns(4)
+    cols[0].metric("إجمالي السجلات", len(df))
+    cols[1].metric("عدد الأعمدة", len(df.columns))
+    # هنا بنفترض إن عندك عمود مبيعات أو تكلفة (عدل اسم العمود حسب ملفك)
+    if 'Revenue' in df.columns:
+        cols[2].metric("إجمالي الإيرادات", f"{df['Revenue'].sum():,.0f}")
+    
+    st.divider()
+
+    # --- قسم الرسوم البيانية التفاعلية ---
+    st.subheader("📊 التحليل البصري الديناميكي")
+    col_x = st.selectbox("اختر المحور الأفقي (X)", df.columns)
+    col_y = st.selectbox("اختر المحور الرأسي (Y)", df.select_dtypes(include=['number']).columns)
+
+    if chart_type == "Bar Chart":
+        fig = px.bar(df.head(50), x=col_x, y=col_y, color=col_x, template="plotly_dark")
+    elif chart_type == "Line Chart":
+        fig = px.line(df.head(50), x=col_x, y=col_y, template="plotly_dark")
+    else:
+        fig = px.scatter(df.head(50), x=col_x, y=col_y, color=col_x, template="plotly_dark")
+    
+    st.plotly_chart(fig, use_container_width=True)
+
+    # --- قسم الـ AI (العقل المفكر) ---
+    st.divider()
+    st.subheader("🧠 اسأل المحلل الذكي (الدردشة)")
+    query = st.text_input("مثلاً: حلل لي أداء الموردين واقترح تحسينات؟")
+
+    if st.button("تحليل بالذكاء الاصطناعي"):
+        if query:
+            with st.spinner("جاري قراءة البيانات والتحليل..."):
+                # بنبعت للـ AI وصف للأعمدة وأول كام سطر
+                data_summary = df.describe().to_string()
+                context = df.head(20).to_string()
+                prompt = f"""
+                أنت خبير سلاسل إمداد. إليك ملخص البيانات:
+                {data_summary}
+                وعينة من البيانات:
+                {context}
+                بناءً على هذه البيانات، أجب على السؤال التالي بشكل احترافي ومنظم:
+                السؤال: {query}
+                """
+                response = model.generate_content(prompt)
+                st.markdown(response.text)
+        else:
+            st.warning("من فضلك اكتب سؤالك")
+
+    if show_data:
+        st.subheader("📋 البيانات الكاملة")
+        st.write(df)
+
 else:
-    st.error(f"⚠️ الملف {file_path} غير موجود.")
+    st.error("❌ لم يتم العثور على ملف البيانات")
