@@ -1,19 +1,18 @@
 import streamlit as st
 import pandas as pd
-import google.generativeai as genai
-import plotly.express as px
+from pandasai import SmartDataframe
+from pandasai.llm import GoogleGemini
 import os
 
-# 1. إعدادات الصفحة والـ AI
-st.set_page_config(page_title="AI Smart Dashboard", layout="wide")
-st.title("🤖 Supply Chain Smart Analyst")
+st.set_page_config(page_title="AI Data Scientist", layout="wide")
+st.title("🤖 PandasAI: Smart Supply Chain Analyst")
 
+# 1. إعداد الـ LLM (Gemini) داخل PandasAI
 try:
     API_KEY = st.secrets["GOOGLE_API_KEY"]
-    genai.configure(api_key=API_KEY)
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    llm = GoogleGemini(api_key=API_KEY)
 except:
-    st.error("⚠️ تأكد من الـ API Key في الـ Secrets")
+    st.error("⚠️ تأكد من إضافة المفتاح في الـ Secrets")
 
 # 2. تحميل البيانات
 file_path = "Supply_Chain_Optimization.csv"
@@ -21,62 +20,30 @@ file_path = "Supply_Chain_Optimization.csv"
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
     
-    # --- القائمة الجانبية (Sidebar) للتحكم ---
-    st.sidebar.header("⚙️ لوحة التحكم")
-    show_data = st.sidebar.checkbox("عرض جدول البيانات")
-    chart_type = st.sidebar.selectbox("اختر نوع الرسم البياني الأساسي", ["Bar Chart", "Line Chart", "Scatter Plot"])
+    # تحويل الـ DataFrame العادي لـ Smart Dataframe
+    smart_df = SmartDataframe(df, config={"llm": llm})
 
-    # --- عرض الإحصائيات السريعة ---
-    cols = st.columns(4)
-    cols[0].metric("إجمالي السجلات", len(df))
-    cols[1].metric("عدد الأعمدة", len(df.columns))
-    # هنا بنفترض إن عندك عمود مبيعات أو تكلفة (عدل اسم العمود حسب ملفك)
-    if 'Revenue' in df.columns:
-        cols[2].metric("إجمالي الإيرادات", f"{df['Revenue'].sum():,.0f}")
-    
+    st.write("### عينة من البيانات:")
+    st.dataframe(df.head(5))
+
     st.divider()
 
-    # --- قسم الرسوم البيانية التفاعلية ---
-    st.subheader("📊 التحليل البصري الديناميكي")
-    col_x = st.selectbox("اختر المحور الأفقي (X)", df.columns)
-    col_y = st.selectbox("اختر المحور الرأسي (Y)", df.select_dtypes(include=['number']).columns)
+    # 3. صندوق الدردشة الذكي
+    st.subheader("📊 اسأل الـ AI ليرسم أو يحلل:")
+    prompt = st.text_input("مثلاً: 'Draw a bar chart of top 5 products by revenue' أو 'ماهي أعلى 5 مدن في التكلفة؟'")
 
-    if chart_type == "Bar Chart":
-        fig = px.bar(df.head(50), x=col_x, y=col_y, color=col_x, template="plotly_dark")
-    elif chart_type == "Line Chart":
-        fig = px.line(df.head(50), x=col_x, y=col_y, template="plotly_dark")
-    else:
-        fig = px.scatter(df.head(50), x=col_x, y=col_y, color=col_x, template="plotly_dark")
-    
-    st.plotly_chart(fig, use_container_width=True)
-
-    # --- قسم الـ AI (العقل المفكر) ---
-    st.divider()
-    st.subheader("🧠 اسأل المحلل الذكي (الدردشة)")
-    query = st.text_input("مثلاً: حلل لي أداء الموردين واقترح تحسينات؟")
-
-    if st.button("تحليل بالذكاء الاصطناعي"):
-        if query:
-            with st.spinner("جاري قراءة البيانات والتحليل..."):
-                # بنبعت للـ AI وصف للأعمدة وأول كام سطر
-                data_summary = df.describe().to_string()
-                context = df.head(20).to_string()
-                prompt = f"""
-                أنت خبير سلاسل إمداد. إليك ملخص البيانات:
-                {data_summary}
-                وعينة من البيانات:
-                {context}
-                بناءً على هذه البيانات، أجب على السؤال التالي بشكل احترافي ومنظم:
-                السؤال: {query}
-                """
-                response = model.generate_content(prompt)
-                st.markdown(response.text)
+    if st.button("تنفيذ الأمر"):
+        if prompt:
+            with st.spinner("جاري التفكير والرسم..."):
+                # هنا السحر: المكتبة هي اللي بتقرر تطلع نص أو رسمة
+                response = smart_df.chat(prompt)
+                
+                # عرض النتيجة (سواء كانت نص أو صورة الرسم البياني)
+                if response:
+                    st.write(response)
+                    # ملاحظة: PandasAI بتحفظ الصورة في مجلد exports وتظهرها أوتوماتيك
         else:
-            st.warning("من فضلك اكتب سؤالك")
-
-    if show_data:
-        st.subheader("📋 البيانات الكاملة")
-        st.write(df)
+            st.warning("اكتب سؤالك أو أمر الرسم أولاً")
 
 else:
-    st.error("❌ لم يتم العثور على ملف البيانات")
+    st.error("❌ ملف البيانات غير موجود")
