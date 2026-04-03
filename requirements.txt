@@ -2,3 +2,6 @@ streamlit
 pandas
 pandasai
 google-generativeai
+astor
+pillow
+matplotlib
