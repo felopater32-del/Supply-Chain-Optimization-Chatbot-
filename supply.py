@@ -27,6 +27,7 @@ st.markdown(
     .kpi-label { font-size: 0.85rem; color: #8892b0; margin-top: 4px; }
     .chat-bot { background: #1a1f2e; border-left: 4px solid #00d4ff; border-radius: 12px; padding: 16px; margin: 8px 0; color: #ccd6f6; }
     .chat-user { background: #252b3b; border-left: 4px solid #7b2ff7; border-radius: 12px; padding: 16px; margin: 8px 0; color: #ccd6f6; text-align: right; direction: rtl; }
+    .memory-box { background: #0d1117; border: 1px solid #2d3550; border-radius: 10px; padding: 10px 16px; color: #4a5568; font-size: 0.78rem; margin-bottom: 10px; }
     </style>
     """,
     unsafe_allow_html=True,
@@ -35,6 +36,7 @@ st.markdown(
 st.title("Supply Chain Intelligence Chatbot")
 st.markdown("<p style='color:#8892b0;'>اسأل اي سؤال عن البيانات - هيرد بارقام وتحليلات ورسوم بيانية</p>", unsafe_allow_html=True)
 
+# KPI Strip
 numeric_cols = df.select_dtypes(include="number").columns.tolist()
 kpis = []
 for col in numeric_cols[:5]:
@@ -60,61 +62,98 @@ with st.expander("عرض البيانات", expanded=False):
 
 st.divider()
 
-if "messages" not in st.session_state:
-    st.session_state.messages = []
+# Session State Init
+if "chat_history" not in st.session_state:
+    # chat_history: list of {"role": "user"/"assistant", "content": str}
+    # used to send context to Groq
+    st.session_state.chat_history = []
 
-for msg in st.session_state.messages:
-    if msg["role"] == "user":
-        st.markdown(f"<div class='chat-user'>سؤال: {msg['content']}</div>", unsafe_allow_html=True)
-    else:
-        st.markdown(f"<div class='chat-bot'>الاجابة: {msg['content']}</div>", unsafe_allow_html=True)
-        if "chart" in msg:
-            st.plotly_chart(msg["chart"], use_container_width=True)
+if "last_answer" not in st.session_state:
+    st.session_state.last_answer = None
 
-col_input, col_btn = st.columns([5, 1])
+if "last_charts" not in st.session_state:
+    st.session_state.last_charts = []
+
+if "last_question" not in st.session_state:
+    st.session_state.last_question = None
+
+# Show memory indicator
+if st.session_state.chat_history:
+    turns = len([m for m in st.session_state.chat_history if m["role"] == "user"])
+    st.markdown(
+        f"<div class='memory-box'>الذاكرة: {turns} سؤال محفوظ — الشات فاكر كل المحادثة السابقة</div>",
+        unsafe_allow_html=True,
+    )
+
+# Show only last answer
+if st.session_state.last_question:
+    st.markdown(f"<div class='chat-user'>سؤال: {st.session_state.last_question}</div>", unsafe_allow_html=True)
+
+if st.session_state.last_answer:
+    st.markdown(f"<div class='chat-bot'>الاجابة: {st.session_state.last_answer}</div>", unsafe_allow_html=True)
+
+if st.session_state.last_charts:
+    chart_cols = st.columns(len(st.session_state.last_charts))
+    for idx, fig in enumerate(st.session_state.last_charts):
+        with chart_cols[idx]:
+            st.plotly_chart(fig, use_container_width=True)
+
+st.divider()
+
+# Input
+col_input, col_btn, col_clear = st.columns([4, 1, 1])
 with col_input:
     user_question = st.text_input("سؤالك", placeholder="مثال: ما هو المنتج الاعلى مبيعا؟", label_visibility="collapsed")
 with col_btn:
     ask_clicked = st.button("اسأل")
+with col_clear:
+    clear_clicked = st.button("مسح الذاكرة")
+
+if clear_clicked:
+    st.session_state.chat_history = []
+    st.session_state.last_answer = None
+    st.session_state.last_charts = []
+    st.session_state.last_question = None
+    st.rerun()
 
 
-def ask_groq(prompt_text):
+def ask_groq_with_memory(user_msg, system_msg):
+    messages = [{"role": "system", "content": system_msg}]
+    # add previous conversation history for memory
+    for turn in st.session_state.chat_history[-10:]:  # keep last 10 turns
+        messages.append({"role": turn["role"], "content": turn["content"]})
+    # add current question
+    messages.append({"role": "user", "content": user_msg})
+
     response = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
-        messages=[{"role": "user", "content": prompt_text}],
+        messages=messages,
         temperature=0.3,
         max_tokens=2000,
     )
     return response.choices[0].message.content
 
 
-def try_generate_chart(question, dataframe):
-    cols_info = {col: str(dataframe[col].dtype) for col in dataframe.columns}
-    sample = dataframe.head(5).to_dict(orient="records")
-
-    chart_prompt = (
-        f'You are a data visualization expert. Question: "{question}"\n'
-        f"Columns and types: {json.dumps(cols_info)}\n"
-        f"Sample rows: {json.dumps(sample, default=str)}\n\n"
-        "Respond ONLY with a valid JSON object, no markdown, no explanation:\n"
-        '{"chart_type": "bar" or "line" or "pie" or "scatter" or "histogram" or "none",'
-        ' "x": "column_name_or_null", "y": "column_name_or_null", "color": "column_name_or_null",'
-        ' "title": "chart title in Arabic", "agg": "sum" or "mean" or "count" or "none"}'
+def ask_groq_simple(prompt_text):
+    response = client.chat.completions.create(
+        model="llama-3.3-70b-versatile",
+        messages=[{"role": "user", "content": prompt_text}],
+        temperature=0.3,
+        max_tokens=1000,
     )
+    return response.choices[0].message.content
 
-    raw = ask_groq(chart_prompt)
-    raw = re.sub(r"```json|```", "", raw).strip()
-    cfg = json.loads(raw)
 
-    if cfg.get("chart_type") == "none":
-        return None
-
+def build_chart(cfg, dataframe):
     chart_type = cfg.get("chart_type", "bar")
     x_col = cfg.get("x")
     y_col = cfg.get("y")
     color_col = cfg.get("color")
     title = cfg.get("title", "")
     agg = cfg.get("agg", "none")
+
+    if chart_type == "none" or not x_col:
+        return None
 
     plot_df = dataframe.copy()
 
@@ -146,42 +185,82 @@ def try_generate_chart(question, dataframe):
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(15,17,23,0.8)",
         font=dict(family="Cairo", color="#ccd6f6"),
-        title_font_size=16,
+        title_font_size=15,
         margin=dict(l=20, r=20, t=50, b=20),
     )
     return fig
 
 
-if ask_clicked and user_question.strip():
-    st.session_state.messages.append({"role": "user", "content": user_question})
+def try_generate_charts(question, dataframe):
+    cols_info = {col: str(dataframe[col].dtype) for col in dataframe.columns}
+    sample = dataframe.head(5).to_dict(orient="records")
 
+    chart_prompt = (
+        f'You are a data visualization expert. Question: "{question}"\n'
+        f"Columns and types: {json.dumps(cols_info)}\n"
+        f"Sample rows: {json.dumps(sample, default=str)}\n\n"
+        "Generate 2 to 3 different charts that best answer the question.\n"
+        "Respond ONLY with a valid JSON array, no markdown, no explanation:\n"
+        '[\n'
+        '  {"chart_type": "bar" or "line" or "pie" or "scatter" or "histogram" or "none",'
+        ' "x": "column_name", "y": "column_name_or_null", "color": "column_name_or_null",'
+        ' "title": "Arabic title", "agg": "sum" or "mean" or "count" or "none"},\n'
+        '  {"chart_type": "...", "x": "...", "y": "...", "color": null, "title": "...", "agg": "..."}\n'
+        ']'
+    )
+
+    raw = ask_groq_simple(chart_prompt)
+    raw = re.sub(r"```json|```", "", raw).strip()
+
+    match = re.search(r'\[.*\]', raw, re.DOTALL)
+    if not match:
+        return []
+    configs = json.loads(match.group())
+
+    charts = []
+    for cfg in configs[:3]:
+        try:
+            fig = build_chart(cfg, dataframe)
+            if fig:
+                charts.append(fig)
+        except Exception:
+            continue
+    return charts
+
+
+if ask_clicked and user_question.strip():
     with st.spinner("جاري التحليل..."):
         stats = df.describe(include="all").to_string()
         col_list = ", ".join(df.columns.tolist())
         sample_rows = df.head(20).to_string(index=False)
 
-        prompt = (
+        system_msg = (
             "انت محلل بيانات خبير في سلاسل التوريد. اجب باللغة العربية بشكل مفصل.\n"
             "قدم الارقام والاحصاءات. استخدم الترقيم والنقاط.\n"
-            "في النهاية اذكر ملخصا يبدا بـ الخلاصة.\n\n"
+            "في النهاية اذكر ملخصا يبدا بـ الخلاصة.\n"
+            "تذكر المحادثات السابقة واستخدمها في اجاباتك.\n\n"
             f"اعمدة البيانات: {col_list}\n\n"
-            f"احصاءات:\n{stats}\n\n"
-            f"عينة (اول 20 صف):\n{sample_rows}\n\n"
-            f"السؤال: {user_question}"
+            f"احصاءات البيانات:\n{stats}\n\n"
+            f"عينة من البيانات (اول 20 صف):\n{sample_rows}"
         )
 
-        answer = ask_groq(prompt)
+        answer = ask_groq_with_memory(user_question, system_msg)
 
-        chart = None
+        # save to memory
+        st.session_state.chat_history.append({"role": "user", "content": user_question})
+        st.session_state.chat_history.append({"role": "assistant", "content": answer})
+
+        # generate charts
+        charts = []
         try:
-            chart = try_generate_chart(user_question, df)
+            charts = try_generate_charts(user_question, df)
         except Exception:
-            chart = None
+            charts = []
 
-        msg = {"role": "assistant", "content": answer}
-        if chart:
-            msg["chart"] = chart
-        st.session_state.messages.append(msg)
+        # update last shown
+        st.session_state.last_question = user_question
+        st.session_state.last_answer = answer
+        st.session_state.last_charts = charts
 
     st.rerun()
 
