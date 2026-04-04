@@ -17,7 +17,7 @@ try:
     genai.configure(api_key=api_key)
     
     # تحديد الموديل بالمسار الكامل وبدون v1beta لضمان التوافق
-    model = genai.GenerativeModel(model_name='gemini-1.5-flash')
+    model =genai.GenerativeModel('gemini-1.5-flash') 
 except Exception as e:
     st.error(f"⚠️ Error: {e}")
 
