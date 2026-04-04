@@ -6,9 +6,9 @@ import json
 import re
 
 # ========================
-# 1. إعدادات الصفحة والستايل
+# 1. إعدادات الصفحة والتصميم
 # ========================
-st.set_page_config(page_title="Supply Chain Intelligence", page_icon="🚀", layout="wide")
+st.set_page_config(page_title="Supply Chain Expert AI", page_icon="📊", layout="wide")
 
 st.markdown("""
 <style>
@@ -24,11 +24,11 @@ st.markdown("""
         margin-bottom: 10px;
         box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
-    .kpi-value { font-size: 1.7rem; font-weight: 700; color: #00d4ff; }
-    .kpi-label { font-size: 0.78rem; color: #8892b0; margin-top: 4px; }
+    .kpi-value { font-size: 1.6rem; font-weight: 700; color: #00d4ff; }
+    .kpi-label { font-size: 0.8rem; color: #8892b0; margin-top: 4px; }
     .chat-bot {
         background: #1a1f2e;
-        border-right: 4px solid #00d4ff;
+        border-right: 5px solid #00d4ff;
         border-radius: 12px;
         padding: 20px;
         margin: 10px 0;
@@ -38,7 +38,7 @@ st.markdown("""
     }
     .chat-user {
         background: #252b3b;
-        border-left: 4px solid #7b2ff7;
+        border-left: 5px solid #7b2ff7;
         border-radius: 12px;
         padding: 16px;
         margin: 10px 0;
@@ -50,10 +50,13 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ========================
-# 2. الربط والبيانات
+# 2. الربط مع Groq وتحميل البيانات
 # ========================
-api_key = st.secrets["GROQ_API_KEY"]
-client = Groq(api_key=api_key)
+try:
+    api_key = st.secrets["GROQ_API_KEY"]
+    client = Groq(api_key=api_key)
+except Exception as e:
+    st.error("⚠️ تأكد من إضافة GROQ_API_KEY في Streamlit Secrets")
 
 @st.cache_data
 def load_data():
@@ -62,10 +65,9 @@ def load_data():
 df = load_data()
 
 # ========================
-# 3. واجهة العرض (Header & KPIs)
+# 3. واجهة الـ KPIs (لوحة التحكم العلوية)
 # ========================
-st.title("🚀 Supply Chain Intelligence Chatbot")
-st.markdown("<p style='color:#8892b0;'>حلل بياناتك بذكاء Groq ورسومات Plotly المتطورة</p>", unsafe_allow_html=True)
+st.title("🚀 المحلل الذكي لسلاسل الإمداد")
 
 k1, k2, k3, k4, k5, k6 = st.columns(6)
 metrics = [
@@ -85,18 +87,16 @@ for idx, (val, label) in enumerate(metrics):
 st.divider()
 
 # ========================
-# 4. دوال الرسم والذكاء الاصطناعي
+# 4. محرك الرسوم البيانية المتطور
 # ========================
 def build_chart(cfg):
     chart_type = cfg.get("chart_type", "bar")
     x_col = cfg.get("x")
     y_col = cfg.get("y")
-    color_col = cfg.get("color")
     title = cfg.get("title", "")
     agg = cfg.get("agg", "none")
 
-    if chart_type == "none" or not x_col or x_col not in df.columns:
-        return None
+    if not x_col or x_col not in df.columns: return None
     
     plot_df = df.copy()
     if agg != "none" and y_col and y_col in df.columns:
@@ -108,7 +108,7 @@ def build_chart(cfg):
         plot_bgcolor="rgba(15,17,23,0.5)",
         font=dict(family="Cairo", color="#ccd6f6"),
         hovermode="x unified",
-        margin=dict(l=20, r=20, t=50, b=20)
+        margin=dict(l=10, r=10, t=50, b=10)
     )
 
     if chart_type == "bar":
@@ -119,60 +119,63 @@ def build_chart(cfg):
     elif chart_type == "pie":
         fig = px.pie(plot_df, names=x_col, values=y_col, title=f"🍩 {title}", hole=0.4, color_discrete_sequence=px.colors.sequential.Plasma_r)
     elif chart_type == "scatter":
-        fig = px.scatter(plot_df, x=x_col, y=y_col, color=color_col if color_col in df.columns else None, title=f"🎯 {title}")
+        fig = px.scatter(plot_df, x=x_col, y=y_col, title=f"🎯 {title}", color_discrete_sequence=['#00ff88'])
     else: return None
 
     fig.update_layout(**layout_args)
     return fig
 
 def try_generate_charts(question):
-    cols_info = {col: str(df[col].dtype) for col in df.columns}
+    cols_list = list(df.columns)
+    # برومبت صارم لمنع التكرار وإجبار الموديل على التنوع
     prompt = (
-        f"You are a Senior Data Analyst. Question: {question}\n"
-        f"Columns: {json.dumps(cols_info)}\n"
-        "Return a JSON list of 3 charts. Each: {'chart_type': 'bar'|'line'|'pie'|'scatter', 'x': 'col', 'y': 'col', 'agg': 'sum'|'mean'|'none', 'title': 'Arabic Title'}"
+        f"You are a Senior Supply Chain Analyst. User Question: '{question}'\n"
+        f"Available Columns: {json.dumps(cols_list)}\n\n"
+        "Instructions:\n"
+        "1. Choose 3 DIFFERENT charts that best answer the question.\n"
+        "2. DO NOT repeat the same column choices every time.\n"
+        "3. Respond with ONLY a JSON object: {'charts': [{'chart_type': 'bar|line|pie|scatter', 'x': 'col_name', 'y': 'col_name', 'agg': 'sum|mean|none', 'title': 'Arabic Title'}]}"
     )
     
-    resp = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.1, response_format={"type": "json_object"}
-    )
-    
-    configs = json.loads(resp.choices[0].message.content).get("charts", [])
-    charts = []
-    for cfg in configs[:3]:
-        fig = build_chart(cfg)
-        if fig: charts.append(fig)
-    return charts
+    try:
+        resp = client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.8, # زيادة العشوائية للإبداع
+            response_format={"type": "json_object"}
+        )
+        configs = json.loads(resp.choices[0].message.content).get("charts", [])
+        charts = [build_chart(cfg) for cfg in configs if build_chart(cfg) is not None]
+        return charts[:3]
+    except:
+        return []
 
 # ========================
-# 5. منطق الشات (Main Logic)
+# 5. منطق المحادثة والتحليل
 # ========================
 if "history" not in st.session_state: st.session_state.history = []
 
-# Input Section
 col_in, col_btn = st.columns([5, 1])
 with col_in:
-    user_q = st.text_input("اسأل عن أي تحليل في بياناتك:", placeholder="مثلاً: قارن بين تكلفة النقل لكل وسيلة شحن")
+    user_q = st.text_input("اسأل عن أي تحليل في بياناتك:", placeholder="مثلاً: قارن بين كفاءة المناطق المختلفة وتكلفة النقل")
 with col_btn:
     if st.button("تحليل الآن ✨") and user_q:
-        with st.spinner("جاري التحليل..."):
-            # Text Response
-            stats = df.describe().to_string()
+        with st.spinner("جاري فحص البيانات وتوليد الرسوم..."):
+            # 1. تحليل نصي
+            stats_summary = df.describe(include='all').to_string()
             res = client.chat.completions.create(
                 model="llama-3.3-70b-versatile",
-                messages=[{"role": "system", "content": "انت محلل بيانات خبير. اجب بالعربية."},
-                          {"role": "user", "content": f"البيانات: {stats}\nالسؤال: {user_q}"}]
+                messages=[{"role": "system", "content": "انت خبير سلاسل إمداد. حلل الأرقام بدقة وأجب بالعربية."},
+                          {"role": "user", "content": f"إحصائيات: {stats_summary}\nالسؤال: {user_q}"}]
             )
             ans = res.choices[0].message.content
             
-            # Charts
+            # 2. توليد رسوم بيانية
             charts = try_generate_charts(user_q)
             
             st.session_state.history.append({"q": user_q, "a": ans, "charts": charts})
 
-# Display History
+# عرض المحادثة (من الأحدث للأقدم)
 for item in reversed(st.session_state.history):
     st.markdown(f"<div class='chat-user'>👤 {item['q']}</div>", unsafe_allow_html=True)
     st.markdown(f"<div class='chat-bot'>🤖 {item['a']}</div>", unsafe_allow_html=True)
@@ -182,9 +185,12 @@ for item in reversed(st.session_state.history):
             with c_cols[i]: st.plotly_chart(f, use_container_width=True)
 
 # ========================
-# 6. التذييل (Footer)
+# 6. القائمة الجانبية (Sidebar)
 # ========================
-st.sidebar.title("إعدادات المحلل")
-if st.sidebar.button("مسح المحادثة"):
+st.sidebar.title("🛠️ أدوات التحكم")
+if st.sidebar.button("🗑️ مسح المحادثة"):
     st.session_state.history = []
     st.rerun()
+
+if st.sidebar.checkbox("عرض البيانات المصدر"):
+    st.dataframe(df.head(50))
