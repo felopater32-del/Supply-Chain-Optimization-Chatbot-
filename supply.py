@@ -1,74 +1,107 @@
 import streamlit as st
 import pandas as pd
+import plotly.express as px
 import google.generativeai as genai
+import json
+import re
 import os
 
-# 1. إعداد الصفحة
-st.set_page_config(page_title="Supply Chain Analyst", layout="wide")
-st.title("📊 Supply Chain AI Dashboard")
+# ========================
+# Page Config
+# ========================
+st.set_page_config(page_title="Supply Chain Intelligence", page_icon="🚀", layout="wide")
 
-# 2. إعداد الـ AI (الطريقة المستقرة)
+# ========================
+# Load API Key & Setup Model
+# ========================
 try:
-    API_KEY = st.secrets["GOOGLE_API_KEY"]
-    genai.configure(api_key=API_KEY)
-    # استخدام اسم الموديل بدون كلمة models/ وبدون تحديد إصدار بيتا
+    api_key = st.secrets["GOOGLE_API_KEY"]
+    genai.configure(api_key=api_key)
+    # استخدام الموديل المستقر 1.5 فلاش لضمان العمل في كل المناطق
     model = genai.GenerativeModel('gemini-1.5-flash')
 except Exception as e:
-    st.error(f"⚠️ مشكلة في الـ API: {e}")
+    st.error(f"⚠️ Error setting up AI: {e}")
 
-# 3. تحميل البيانات
-file_path = "Supply_Chain_Optimization.csv"
+# ========================
+# Load Data
+# ========================
+@st.cache_data
+def load_data():
+    if os.path.exists("Supply_Chain_Optimization.csv"):
+        return pd.read_csv("Supply_Chain_Optimization.csv")
+    return pd.DataFrame()
 
-if os.path.exists(file_path):
-    df = pd.read_csv(file_path)
-    st.success("✅ تم تحميل البيانات بنجاح")
-    
-    # عرض إحصائيات سريعة
-    st.metric("إجمالي السجلات", len(df))
-    
+df = load_data()
+
+# ========================
+# Styling (CSS)
+# ========================
+st.markdown("""
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+    html, body, [class*="css"] { font-family: 'Cairo', sans-serif; text-align: right; }
+    .main { background: #0f1117; }
+    h1 { background: linear-gradient(135deg, #00d4ff, #7b2ff7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700 !important; }
+    .chat-bubble-bot { background: #1e2a45; border-left: 4px solid #00d4ff; border-radius: 12px; padding: 1rem; margin: 10px 0; color: #ccd6f6; direction: rtl; }
+    .chat-bubble-user { background: #252b3b; border-right: 4px solid #7b2ff7; border-radius: 12px; padding: 1rem; margin: 10px 0; color: #ccd6f6; direction: rtl; }
+</style>
+""", unsafe_allow_html=True)
+
+# ========================
+# Header & KPIs
+# ========================
+st.title("🚀 Supply Chain Intelligence Chatbot")
+
+if not df.empty:
+    cols = st.columns(4)
+    cols[0].metric("إجمالي العمليات", len(df))
+    cols[1].metric("المنتجات الفريدة", df.iloc[:, 0].nunique())
+    # عرض الإيرادات لو العمود موجود
+    rev_cols = [c for c in df.columns if 'revenue' in c.lower()]
+    if rev_cols:
+        cols[2].metric("إجمالي الإيرادات", f"${df[rev_cols[0]].sum():,.0f}")
+    cols[3].metric("عدد المخازن/المدن", df.iloc[:, 1].nunique() if len(df.columns) > 1 else 0)
+
     st.divider()
 
-    # 4. قسم الشات بوت
-    st.subheader("🤖 اسأل المحلل الذكي")
-    user_query = st.text_input("❓ اكتب سؤالك هنا (مثلاً: حلل لي أداء الشحن):")
+    # ========================
+    # Chat Logic
+    # ========================
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
 
-    if st.button("تحليل الآن"):
-        if user_query:
-            with st.spinner("جاري التحليل..."):
-                try:
-                    # نبعت ملخص البيانات في البرومبت
-                    data_info = df.head(20).to_string()
-                    full_prompt = f"إليك بيانات سلاسل إمداد:\n{data_info}\n\nالسؤال: {user_query}\nأجب باللغة العربية."
-                    
-                    # طلب الرد
-                    response = model.generate_content(full_prompt)
-                    st.info(response.text)
-                except Exception as e:
-                    st.error(f"❌ خطأ في الرد: {e}")
-        else:
-            st.warning("اكتب سؤالك أولاً")
-            
-    if st.checkbox("عرض الجدول"):
-        st.dataframe(df)
-else:
-    st.error(f"⚠️ الملف {file_path} غير موجود.")
-    if st.button("تحليل الآن"):
-        if user_query:
-            with st.spinner("جاري التحليل..."):
-                try:
-                    # نبعت أول 50 سطر كعينة بسيطة
-                    context = df.head(50).to_string()
-                    full_prompt = f"إليك عينة من بيانات سلاسل الإمداد:\n{context}\n\nالسؤال: {user_query}\nأجب باللغة العربية."
-                    
-                    response = model.generate_content(full_prompt)
-                    st.success(response.text)
-                except Exception as e:
-                    st.error(f"❌ حدث خطأ في الـ AI: {e}")
-        else:
-            st.warning("يرجى كتابة سؤال")
+    for msg in st.session_state.messages:
+        role_class = "chat-bubble-user" if msg["role"] == "user" else "chat-bubble-bot"
+        st.markdown(f"<div class='{role_class}'>{msg['content']}</div>", unsafe_allow_html=True)
+        if "chart" in msg:
+            st.plotly_chart(msg["chart"], use_container_width=True)
+
+    # Input area
+    user_question = st.text_input("اسأل أي سؤال عن بياناتك:", placeholder="مثلاً: قارن بين تكلفة الشحن للمدن المختلفة")
     
-    if st.checkbox("عرض جدول البيانات"):
-        st.dataframe(df)
+    if st.button("تحليل البيانات ✨"):
+        if user_question:
+            st.session_state.messages.append({"role": "user", "content": user_question})
+            
+            with st.spinner("جاري التفكير والتحليل..."):
+                # 1. Text Analysis
+                stats = df.describe(include='all').to_string()
+                prompt = f"أنت خبير سلاسل إمداد. حلل هذه البيانات:\n{stats}\nالسؤال: {user_question}\nأجب بالعربية بنقاط واضحة وفي النهاية اكتب الخلاصة."
+                
+                response = model.generate_content(prompt)
+                answer = response.text
 
+                # 2. Chart Logic (Simplified)
+                chart = None
+                if "رسم" in user_question or "chart" in user_question.lower() or "قارن" in user_question:
+                    # رسم بياني تلقائي لأول عمودين رقميين
+                    num_cols = df.select_dtypes(include=['number']).columns
+                    cat_cols = df.select_dtypes(include=['object']).columns
+                    if len(num_cols) > 0 and len(cat_cols) > 0:
+                        fig = px.bar(df.head(20), x=cat_cols[0], y=num_cols[0], template="plotly_dark", title="تحليل بياني مقترح")
+                        chart = fig
+
+                st.session_state.messages.append({"role": "assistant", "content": answer, "chart": chart})
+                st.rerun()
 else:
-    st.error(f"⚠️ لم يتم العثور على ملف {file_path}")
+    st.error("⚠️ لم يتم العثور على ملف البيانات Supply_Chain_Optimization.csv")
