@@ -195,7 +195,7 @@ Respond ONLY with a valid JSON object (no markdown, no explanation) like:
 }}
 If no chart is appropriate, return {{"chart_type": "none"}}.
 """
-    resp = client.models.generate_content(model="gemini-2.0-flash", contents=chart_prompt)
+    resp = client.models.generate_content(model="gemini-1.5-flash", contents=chart_prompt)
     raw = resp.text.strip()
     raw = re.sub(r"```json|```", "", raw).strip()
     cfg = json.loads(raw)
@@ -279,7 +279,7 @@ if ask_clicked and user_question.strip():
 
 السؤال: {user_question}
 """
-        response = client.models.generate_content(model="gemini-2.0-flash", contents=prompt)
+        response = client.models.generate_content(model="gemini-1.5-flash", contents=prompt)
         answer = response.text
 
         # محاولة توليد رسم بياني
