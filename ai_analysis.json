@@ -1,0 +1,22 @@
+[
+  {
+    "region": "West",
+    "analysis": "Key observations: High forecast accuracy and supplier reliability, but moderate inventory risk and notable stockout incidents. Lead time is relatively long. Recommendation: Implement a just-in-time inventory management system to reduce stockouts and optimize inventory levels, leveraging the region's high forecast accuracy to minimize inventory risk.",
+    "timestamp": "2026-04-07 17:25:19"
+  },
+  {
+    "region": "East",
+    "analysis": "The East region's supply chain performance is generally stable, with a high forecast accuracy of 90.7%. However, the inventory risk score of 22.7 and 393 stockout incidents indicate room for improvement. Supplier reliability is relatively strong at 80.4%. To enhance performance, I recommend implementing a safety stock optimization strategy to mitigate stockouts and reduce inventory risk.",
+    "timestamp": "2026-04-07 17:25:21"
+  },
+  {
+    "region": "North",
+    "analysis": "The North region's supply chain performance is relatively stable, with a high forecast accuracy of 90.3%. However, stockout incidents and inventory risk score are concerns. Key observations include moderate supplier reliability and average lead time. Recommendation: Implement a supplier development program to improve reliability from 81.1% to 90%, reducing stockout incidents and inventory risk.",
+    "timestamp": "2026-04-07 17:25:23"
+  },
+  {
+    "region": "South",
+    "analysis": "The South region's supply chain performance is relatively stable, with a high forecast accuracy of 90.0%. However, the inventory risk score of 23.2 and 379 stockout incidents indicate room for improvement. Supplier reliability is satisfactory at 82.6%. To enhance performance, I recommend optimizing inventory levels to reduce stockouts and mitigate inventory risk.",
+    "timestamp": "2026-04-07 17:25:24"
+  }
+]
