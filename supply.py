@@ -67,18 +67,17 @@ df = load_data()
 # ========================
 # 3. واجهة الـ KPIs (لوحة التحكم العلوية)
 # ========================
-st.title("🚀 المحلل الذكي لسلاسل الإمداد")
+st.title("🚀 Supply Chain Smart Analyst")
 
 k1, k2, k3, k4, k5, k6 = st.columns(6)
 metrics = [
-    (df['Demand_Units'].sum(), "إجمالي الطلب"),
-    (df['Transportation_Cost_USD'].mean(), "متوسط تكلفة النقل"),
-    (df['Supplier_Reliability_Score'].mean(), "موثوقية الموردين"),
-    (df['Stockout_Incidents'].sum(), "حوادث النفاذ"),
-    (df['Supply_Chain_Efficiency_Index'].mean(), "مؤشر الكفاءة"),
-    (df['Lead_Time_Days'].mean(), "وقت التسليم")
+    (df['Demand_Units'].sum(), "Total Demand"),
+    (df['Transportation_Cost_USD'].mean(), "Avg Transport Cost"),
+    (df['Supplier_Reliability_Score'].mean(), "Supplier Reliability"),
+    (df['Stockout_Incidents'].sum(), "Stockout Incidents"),
+    (df['Supply_Chain_Efficiency_Index'].mean(), "Efficiency Index"),
+    (df['Lead_Time_Days'].mean(), "Lead Time")
 ]
-
 for idx, (val, label) in enumerate(metrics):
     with [k1, k2, k3, k4, k5, k6][idx]:
         fmt = f"{val:,.1f}" if val < 1000 else f"{val:,.0f}"
