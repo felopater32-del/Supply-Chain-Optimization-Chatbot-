@@ -1,9 +1,6 @@
 import streamlit as st
-import streamlit.components.v1 as components
 import pandas as pd
 import plotly.express as px
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 from groq import Groq
 import json
 
@@ -28,6 +25,7 @@ st.markdown("""
     }
     .kpi-value { font-size: 1.6rem; font-weight: 700; color: #00d4ff; }
     .kpi-label { font-size: 0.8rem; color: #8892b0; margin-top: 4px; }
+    .kpi-answer { font-size: 1.6rem; font-weight: 700; color: #f0a500; }
     .chat-bot {
         background: #1a1f2e;
         border-right: 5px solid #00d4ff;
@@ -65,9 +63,11 @@ st.markdown("""
 try:
     api_key = st.secrets["GROQ_API_KEY"]
     client = Groq(api_key=api_key)
+except KeyError:
+    st.error("⚠️ مفيش GROQ_API_KEY في Secrets")
+    st.stop()
 except Exception as e:
-    st.error("⚠️ تأكد من إضافة GROQ_API_KEY في Streamlit Secrets")
-
+    st.warning(f"تحذير: {e}")
 @st.cache_data
 def load_data():
     return pd.read_csv("Supply_Chain_Optimization.csv")
@@ -75,7 +75,7 @@ def load_data():
 df = load_data()
 
 # ========================
-# 3. واجهة الـ KPIs
+# 3. واجهة الـ KPIs (لوحة التحكم العلوية)
 # ========================
 st.title("🚀 Supply Chain Smart Analyst")
 
@@ -91,31 +91,34 @@ metrics = [
 for idx, (val, label) in enumerate(metrics):
     with [k1, k2, k3, k4, k5, k6][idx]:
         fmt = f"{val:,.1f}" if val < 1000 else f"{val:,.0f}"
-        st.markdown(f"<div class='kpi-box'><div class='kpi-value'>{fmt}</div><div class='kpi-label'>{label}</div></div>", unsafe_allow_html=True)
+        st.markdown(
+            f"<div class='kpi-box'>"
+            f"<div class='kpi-value'>{fmt}</div>"
+            f"<div class='kpi-label'>{label}</div>"
+            f"</div>",
+            unsafe_allow_html=True
+        )
 
 st.divider()
 
 # ========================
-# 4. محرك Dashboard الكامل
+# 4. دوال بناء الـ Dashboard
 # ========================
 
 def get_dashboard_config(question):
-    """يطلب من AI تصميم dashboard كاملة: KPIs + 4 مخططات + جدول"""
     cols_info = {col: str(df[col].dtype) for col in df.columns}
-    
-    # حساب إحصائيات سريعة للأعمدة الرقمية
-  numeric_stats = {}
-for col in df.select_dtypes(include='number').columns:
-    numeric_stats[col] = {
-        "sum": float(round(df[col].sum(), 2)),
-        "mean": float(round(df[col].mean(), 2)),
-        "min": float(round(df[col].min(), 2)),
-        "max": float(round(df[col].max(), 2))
-    }
-    
-    # أعمدة نصية (categorical)
+
+    numeric_stats = {}
+    for col in df.select_dtypes(include='number').columns:
+        numeric_stats[col] = {
+            "sum": float(round(df[col].sum(), 2)),
+            "mean": float(round(df[col].mean(), 2)),
+            "min": float(round(df[col].min(), 2)),
+            "max": float(round(df[col].max(), 2))
+        }
+
     cat_cols = list(df.select_dtypes(exclude='number').columns)
-    
+
     prompt = f"""
 You are a Senior Supply Chain Analyst building a data dashboard.
 
@@ -141,7 +144,7 @@ Design a COMPLETE dashboard to answer the question. Return ONLY valid JSON:
       "color_col": "col_name_or_null"
     }}
   ],
-  "insight_prompt": "A focused prompt to generate 3 key Arabic insights from the data stats: {json.dumps(numeric_stats)}"
+  "insight_prompt": "A focused prompt to generate 3 key Arabic insights from the data"
 }}
 
 Rules:
@@ -150,7 +153,7 @@ Rules:
 - All titles/labels in Arabic
 - color_col: use a categorical column if it adds value, else null
 """
-    
+
     try:
         resp = client.chat.completions.create(
             model="llama-3.3-70b-versatile",
@@ -164,88 +167,98 @@ Rules:
 
 
 def get_ai_insights(insight_prompt, stats_summary):
-    """يولد 3 رؤى تحليلية نصية قصيرة"""
     try:
         resp = client.chat.completions.create(
             model="llama-3.3-70b-versatile",
             messages=[
-                {"role": "system", "content": "أنت خبير سلاسل إمداد. اكتب 3 رؤى تحليلية مختصرة وعملية بالعربية. كل رؤية في سطر واحد تبدأ بـ ✅"},
-                {"role": "user", "content": f"{insight_prompt}\n\nإحصائيات: {stats_summary}"}
+                {
+                    "role": "system",
+                    "content": "أنت خبير سلاسل إمداد. اكتب 3 رؤى تحليلية مختصرة وعملية بالعربية. كل رؤية في سطر واحد تبدأ بـ ✅"
+                },
+                {
+                    "role": "user",
+                    "content": f"{insight_prompt}\n\nإحصائيات: {stats_summary}"
+                }
             ]
         )
         return resp.choices[0].message.content
-    except:
+    except Exception:
         return "لم يتمكن النظام من توليد الرؤى."
 
 
-def build_kpi_html(kpi_configs):
-    """يبني HTML لـ KPI cards"""
+def build_kpi_cards(kpi_configs):
     kpi_data = []
     for kpi in kpi_configs:
         col = kpi.get("column")
         agg = kpi.get("agg", "mean")
         label = kpi.get("label", col)
-        
-        if col not in df.columns:
+
+        if not col or col not in df.columns:
             continue
-        
+
         try:
-            if agg == "sum":      val = df[col].sum()
-            elif agg == "mean":   val = df[col].mean()
-            elif agg == "max":    val = df[col].max()
-            elif agg == "min":    val = df[col].min()
-            elif agg == "count":  val = df[col].count()
-            else:                 val = df[col].mean()
-            
+            if agg == "sum":
+                val = df[col].sum()
+            elif agg == "mean":
+                val = df[col].mean()
+            elif agg == "max":
+                val = df[col].max()
+            elif agg == "min":
+                val = df[col].min()
+            elif agg == "count":
+                val = df[col].count()
+            else:
+                val = df[col].mean()
+
             fmt = f"{val:,.1f}" if val < 10000 else f"{val:,.0f}"
-        except:
+        except Exception:
             fmt = "N/A"
-        
+
         kpi_data.append((label, fmt))
-    
-    cols = st.columns(len(kpi_data)) if kpi_data else []
-    for i, (label, val) in enumerate(kpi_data):
-        with cols[i]:
-            st.markdown(
-                f"<div class='kpi-box'>"
-                f"<div class='kpi-value' style='color:#f0a500'>{val}</div>"
-                f"<div class='kpi-label'>{label}</div>"
-                f"</div>",
-                unsafe_allow_html=True
-            )
+
+    if kpi_data:
+        cols = st.columns(len(kpi_data))
+        for i, (label, val) in enumerate(kpi_data):
+            with cols[i]:
+                st.markdown(
+                    f"<div class='kpi-box'>"
+                    f"<div class='kpi-answer'>{val}</div>"
+                    f"<div class='kpi-label'>{label}</div>"
+                    f"</div>",
+                    unsafe_allow_html=True
+                )
 
 
 def build_chart_fig(cfg):
-    """يبني Plotly figure من config"""
     chart_type = cfg.get("chart_type", "bar")
     x_col = cfg.get("x")
     y_col = cfg.get("y")
     title = cfg.get("title", "")
     agg = cfg.get("agg", "none")
     color_col = cfg.get("color_col")
-    
-    # تحقق من الأعمدة
+
     if not x_col or x_col not in df.columns:
         return None
-    
-    # إذا color_col مش موجود في الداتا، نلغيه
+
     if color_col and color_col not in df.columns:
         color_col = None
-    
+
     plot_df = df.copy()
-    
-    # Aggregation
+
     if agg != "none" and y_col and y_col in df.columns:
         group_cols = [x_col]
         if color_col and color_col != x_col:
             group_cols.append(color_col)
-        if agg == "sum":
-            plot_df = plot_df.groupby(group_cols)[y_col].sum().reset_index()
-        elif agg == "mean":
-            plot_df = plot_df.groupby(group_cols)[y_col].mean().reset_index()
-        elif agg == "count":
-            plot_df = plot_df.groupby(group_cols)[y_col].count().reset_index()
-    
+        try:
+            if agg == "sum":
+                plot_df = plot_df.groupby(group_cols)[y_col].sum().reset_index()
+            elif agg == "mean":
+                plot_df = plot_df.groupby(group_cols)[y_col].mean().reset_index()
+            elif agg == "count":
+                plot_df = plot_df.groupby(group_cols)[y_col].count().reset_index()
+        except Exception:
+            plot_df = df.copy()
+
     layout_args = dict(
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(15,17,23,0.5)",
@@ -257,69 +270,81 @@ def build_chart_fig(cfg):
         xaxis=dict(gridcolor="#1e2433", tickfont=dict(size=9)),
         yaxis=dict(gridcolor="#1e2433")
     )
-    
+
     color_seq = ['#00d4ff', '#7b2ff7', '#f0a500', '#00ff88', '#ff6b6b', '#a8edea']
-    
+
     try:
         if chart_type == "bar":
-            fig = px.bar(plot_df, x=x_col, y=y_col, color=color_col,
-                         color_discrete_sequence=color_seq, barmode="group")
+            fig = px.bar(
+                plot_df, x=x_col, y=y_col, color=color_col,
+                color_discrete_sequence=color_seq, barmode="group"
+            )
         elif chart_type == "line":
-            fig = px.line(plot_df, x=x_col, y=y_col, color=color_col,
-                          markers=True, line_shape="spline",
-                          color_discrete_sequence=color_seq)
+            fig = px.line(
+                plot_df, x=x_col, y=y_col, color=color_col,
+                markers=True, line_shape="spline",
+                color_discrete_sequence=color_seq
+            )
         elif chart_type == "pie":
-            fig = px.pie(plot_df, names=x_col, values=y_col, hole=0.45,
-                         color_discrete_sequence=px.colors.sequential.Plasma_r)
+            fig = px.pie(
+                plot_df, names=x_col, values=y_col, hole=0.45,
+                color_discrete_sequence=px.colors.sequential.Plasma_r
+            )
             fig.update_traces(textfont_color="#fff")
         elif chart_type == "scatter":
-            fig = px.scatter(plot_df, x=x_col, y=y_col, color=color_col,
-                             color_discrete_sequence=color_seq, opacity=0.75)
+            fig = px.scatter(
+                plot_df, x=x_col, y=y_col, color=color_col,
+                color_discrete_sequence=color_seq, opacity=0.75
+            )
         elif chart_type == "histogram":
-            fig = px.histogram(plot_df, x=x_col, color=color_col,
-                               color_discrete_sequence=color_seq, nbins=20)
+            fig = px.histogram(
+                plot_df, x=x_col, color=color_col,
+                color_discrete_sequence=color_seq, nbins=20
+            )
         elif chart_type == "box":
-            fig = px.box(plot_df, x=x_col, y=y_col, color=color_col,
-                         color_discrete_sequence=color_seq)
+            fig = px.box(
+                plot_df, x=x_col, y=y_col, color=color_col,
+                color_discrete_sequence=color_seq
+            )
         else:
             return None
-        
+
         fig.update_layout(**layout_args)
         return fig
-    except:
+    except Exception:
         return None
 
 
 def render_full_dashboard(question):
-    """الدالة الرئيسية: تولد وتعرض Dashboard كاملة"""
-    
     with st.spinner("🔍 جاري تحليل بياناتك وبناء الـ Dashboard..."):
         config = get_dashboard_config(question)
-    
+
     if not config:
         st.error("لم يتمكن النظام من توليد الـ Dashboard. حاول مرة أخرى.")
         return None
-    
-    # ── عنوان الـ Dashboard ──
-    st.markdown(f"<div class='dashboard-title'>📊 {config.get('dashboard_title', 'تحليل البيانات')}</div>",
-                unsafe_allow_html=True)
-    
-    # ── KPIs ──
+
+    # عنوان الـ Dashboard
+    st.markdown(
+        f"<div class='dashboard-title'>📊 {config.get('dashboard_title', 'تحليل البيانات')}</div>",
+        unsafe_allow_html=True
+    )
+
+    # KPI Cards
     if config.get("kpis"):
-        build_kpi_html(config["kpis"])
-    
+        build_kpi_cards(config["kpis"])
+
     st.markdown("<br>", unsafe_allow_html=True)
-    
-    # ── المخططات (2×2 grid) ──
+
+    # المخططات في grid 2x2
     charts_cfg = config.get("charts", [])
     valid_figs = []
     for cfg in charts_cfg:
         fig = build_chart_fig(cfg)
-        if fig:
+        if fig is not None:
             valid_figs.append(fig)
-    
+
     if valid_figs:
-        # صف أول: أول مخططين
+        # الصف الأول
         if len(valid_figs) >= 2:
             col1, col2 = st.columns(2)
             with col1:
@@ -328,8 +353,8 @@ def render_full_dashboard(question):
                 st.plotly_chart(valid_figs[1], use_container_width=True)
         elif len(valid_figs) == 1:
             st.plotly_chart(valid_figs[0], use_container_width=True)
-        
-        # صف ثاني: باقي المخططات
+
+        # الصف الثاني
         if len(valid_figs) >= 4:
             col3, col4 = st.columns(2)
             with col3:
@@ -338,18 +363,21 @@ def render_full_dashboard(question):
                 st.plotly_chart(valid_figs[3], use_container_width=True)
         elif len(valid_figs) == 3:
             st.plotly_chart(valid_figs[2], use_container_width=True)
-    
-    # ── الرؤى التحليلية ──
-    st.markdown("<div class='dashboard-title'>💡 الرؤى التحليلية</div>", unsafe_allow_html=True)
-    
+
+    # الرؤى التحليلية
+    st.markdown(
+        "<div class='dashboard-title'>💡 الرؤى التحليلية</div>",
+        unsafe_allow_html=True
+    )
+
     with st.spinner("جاري توليد الرؤى..."):
         stats_summary = df.describe().to_string()
         insight_prompt = config.get("insight_prompt", f"حلل البيانات وأجب عن: {question}")
         insights = get_ai_insights(insight_prompt, stats_summary)
-    
+
     st.markdown(f"<div class='chat-bot'>{insights}</div>", unsafe_allow_html=True)
-    
-    return {"question": question, "config": config, "insights": insights}
+
+    return {"question": question, "insights": insights}
 
 
 # ========================
@@ -369,25 +397,27 @@ with col_btn:
 
 if analyze_clicked and user_q:
     st.markdown(f"<div class='chat-user'>👤 {user_q}</div>", unsafe_allow_html=True)
-    
     result = render_full_dashboard(user_q)
-    
     if result:
         st.session_state.history.append(result)
-    
     st.divider()
 
-# ── عرض السجل السابق ──
+# عرض السجل السابق
 if st.session_state.history:
     st.markdown("### 📂 التحليلات السابقة")
-    for i, item in enumerate(reversed(st.session_state.history[:-1] if analyze_clicked and user_q else st.session_state.history)):
+    previous = st.session_state.history[:-1] if (analyze_clicked and user_q) else st.session_state.history
+    for item in reversed(previous):
         with st.expander(f"🔹 {item['question']}", expanded=False):
-            st.markdown(f"<div class='chat-bot'>{item['insights']}</div>", unsafe_allow_html=True)
+            st.markdown(
+                f"<div class='chat-bot'>{item['insights']}</div>",
+                unsafe_allow_html=True
+            )
 
 # ========================
 # 6. القائمة الجانبية
 # ========================
 st.sidebar.title("🛠️ أدوات التحكم")
+
 if st.sidebar.button("🗑️ مسح المحادثة"):
     st.session_state.history = []
     st.rerun()
@@ -395,10 +425,9 @@ if st.sidebar.button("🗑️ مسح المحادثة"):
 if st.sidebar.checkbox("عرض البيانات المصدر"):
     st.dataframe(df.head(50))
 
-# معلومات إضافية في الـ Sidebar
 st.sidebar.divider()
 st.sidebar.markdown("**📋 أعمدة البيانات المتاحة:**")
 for col in df.columns:
     dtype = str(df[col].dtype)
-    icon = "🔢" if "int" in dtype or "float" in dtype else "🔤"
+    icon = "🔢" if ("int" in dtype or "float" in dtype) else "🔤"
     st.sidebar.markdown(f"{icon} `{col}`")
