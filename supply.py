@@ -150,7 +150,8 @@ Design a COMPLETE dashboard to answer the question. Return ONLY valid JSON:
 Rules:
 - kpis: exactly 4 KPIs
 - charts: exactly 4 DIFFERENT charts using DIFFERENT columns
-- All titles/labels in Arabic
+- All titles/labels in English
+- kpi labels in English
 - color_col: use a categorical column if it adds value, else null
 """
 
@@ -173,7 +174,7 @@ def get_ai_insights(insight_prompt, stats_summary):
             messages=[
                 {
                     "role": "system",
-                    "content": "أنت خبير سلاسل إمداد. اكتب 3 رؤى تحليلية مختصرة وعملية بالعربية. كل رؤية في سطر واحد تبدأ بـ ✅"
+                    "content": "You are a Supply Chain Expert. Write 3 brief analytical insights in English. Each insight on one line starting with ✅"
                 },
                 {
                     "role": "user",
