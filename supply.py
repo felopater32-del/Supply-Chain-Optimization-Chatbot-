@@ -104,14 +104,14 @@ def get_dashboard_config(question):
     cols_info = {col: str(df[col].dtype) for col in df.columns}
     
     # حساب إحصائيات سريعة للأعمدة الرقمية
-    numeric_stats = {}
-    for col in df.select_dtypes(include='number').columns:
-        numeric_stats[col] = {
-            "sum": round(df[col].sum(), 2),
-            "mean": round(df[col].mean(), 2),
-            "min": round(df[col].min(), 2),
-            "max": round(df[col].max(), 2)
-        }
+  numeric_stats = {}
+for col in df.select_dtypes(include='number').columns:
+    numeric_stats[col] = {
+        "sum": float(round(df[col].sum(), 2)),
+        "mean": float(round(df[col].mean(), 2)),
+        "min": float(round(df[col].min(), 2)),
+        "max": float(round(df[col].max(), 2))
+    }
     
     # أعمدة نصية (categorical)
     cat_cols = list(df.select_dtypes(exclude='number').columns)
