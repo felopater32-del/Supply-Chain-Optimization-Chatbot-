@@ -1,9 +1,11 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 from groq import Groq
 import json
-import re
 
 # ========================
 # 1. إعدادات الصفحة والتصميم
@@ -46,6 +48,14 @@ st.markdown("""
         text-align: right;
         direction: rtl;
     }
+    .dashboard-title {
+        color: #00d4ff;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin: 16px 0 8px 0;
+        text-align: right;
+        direction: rtl;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -65,7 +75,7 @@ def load_data():
 df = load_data()
 
 # ========================
-# 3. واجهة الـ KPIs (لوحة التحكم العلوية)
+# 3. واجهة الـ KPIs
 # ========================
 st.title("🚀 Supply Chain Smart Analyst")
 
@@ -86,105 +96,296 @@ for idx, (val, label) in enumerate(metrics):
 st.divider()
 
 # ========================
-# 4. محرك الرسوم البيانية المتطور
+# 4. محرك Dashboard الكامل
 # ========================
-def build_chart(cfg):
-    chart_type = cfg.get("chart_type", "bar")
-    x_col = cfg.get("x")
-    y_col = cfg.get("y")
-    title = cfg.get("title", "")
-    agg = cfg.get("agg", "none")
 
-    if not x_col or x_col not in df.columns: return None
+def get_dashboard_config(question):
+    """يطلب من AI تصميم dashboard كاملة: KPIs + 4 مخططات + جدول"""
+    cols_info = {col: str(df[col].dtype) for col in df.columns}
     
-    plot_df = df.copy()
-    if agg != "none" and y_col and y_col in df.columns:
-        if agg == "sum": plot_df = plot_df.groupby(x_col)[y_col].sum().reset_index()
-        elif agg == "mean": plot_df = plot_df.groupby(x_col)[y_col].mean().reset_index()
+    # حساب إحصائيات سريعة للأعمدة الرقمية
+    numeric_stats = {}
+    for col in df.select_dtypes(include='number').columns:
+        numeric_stats[col] = {
+            "sum": round(df[col].sum(), 2),
+            "mean": round(df[col].mean(), 2),
+            "min": round(df[col].min(), 2),
+            "max": round(df[col].max(), 2)
+        }
+    
+    # أعمدة نصية (categorical)
+    cat_cols = list(df.select_dtypes(exclude='number').columns)
+    
+    prompt = f"""
+You are a Senior Supply Chain Analyst building a data dashboard.
 
-    layout_args = dict(
-        paper_bgcolor="rgba(0,0,0,0)",
-        plot_bgcolor="rgba(15,17,23,0.5)",
-        font=dict(family="Cairo", color="#ccd6f6"),
-        hovermode="x unified",
-        margin=dict(l=10, r=10, t=50, b=10)
-    )
+User Question: "{question}"
+Available Columns: {json.dumps(cols_info)}
+Numeric Stats: {json.dumps(numeric_stats)}
+Categorical Columns: {cat_cols}
 
-    if chart_type == "bar":
-        fig = px.bar(plot_df, x=x_col, y=y_col, title=f"📊 {title}", color_discrete_sequence=['#00d4ff'])
-    elif chart_type == "line":
-        fig = px.line(plot_df, x=x_col, y=y_col, title=f"📈 {title}", markers=True, line_shape="spline")
-        fig.update_traces(line_color='#7b2ff7')
-    elif chart_type == "pie":
-        fig = px.pie(plot_df, names=x_col, values=y_col, title=f"🍩 {title}", hole=0.4, color_discrete_sequence=px.colors.sequential.Plasma_r)
-    elif chart_type == "scatter":
-        fig = px.scatter(plot_df, x=x_col, y=y_col, title=f"🎯 {title}", color_discrete_sequence=['#00ff88'])
-    else: return None
+Design a COMPLETE dashboard to answer the question. Return ONLY valid JSON:
 
-    fig.update_layout(**layout_args)
-    return fig
+{{
+  "dashboard_title": "Arabic title for this dashboard",
+  "kpis": [
+    {{"label": "Arabic label", "column": "col_name", "agg": "sum|mean|max|min|count"}}
+  ],
+  "charts": [
+    {{
+      "chart_type": "bar|line|pie|scatter|histogram|box",
+      "x": "col_name",
+      "y": "col_name_or_null",
+      "agg": "sum|mean|count|none",
+      "title": "Arabic chart title",
+      "color_col": "col_name_or_null"
+    }}
+  ],
+  "insight_prompt": "A focused prompt to generate 3 key Arabic insights from the data stats: {json.dumps(numeric_stats)}"
+}}
 
-def try_generate_charts(question):
-    cols_list = list(df.columns)
-    # برومبت صارم لمنع التكرار وإجبار الموديل على التنوع
-    prompt = (
-        f"You are a Senior Supply Chain Analyst. User Question: '{question}'\n"
-        f"Available Columns: {json.dumps(cols_list)}\n\n"
-        "Instructions:\n"
-        "1. Choose 3 DIFFERENT charts that best answer the question.\n"
-        "2. DO NOT repeat the same column choices every time.\n"
-        "3. Respond with ONLY a JSON object: {'charts': [{'chart_type': 'bar|line|pie|scatter', 'x': 'col_name', 'y': 'col_name', 'agg': 'sum|mean|none', 'title': 'Arabic Title'}]}"
-    )
+Rules:
+- kpis: exactly 4 KPIs
+- charts: exactly 4 DIFFERENT charts using DIFFERENT columns
+- All titles/labels in Arabic
+- color_col: use a categorical column if it adds value, else null
+"""
     
     try:
         resp = client.chat.completions.create(
             model="llama-3.3-70b-versatile",
             messages=[{"role": "user", "content": prompt}],
-            temperature=0.8, # زيادة العشوائية للإبداع
+            temperature=0.7,
             response_format={"type": "json_object"}
         )
-        configs = json.loads(resp.choices[0].message.content).get("charts", [])
-        charts = [build_chart(cfg) for cfg in configs if build_chart(cfg) is not None]
-        return charts[:3]
+        return json.loads(resp.choices[0].message.content)
+    except Exception as e:
+        return None
+
+
+def get_ai_insights(insight_prompt, stats_summary):
+    """يولد 3 رؤى تحليلية نصية قصيرة"""
+    try:
+        resp = client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[
+                {"role": "system", "content": "أنت خبير سلاسل إمداد. اكتب 3 رؤى تحليلية مختصرة وعملية بالعربية. كل رؤية في سطر واحد تبدأ بـ ✅"},
+                {"role": "user", "content": f"{insight_prompt}\n\nإحصائيات: {stats_summary}"}
+            ]
+        )
+        return resp.choices[0].message.content
     except:
-        return []
+        return "لم يتمكن النظام من توليد الرؤى."
+
+
+def build_kpi_html(kpi_configs):
+    """يبني HTML لـ KPI cards"""
+    kpi_data = []
+    for kpi in kpi_configs:
+        col = kpi.get("column")
+        agg = kpi.get("agg", "mean")
+        label = kpi.get("label", col)
+        
+        if col not in df.columns:
+            continue
+        
+        try:
+            if agg == "sum":      val = df[col].sum()
+            elif agg == "mean":   val = df[col].mean()
+            elif agg == "max":    val = df[col].max()
+            elif agg == "min":    val = df[col].min()
+            elif agg == "count":  val = df[col].count()
+            else:                 val = df[col].mean()
+            
+            fmt = f"{val:,.1f}" if val < 10000 else f"{val:,.0f}"
+        except:
+            fmt = "N/A"
+        
+        kpi_data.append((label, fmt))
+    
+    cols = st.columns(len(kpi_data)) if kpi_data else []
+    for i, (label, val) in enumerate(kpi_data):
+        with cols[i]:
+            st.markdown(
+                f"<div class='kpi-box'>"
+                f"<div class='kpi-value' style='color:#f0a500'>{val}</div>"
+                f"<div class='kpi-label'>{label}</div>"
+                f"</div>",
+                unsafe_allow_html=True
+            )
+
+
+def build_chart_fig(cfg):
+    """يبني Plotly figure من config"""
+    chart_type = cfg.get("chart_type", "bar")
+    x_col = cfg.get("x")
+    y_col = cfg.get("y")
+    title = cfg.get("title", "")
+    agg = cfg.get("agg", "none")
+    color_col = cfg.get("color_col")
+    
+    # تحقق من الأعمدة
+    if not x_col or x_col not in df.columns:
+        return None
+    
+    # إذا color_col مش موجود في الداتا، نلغيه
+    if color_col and color_col not in df.columns:
+        color_col = None
+    
+    plot_df = df.copy()
+    
+    # Aggregation
+    if agg != "none" and y_col and y_col in df.columns:
+        group_cols = [x_col]
+        if color_col and color_col != x_col:
+            group_cols.append(color_col)
+        if agg == "sum":
+            plot_df = plot_df.groupby(group_cols)[y_col].sum().reset_index()
+        elif agg == "mean":
+            plot_df = plot_df.groupby(group_cols)[y_col].mean().reset_index()
+        elif agg == "count":
+            plot_df = plot_df.groupby(group_cols)[y_col].count().reset_index()
+    
+    layout_args = dict(
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(15,17,23,0.5)",
+        font=dict(family="Cairo", color="#ccd6f6", size=11),
+        title=dict(text=f"<b>{title}</b>", font=dict(size=13, color="#00d4ff")),
+        hovermode="x unified",
+        margin=dict(l=10, r=10, t=50, b=40),
+        legend=dict(bgcolor="rgba(0,0,0,0)", font=dict(color="#ccd6f6")),
+        xaxis=dict(gridcolor="#1e2433", tickfont=dict(size=9)),
+        yaxis=dict(gridcolor="#1e2433")
+    )
+    
+    color_seq = ['#00d4ff', '#7b2ff7', '#f0a500', '#00ff88', '#ff6b6b', '#a8edea']
+    
+    try:
+        if chart_type == "bar":
+            fig = px.bar(plot_df, x=x_col, y=y_col, color=color_col,
+                         color_discrete_sequence=color_seq, barmode="group")
+        elif chart_type == "line":
+            fig = px.line(plot_df, x=x_col, y=y_col, color=color_col,
+                          markers=True, line_shape="spline",
+                          color_discrete_sequence=color_seq)
+        elif chart_type == "pie":
+            fig = px.pie(plot_df, names=x_col, values=y_col, hole=0.45,
+                         color_discrete_sequence=px.colors.sequential.Plasma_r)
+            fig.update_traces(textfont_color="#fff")
+        elif chart_type == "scatter":
+            fig = px.scatter(plot_df, x=x_col, y=y_col, color=color_col,
+                             color_discrete_sequence=color_seq, opacity=0.75)
+        elif chart_type == "histogram":
+            fig = px.histogram(plot_df, x=x_col, color=color_col,
+                               color_discrete_sequence=color_seq, nbins=20)
+        elif chart_type == "box":
+            fig = px.box(plot_df, x=x_col, y=y_col, color=color_col,
+                         color_discrete_sequence=color_seq)
+        else:
+            return None
+        
+        fig.update_layout(**layout_args)
+        return fig
+    except:
+        return None
+
+
+def render_full_dashboard(question):
+    """الدالة الرئيسية: تولد وتعرض Dashboard كاملة"""
+    
+    with st.spinner("🔍 جاري تحليل بياناتك وبناء الـ Dashboard..."):
+        config = get_dashboard_config(question)
+    
+    if not config:
+        st.error("لم يتمكن النظام من توليد الـ Dashboard. حاول مرة أخرى.")
+        return None
+    
+    # ── عنوان الـ Dashboard ──
+    st.markdown(f"<div class='dashboard-title'>📊 {config.get('dashboard_title', 'تحليل البيانات')}</div>",
+                unsafe_allow_html=True)
+    
+    # ── KPIs ──
+    if config.get("kpis"):
+        build_kpi_html(config["kpis"])
+    
+    st.markdown("<br>", unsafe_allow_html=True)
+    
+    # ── المخططات (2×2 grid) ──
+    charts_cfg = config.get("charts", [])
+    valid_figs = []
+    for cfg in charts_cfg:
+        fig = build_chart_fig(cfg)
+        if fig:
+            valid_figs.append(fig)
+    
+    if valid_figs:
+        # صف أول: أول مخططين
+        if len(valid_figs) >= 2:
+            col1, col2 = st.columns(2)
+            with col1:
+                st.plotly_chart(valid_figs[0], use_container_width=True)
+            with col2:
+                st.plotly_chart(valid_figs[1], use_container_width=True)
+        elif len(valid_figs) == 1:
+            st.plotly_chart(valid_figs[0], use_container_width=True)
+        
+        # صف ثاني: باقي المخططات
+        if len(valid_figs) >= 4:
+            col3, col4 = st.columns(2)
+            with col3:
+                st.plotly_chart(valid_figs[2], use_container_width=True)
+            with col4:
+                st.plotly_chart(valid_figs[3], use_container_width=True)
+        elif len(valid_figs) == 3:
+            st.plotly_chart(valid_figs[2], use_container_width=True)
+    
+    # ── الرؤى التحليلية ──
+    st.markdown("<div class='dashboard-title'>💡 الرؤى التحليلية</div>", unsafe_allow_html=True)
+    
+    with st.spinner("جاري توليد الرؤى..."):
+        stats_summary = df.describe().to_string()
+        insight_prompt = config.get("insight_prompt", f"حلل البيانات وأجب عن: {question}")
+        insights = get_ai_insights(insight_prompt, stats_summary)
+    
+    st.markdown(f"<div class='chat-bot'>{insights}</div>", unsafe_allow_html=True)
+    
+    return {"question": question, "config": config, "insights": insights}
+
 
 # ========================
-# 5. منطق المحادثة والتحليل
+# 5. واجهة المحادثة
 # ========================
-if "history" not in st.session_state: st.session_state.history = []
+if "history" not in st.session_state:
+    st.session_state.history = []
 
 col_in, col_btn = st.columns([5, 1])
 with col_in:
-    user_q = st.text_input("اسأل عن أي تحليل في بياناتك:", placeholder="مثلاً: قارن بين كفاءة المناطق المختلفة وتكلفة النقل")
+    user_q = st.text_input(
+        "اسأل عن أي تحليل في بياناتك:",
+        placeholder="مثلاً: قارن بين كفاءة المناطق المختلفة وتكلفة النقل"
+    )
 with col_btn:
-    if st.button("تحليل الآن ✨") and user_q:
-        with st.spinner("جاري فحص البيانات وتوليد الرسوم..."):
-            # 1. تحليل نصي
-            stats_summary = df.describe(include='all').to_string()
-            res = client.chat.completions.create(
-                model="llama-3.3-70b-versatile",
-                messages=[{"role": "system", "content": "انت خبير سلاسل إمداد. حلل الأرقام بدقة وأجب بالعربية."},
-                          {"role": "user", "content": f"إحصائيات: {stats_summary}\nالسؤال: {user_q}"}]
-            )
-            ans = res.choices[0].message.content
-            
-            # 2. توليد رسوم بيانية
-            charts = try_generate_charts(user_q)
-            
-            st.session_state.history.append({"q": user_q, "a": ans, "charts": charts})
+    analyze_clicked = st.button("تحليل الآن ✨")
 
-# عرض المحادثة (من الأحدث للأقدم)
-for item in reversed(st.session_state.history):
-    st.markdown(f"<div class='chat-user'>👤 {item['q']}</div>", unsafe_allow_html=True)
-    st.markdown(f"<div class='chat-bot'>🤖 {item['a']}</div>", unsafe_allow_html=True)
-    if item['charts']:
-        c_cols = st.columns(len(item['charts']))
-        for i, f in enumerate(item['charts']):
-            with c_cols[i]: st.plotly_chart(f, use_container_width=True)
+if analyze_clicked and user_q:
+    st.markdown(f"<div class='chat-user'>👤 {user_q}</div>", unsafe_allow_html=True)
+    
+    result = render_full_dashboard(user_q)
+    
+    if result:
+        st.session_state.history.append(result)
+    
+    st.divider()
+
+# ── عرض السجل السابق ──
+if st.session_state.history:
+    st.markdown("### 📂 التحليلات السابقة")
+    for i, item in enumerate(reversed(st.session_state.history[:-1] if analyze_clicked and user_q else st.session_state.history)):
+        with st.expander(f"🔹 {item['question']}", expanded=False):
+            st.markdown(f"<div class='chat-bot'>{item['insights']}</div>", unsafe_allow_html=True)
 
 # ========================
-# 6. القائمة الجانبية (Sidebar)
+# 6. القائمة الجانبية
 # ========================
 st.sidebar.title("🛠️ أدوات التحكم")
 if st.sidebar.button("🗑️ مسح المحادثة"):
@@ -193,3 +394,11 @@ if st.sidebar.button("🗑️ مسح المحادثة"):
 
 if st.sidebar.checkbox("عرض البيانات المصدر"):
     st.dataframe(df.head(50))
+
+# معلومات إضافية في الـ Sidebar
+st.sidebar.divider()
+st.sidebar.markdown("**📋 أعمدة البيانات المتاحة:**")
+for col in df.columns:
+    dtype = str(df[col].dtype)
+    icon = "🔢" if "int" in dtype or "float" in dtype else "🔤"
+    st.sidebar.markdown(f"{icon} `{col}`")
